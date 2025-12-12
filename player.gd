@@ -11,9 +11,6 @@ var _mouse_rotation: Vector3
 var _rotation_input: float
 var _tilt_input: float
 
-func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
 func _physics_process(delta: float):
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -45,6 +42,10 @@ func _update_camera(delta: float):
 	
 	_rotation_input = 0.0
 	_tilt_input = 0.0
+
+func _input(event: InputEvent):
+	if (Input.mouse_mode != Input.MOUSE_MODE_CAPTURED) and event is InputEventMouseButton: 
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
