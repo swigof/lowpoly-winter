@@ -26,6 +26,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.216894, 0)
 script = ExtResource("1_ig7tw")
 speed = 14
 fall_acceleration = 75
+jump_impulse = 20
 look_sensitivity = 0.1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]

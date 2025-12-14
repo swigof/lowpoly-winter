@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var speed: int
 @export var fall_acceleration: int
+@export var jump_impulse: int
 @export var look_sensitivity: float
 
 const TILT_LOWER_LIMIT := deg_to_rad(-90.0)
@@ -23,6 +24,8 @@ func _physics_process(delta: float):
 	
 	if not is_on_floor():
 		velocity.y = velocity.y - (fall_acceleration * delta)
+	elif Input.is_action_just_pressed("jump"):
+		velocity.y = jump_impulse
 	
 	move_and_slide()
 	_update_camera(delta)
