@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://del5uh8qdlu0u"]
+[gd_scene load_steps=9 format=3 uid="uid://del5uh8qdlu0u"]
 
 [ext_resource type="Script" uid="uid://bcqm70t21l3cc" path="res://player.gd" id="1_ig7tw"]
+[ext_resource type="Material" uid="uid://csjsfva081pp6" path="res://materials/grass.tres" id="2_0xm2m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dm0k"]
 
@@ -8,12 +9,14 @@
 size = Vector3(100, 2, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+material = ExtResource("2_0xm2m")
 size = Vector3(100, 2, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(10, 10, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h2yge"]
+material = ExtResource("2_0xm2m")
 size = Vector3(10, 10, 10)
 
 [sub_resource type="Environment" id="Environment_ig7tw"]
