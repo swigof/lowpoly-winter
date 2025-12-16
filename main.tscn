@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://del5uh8qdlu0u"]
+[gd_scene load_steps=8 format=3 uid="uid://del5uh8qdlu0u"]
 
 [ext_resource type="Script" uid="uid://bcqm70t21l3cc" path="res://player.gd" id="1_ig7tw"]
 
@@ -16,10 +16,10 @@ size = Vector3(10, 10, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_h2yge"]
 size = Vector3(10, 10, 10)
 
-[node name="Main" type="Node3D"]
+[sub_resource type="Environment" id="Environment_ig7tw"]
+fog_enabled = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.58066034, 0.8141459, 0, -0.8141459, 0.58066034, 0, 5.6878424, 0)
+[node name="Main" type="Node3D"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.216894, 0)
@@ -51,3 +51,6 @@ shape = SubResource("BoxShape3D_0xm2m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ramp"]
 mesh = SubResource("BoxMesh_h2yge")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ig7tw")
