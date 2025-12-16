@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://del5uh8qdlu0u"]
+[gd_scene load_steps=10 format=3 uid="uid://del5uh8qdlu0u"]
 
 [ext_resource type="Script" uid="uid://bcqm70t21l3cc" path="res://player.gd" id="1_ig7tw"]
 [ext_resource type="Material" uid="uid://csjsfva081pp6" path="res://materials/grass.tres" id="2_0xm2m"]
+[ext_resource type="AudioStream" uid="uid://br8dip5vvakx7" path="res://assets/music/II.+Andante+Cantabile-MusopenStringQuartet-CC0.mp3" id="3_h2yge"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dm0k"]
 
@@ -47,7 +48,7 @@ shape = SubResource("BoxShape3D_ig7tw")
 mesh = SubResource("BoxMesh_0xm2m")
 
 [node name="Ramp" type="StaticBody3D" parent="."]
-transform = Transform3D(0.9432922, 0.3319636, 0, -0.3319636, 0.9432922, 0, 0, 0, 1, -7.9913225, -3.3496509, 0)
+transform = Transform3D(0.9432922, 0.3319636, 0, -0.3319636, 0.9432922, 0, 0, 0, 1, -8, -3.35, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp"]
 shape = SubResource("BoxShape3D_0xm2m")
@@ -57,3 +58,9 @@ mesh = SubResource("BoxMesh_h2yge")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ig7tw")
+
+[node name="Music" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 25)
+stream = ExtResource("3_h2yge")
+autoplay = true
+parameters/looping = true
