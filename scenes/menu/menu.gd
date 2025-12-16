@@ -8,6 +8,25 @@ func _on_play_button_pressed() -> void:
 	visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+func _on_settings_button_pressed() -> void:
+	$VBoxContainer/TopLevelVBox.visible = false
+	$VBoxContainer/SettingsVBox.visible = true
+	$VBoxContainer/BackButton.visible = true
+
+func _on_credits_button_pressed() -> void:
+	$VBoxContainer/TopLevelVBox.visible = false
+	$VBoxContainer/CreditsVBox.visible = true
+	$VBoxContainer/BackButton.visible = true
+
+func _on_back_button_pressed() -> void:
+	$VBoxContainer/TopLevelVBox.visible = true
+	$VBoxContainer/SettingsVBox.visible = false
+	$VBoxContainer/CreditsVBox.visible = false
+	$VBoxContainer/BackButton.visible = false
+
+func _on_h_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_linear(0, value)
+
 func _input(event: InputEvent):
 	if (Input.mouse_mode != Input.MOUSE_MODE_CAPTURED) and event is InputEventMouseButton:
 		if not visible:

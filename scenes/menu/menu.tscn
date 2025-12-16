@@ -67,7 +67,9 @@ text = "VOLUME"
 [node name="HSlider" type="HSlider" parent="VBoxContainer/SettingsVBox/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-value = 100.0
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="CreditsVBox" type="VBoxContainer" parent="VBoxContainer"]
 visible = false
@@ -88,3 +90,7 @@ layout_mode = 2
 text = "BACK"
 
 [connection signal="pressed" from="VBoxContainer/TopLevelVBox/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TopLevelVBox/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TopLevelVBox/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/SettingsVBox/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
