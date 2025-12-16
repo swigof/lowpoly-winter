@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhdy32kixks6s"]
+
+[ext_resource type="Theme" uid="uid://cehcviwjpw3tj" path="res://scenes/menu/menu_theme.tres" id="1_klgdb"]
+[ext_resource type="Script" uid="uid://dowvlylligkxi" path="res://scenes/menu/menu.gd" id="2_mcvr8"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_klgdb")
+script = ExtResource("2_mcvr8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 0.1882353)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -17.0
+offset_right = 100.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopLevelVBox" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/TopLevelVBox"]
+layout_mode = 2
+text = "RESUME"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer/TopLevelVBox"]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer/TopLevelVBox"]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="SettingsVBox" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SettingsVBox"]
+layout_mode = 2
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/SettingsVBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SettingsVBox/HBoxContainer"]
+layout_mode = 2
+text = "VOLUME"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/SettingsVBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="CreditsVBox" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Credits" type="Label" parent="VBoxContainer/CreditsVBox"]
+layout_mode = 2
+text = "A game by swigof
+
+Credits go here
+
+Made with Godot"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "BACK"
+
+[connection signal="pressed" from="VBoxContainer/TopLevelVBox/PlayButton" to="." method="_on_play_button_pressed"]

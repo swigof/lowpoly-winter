@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://del5uh8qdlu0u"]
+[gd_scene load_steps=11 format=3 uid="uid://del5uh8qdlu0u"]
 
 [ext_resource type="Script" uid="uid://bcqm70t21l3cc" path="res://player.gd" id="1_ig7tw"]
 [ext_resource type="Material" uid="uid://csjsfva081pp6" path="res://materials/grass.tres" id="2_0xm2m"]
 [ext_resource type="AudioStream" uid="uid://br8dip5vvakx7" path="res://assets/music/II.+Andante+Cantabile-MusopenStringQuartet-CC0.mp3" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bhdy32kixks6s" path="res://scenes/menu/menu.tscn" id="4_1bvp3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dm0k"]
 
@@ -64,3 +65,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 25)
 stream = ExtResource("3_h2yge")
 autoplay = true
 parameters/looping = true
+
+[node name="Menu" parent="." instance=ExtResource("4_1bvp3")]
+visible = false

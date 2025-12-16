@@ -46,10 +46,6 @@ func _update_camera(delta: float):
 	_rotation_input = 0.0
 	_tilt_input = 0.0
 
-func _input(event: InputEvent):
-	if (Input.mouse_mode != Input.MOUSE_MODE_CAPTURED) and event is InputEventMouseButton: 
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		_rotation_input = -event.relative.x * look_sensitivity
