@@ -7,6 +7,7 @@ static var _first_capture := true
 func _on_play_button_pressed() -> void:
 	visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	_first_capture = false
 
 func _on_settings_button_pressed() -> void:
 	$VBoxContainer/TopLevelVBox.visible = false
