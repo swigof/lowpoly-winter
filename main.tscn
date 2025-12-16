@@ -61,6 +61,7 @@ mesh = SubResource("BoxMesh_h2yge")
 environment = SubResource("Environment_ig7tw")
 
 [node name="Music" type="AudioStreamPlayer3D" parent="."]
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 25)
 stream = ExtResource("3_h2yge")
 autoplay = true
