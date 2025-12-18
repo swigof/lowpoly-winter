@@ -44,6 +44,8 @@ func _on_credits_button_pressed() -> void:
 	$VBoxContainer/BackButton.visible = true
 
 func _on_back_button_pressed() -> void:
+	if $VBoxContainer/SettingsVBox.visible == true: # TODO clean this up
+		SettingsManager.save_settings()
 	$VBoxContainer/TopLevelVBox.visible = true
 	$VBoxContainer/SettingsVBox.visible = false
 	$VBoxContainer/CreditsVBox.visible = false
