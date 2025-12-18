@@ -53,24 +53,51 @@ text = "CREDITS"
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/SettingsVBox"]
+[node name="SettingsLabel" type="Label" parent="VBoxContainer/SettingsVBox"]
 layout_mode = 2
 text = "SETTINGS"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/SettingsVBox"]
+[node name="VolumeHBox" type="HBoxContainer" parent="VBoxContainer/SettingsVBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/SettingsVBox/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/SettingsVBox/VolumeHBox"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "VOLUME"
+horizontal_alignment = 2
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/SettingsVBox/HBoxContainer"]
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer/SettingsVBox/VolumeHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
-step = 0.1
+step = 0.01
 value = 1.0
+
+[node name="Value" type="Label" parent="VBoxContainer/SettingsVBox/VolumeHBox"]
+layout_mode = 2
+text = "100"
+
+[node name="SensHBox" type="HBoxContainer" parent="VBoxContainer/SettingsVBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SettingsVBox/SensHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SENSITIVITY"
+horizontal_alignment = 2
+
+[node name="SensSlider" type="HSlider" parent="VBoxContainer/SettingsVBox/SensHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.01
+max_value = 0.5
+step = 0.01
+value = 0.09999999999999999
+
+[node name="Value" type="Label" parent="VBoxContainer/SettingsVBox/SensHBox"]
+layout_mode = 2
+text = "1.0"
 
 [node name="CreditsVBox" type="VBoxContainer" parent="VBoxContainer"]
 visible = false
@@ -93,5 +120,6 @@ text = "BACK"
 [connection signal="pressed" from="VBoxContainer/TopLevelVBox/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopLevelVBox/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopLevelVBox/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="value_changed" from="VBoxContainer/SettingsVBox/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SettingsVBox/VolumeHBox/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SettingsVBox/SensHBox/SensSlider" to="." method="_on_sens_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

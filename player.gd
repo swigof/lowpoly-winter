@@ -3,7 +3,6 @@ extends CharacterBody3D
 @export var speed: int
 @export var fall_acceleration: int
 @export var jump_impulse: int
-@export var look_sensitivity: float
 
 const TILT_LOWER_LIMIT := deg_to_rad(-90.0)
 const TILT_UPPER_LIMIT := deg_to_rad(90.0)
@@ -86,5 +85,5 @@ func _update_camera(delta: float):
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		_rotation_input = -event.relative.x * look_sensitivity
-		_tilt_input = -event.relative.y * look_sensitivity
+		_rotation_input = -event.relative.x * SettingsManager.look_sensitivity
+		_tilt_input = -event.relative.y * SettingsManager.look_sensitivity
