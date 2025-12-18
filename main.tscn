@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://del5uh8qdlu0u"]
+[gd_scene load_steps=12 format=3 uid="uid://del5uh8qdlu0u"]
 
 [ext_resource type="Script" uid="uid://bcqm70t21l3cc" path="res://player.gd" id="1_ig7tw"]
 [ext_resource type="Material" uid="uid://csjsfva081pp6" path="res://materials/grass.tres" id="2_0xm2m"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bhdy32kixks6s" path="res://scenes/menu/menu.tscn" id="4_1bvp3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dm0k"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bvp3"]
+size = Vector2(3, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
 size = Vector3(100, 2, 100)
@@ -38,6 +41,20 @@ look_sensitivity = 0.1
 shape = SubResource("CapsuleShape3D_7dm0k")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+
+[node name="Crosshair" type="TextureRect" parent="CharacterBody3D/Camera3D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.5
+offset_top = -1.5
+offset_right = 1.5
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_1bvp3")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
