@@ -2,16 +2,16 @@ extends Control
 
 var _in_settings := false
 
-var sensitivity_label: Label
-var sensitivity_slider: Slider
-var volume_label: Label
-var volume_slider: Slider
+@onready var sensitivity_label := $VBoxContainer/SettingsVBox/SensHBox/Value
+@onready var sensitivity_slider := $VBoxContainer/SettingsVBox/SensHBox/SensSlider
+@onready var volume_label := $VBoxContainer/SettingsVBox/VolumeHBox/Value
+@onready var volume_slider := $VBoxContainer/SettingsVBox/VolumeHBox/VolumeSlider
+@onready var top_container := $VBoxContainer/TopLevelVBox
+@onready var settings_container := $VBoxContainer/SettingsVBox
+@onready var credits_container := $VBoxContainer/CreditsVBox
+@onready var back_button := $VBoxContainer/BackButton
 
-func _ready() -> void:
-	sensitivity_label = $VBoxContainer/SettingsVBox/SensHBox/Value
-	sensitivity_slider = $VBoxContainer/SettingsVBox/SensHBox/SensSlider
-	volume_label = $VBoxContainer/SettingsVBox/VolumeHBox/Value
-	volume_slider = $VBoxContainer/SettingsVBox/VolumeHBox/VolumeSlider
+func _ready():
 	SettingsManager.sensitivity_changed.connect(_update_sensitivity)
 	SettingsManager.volume_changed.connect(_update_volume)
 	_update_sensitivity()
@@ -25,31 +25,31 @@ func _update_volume():
 	volume_label.text = "%03.0f" % (SettingsManager.volume * 100)
 	volume_slider.value = SettingsManager.volume
 
-func _on_play_button_pressed() -> void:
+func _on_play_button_pressed():
 	GameManager.unpause()
 
-func _on_settings_button_pressed() -> void:
+func _on_settings_button_pressed():
 	_in_settings = true
-	$VBoxContainer/TopLevelVBox.visible = false
-	$VBoxContainer/SettingsVBox.visible = true
-	$VBoxContainer/BackButton.visible = true
+	top_container.visible = false
+	settings_container.visible = true
+	back_button.visible = true
 
-func _on_credits_button_pressed() -> void:
-	$VBoxContainer/TopLevelVBox.visible = false
-	$VBoxContainer/CreditsVBox.visible = true
-	$VBoxContainer/BackButton.visible = true
+func _on_credits_button_pressed():
+	top_container.visible = false
+	credits_container.visible = true
+	back_button.visible = true
 
-func _on_back_button_pressed() -> void:
+func _on_back_button_pressed():
 	if _in_settings:
 		SettingsManager.save_settings()
 		_in_settings = false
-	$VBoxContainer/TopLevelVBox.visible = true
-	$VBoxContainer/SettingsVBox.visible = false
-	$VBoxContainer/CreditsVBox.visible = false
-	$VBoxContainer/BackButton.visible = false
+	top_container.visible = true
+	settings_container.visible = false
+	credits_container.visible = false
+	back_button.visible = false
 
-func _on_volume_slider_value_changed(value: float) -> void:
+func _on_volume_slider_value_changed(value: float):
 	SettingsManager.change_volume(value)
 	
-func _on_sens_slider_value_changed(value: float) -> void:
+func _on_sens_slider_value_changed(value: float):
 	SettingsManager.change_sensitivity(value)
