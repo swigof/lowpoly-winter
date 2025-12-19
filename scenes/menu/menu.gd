@@ -1,5 +1,7 @@
 extends Control
 
+var _in_settings := false
+
 var sensitivity_label: Label
 var sensitivity_slider: Slider
 var volume_label: Label
@@ -27,6 +29,7 @@ func _on_play_button_pressed() -> void:
 	GameManager.unpause()
 
 func _on_settings_button_pressed() -> void:
+	_in_settings = true
 	$VBoxContainer/TopLevelVBox.visible = false
 	$VBoxContainer/SettingsVBox.visible = true
 	$VBoxContainer/BackButton.visible = true
@@ -37,8 +40,9 @@ func _on_credits_button_pressed() -> void:
 	$VBoxContainer/BackButton.visible = true
 
 func _on_back_button_pressed() -> void:
-	if $VBoxContainer/SettingsVBox.visible == true: # TODO clean this up
+	if _in_settings:
 		SettingsManager.save_settings()
+		_in_settings = false
 	$VBoxContainer/TopLevelVBox.visible = true
 	$VBoxContainer/SettingsVBox.visible = false
 	$VBoxContainer/CreditsVBox.visible = false
