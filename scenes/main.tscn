@@ -1,25 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://del5uh8qdlu0u"]
+[gd_scene load_steps=5 format=3 uid="uid://del5uh8qdlu0u"]
 
 [ext_resource type="PackedScene" uid="uid://clwyo2n58vr60" path="res://scenes/player/player.tscn" id="1_jyhfs"]
-[ext_resource type="Material" uid="uid://csjsfva081pp6" path="res://materials/grass.tres" id="2_tbgi4"]
 [ext_resource type="AudioStream" uid="uid://br8dip5vvakx7" path="res://assets/music/II.+Andante+Cantabile-MusopenStringQuartet-CC0.mp3" id="3_tefeu"]
-[ext_resource type="PackedScene" uid="uid://bv6lkdb32nb6g" path="res://scenes/aabb_obstacle/aabb_obstacle.tscn" id="4_jyhfs"]
-[ext_resource type="ArrayMesh" uid="uid://db0vt3a32kwut" path="res://assets/models/ambulance-Kenney-CC0/ambulance.obj" id="5_tbgi4"]
-[ext_resource type="ArrayMesh" uid="uid://c2vdlkvyh11vv" path="res://assets/models/barricade-Kenney-CC0/barricade-doorway-a.obj" id="6_tefeu"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
-size = Vector3(100, 2, 100)
-
-[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
-material = ExtResource("2_tbgi4")
-size = Vector3(100, 2, 100)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
-size = Vector3(10, 10, 10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_h2yge"]
-material = ExtResource("2_tbgi4")
-size = Vector3(10, 10, 10)
+[ext_resource type="PackedScene" uid="uid://3d88kudufm44" path="res://scenes/cube.tscn" id="4_jyhfs"]
 
 [sub_resource type="Environment" id="Environment_ig7tw"]
 fog_enabled = true
@@ -28,42 +11,6 @@ fog_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.216894, 0)
-
-[node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-shape = SubResource("BoxShape3D_ig7tw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-mesh = SubResource("BoxMesh_0xm2m")
-
-[node name="Ramp" type="StaticBody3D" parent="."]
-transform = Transform3D(0.9432922, 0.3319636, 0, -0.3319636, 0.9432922, 0, 0, 0, 1, -8, 80, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp"]
-shape = SubResource("BoxShape3D_0xm2m")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ramp"]
-mesh = SubResource("BoxMesh_h2yge")
-
-[node name="Ramp2" type="StaticBody3D" parent="."]
-transform = Transform3D(0.9432922, 0.3319636, 0, -0.3319636, 0.9432922, 0, 0, 0, 1, -44.741184, 4.211529, -43.11022)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp2"]
-shape = SubResource("BoxShape3D_0xm2m")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ramp2"]
-mesh = SubResource("BoxMesh_h2yge")
-
-[node name="Ramp3" type="StaticBody3D" parent="."]
-transform = Transform3D(0.9432922, 0.3319636, 0, -0.3319636, 0.9432922, 0, 0, 0, 1, 45.907085, -1.1381683, 49.190796)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp3"]
-shape = SubResource("BoxShape3D_0xm2m")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ramp3"]
-mesh = SubResource("BoxMesh_h2yge")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ig7tw")
@@ -75,10 +22,11 @@ stream = ExtResource("3_tefeu")
 autoplay = true
 parameters/looping = true
 
-[node name="AabbObstacle" parent="." instance=ExtResource("4_jyhfs")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.95596, 2.8890917, 6.436343)
-mesh = ExtResource("5_tbgi4")
+[node name="Cube" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1.1574379, 1.6273243, 0.11023799, -1.3645704, 1.0401667, -1.027619, -0.89346784, 0.519489, 1.712264, 0, 3.7598357, 0)
 
-[node name="AabbObstacle2" parent="." instance=ExtResource("4_jyhfs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1347625, 0)
-mesh = ExtResource("6_tefeu")
+[node name="Cube2" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -50, 0)
+
+[node name="Cube3" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -14.786228, 74.96221, 1.3539977)
