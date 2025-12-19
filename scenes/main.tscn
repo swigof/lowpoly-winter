@@ -1,22 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://del5uh8qdlu0u"]
+[gd_scene load_steps=9 format=3 uid="uid://del5uh8qdlu0u"]
 
-[ext_resource type="PackedScene" uid="uid://clwyo2n58vr60" path="res://scenes/player/player.tscn" id="1_1bvp3"]
-[ext_resource type="Material" uid="uid://csjsfva081pp6" path="res://materials/grass.tres" id="2_0xm2m"]
-[ext_resource type="AudioStream" uid="uid://br8dip5vvakx7" path="res://assets/music/II.+Andante+Cantabile-MusopenStringQuartet-CC0.mp3" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bhdy32kixks6s" path="res://scenes/menu/menu.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://clwyo2n58vr60" path="res://scenes/player/player.tscn" id="1_jyhfs"]
+[ext_resource type="Material" uid="uid://csjsfva081pp6" path="res://materials/grass.tres" id="2_tbgi4"]
+[ext_resource type="AudioStream" uid="uid://br8dip5vvakx7" path="res://assets/music/II.+Andante+Cantabile-MusopenStringQuartet-CC0.mp3" id="3_tefeu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
 size = Vector3(100, 2, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
-material = ExtResource("2_0xm2m")
+material = ExtResource("2_tbgi4")
 size = Vector3(100, 2, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(10, 10, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h2yge"]
-material = ExtResource("2_0xm2m")
+material = ExtResource("2_tbgi4")
 size = Vector3(10, 10, 10)
 
 [sub_resource type="Environment" id="Environment_ig7tw"]
@@ -24,7 +23,7 @@ fog_enabled = true
 
 [node name="Main" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_1bvp3")]
+[node name="Player" parent="." instance=ExtResource("1_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.216894, 0)
 
 [node name="Ground" type="StaticBody3D" parent="."]
@@ -69,9 +68,6 @@ environment = SubResource("Environment_ig7tw")
 [node name="Music" type="AudioStreamPlayer3D" parent="."]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 25)
-stream = ExtResource("3_h2yge")
+stream = ExtResource("3_tefeu")
 autoplay = true
 parameters/looping = true
-
-[node name="Menu" parent="." instance=ExtResource("4_1bvp3")]
-visible = false
