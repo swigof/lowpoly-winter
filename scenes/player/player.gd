@@ -4,8 +4,8 @@ extends CharacterBody3D
 @export var fall_acceleration: int
 @export var jump_impulse: int
 
-const TILT_LOWER_LIMIT := deg_to_rad(-90.0)
-const TILT_UPPER_LIMIT := deg_to_rad(90.0)
+const TILT_LOWER_LIMIT := deg_to_rad(-89.0)
+const TILT_UPPER_LIMIT := deg_to_rad(89.0)
 
 var _line: MeshInstance3D
 var _camera: Camera3D
