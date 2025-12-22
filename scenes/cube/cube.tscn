@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://3d88kudufm44"]
+[gd_scene load_steps=7 format=3 uid="uid://3d88kudufm44"]
 
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_8viuf"]
 [ext_resource type="Script" uid="uid://clew303o07s4b" path="res://scenes/cube/cube.gd" id="1_i7q2r"]
+[ext_resource type="Texture2D" uid="uid://d06ms4xkiea2a" path="res://assets/textures/Grass_04-ScreamingBrainStudios-CC0.png" id="3_wffmw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 
@@ -9,6 +10,7 @@
 render_priority = 0
 shader = ExtResource("1_8viuf")
 shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/albedoTex = ExtResource("3_wffmw")
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 shader_parameter/uv_pan_velocity = Vector2(0, 0)
