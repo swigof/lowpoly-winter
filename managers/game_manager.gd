@@ -3,11 +3,11 @@ extends Node
 var _first_capture := true
 var _menu: Control
 
-func _ready():
+func init_menu(parent: Node):
 	_menu = preload("res://scenes/menu/menu.tscn").instantiate()
 	_menu.visible = false
 	_menu.z_index = 1
-	add_child(_menu)
+	parent.add_child(_menu)
 
 func _input(event: InputEvent):
 	if not event is InputEventMouseButton or event.button_index != MOUSE_BUTTON_LEFT:

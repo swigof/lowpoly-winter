@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://del5uh8qdlu0u"]
+[gd_scene load_steps=9 format=3 uid="uid://del5uh8qdlu0u"]
 
 [ext_resource type="PackedScene" uid="uid://clwyo2n58vr60" path="res://scenes/player/player.tscn" id="1_jyhfs"]
 [ext_resource type="Shader" uid="uid://b4mwl428x6mhl" path="res://shaders/godot-psx-style-demo/shaders/pp_band-dither.gdshader" id="1_tbgi4"]
+[ext_resource type="Script" uid="uid://dkte5i3ck256g" path="res://scenes/post_processing.gd" id="1_tefeu"]
 [ext_resource type="Texture2D" uid="uid://b0ub3tqjyw46f" path="res://shaders/godot-psx-style-demo/shaders/psxdither.png" id="2_tefeu"]
 [ext_resource type="AudioStream" uid="uid://br8dip5vvakx7" path="res://assets/music/II.+Andante+Cantabile-MusopenStringQuartet-CC0.mp3" id="3_tefeu"]
 [ext_resource type="PackedScene" uid="uid://3d88kudufm44" path="res://scenes/cube/cube.tscn" id="4_jyhfs"]
@@ -17,6 +18,7 @@ fog_enabled = true
 
 [node name="PostProcessing" type="CanvasLayer"]
 layer = 0
+script = ExtResource("1_tefeu")
 
 [node name="Dither" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_jxqm2")
