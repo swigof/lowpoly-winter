@@ -7,6 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0d7ej"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_8viuf")
 shader_parameter/modulate_color = Color(1, 1, 1, 1)
@@ -15,7 +16,8 @@ shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 shader_parameter/uv_pan_velocity = Vector2(0, 0)
 
-[sub_resource type="BoxMesh" id="BoxMesh_h2yge"]
+[sub_resource type="BoxMesh" id="BoxMesh_wffmw"]
+resource_local_to_scene = true
 material = SubResource("ShaderMaterial_0d7ej")
 
 [node name="Cube" type="StaticBody3D"]
@@ -25,4 +27,4 @@ script = ExtResource("1_i7q2r")
 shape = SubResource("BoxShape3D_0xm2m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_h2yge")
+mesh = SubResource("BoxMesh_wffmw")
