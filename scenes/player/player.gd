@@ -41,7 +41,7 @@ func _physics_process(delta: float):
 	if not _pulling:
 		var input_dir: Vector2
 		input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		var direction := (_camera.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
@@ -72,13 +72,9 @@ func _update_camera(delta: float):
 	_mouse_rotation.x = clamp(_mouse_rotation.x, TILT_LOWER_LIMIT, TILT_UPPER_LIMIT)
 	_mouse_rotation.y += _rotation_input * delta
 	
-	var player_rotation := Vector3(0.0,_mouse_rotation.y,0.0)
-	var camera_rotation := Vector3(_mouse_rotation.x,0.0,0.0)
+	var camera_rotation := Vector3(_mouse_rotation.x,_mouse_rotation.y,0.0)
 	
 	_camera.transform.basis = Basis.from_euler(camera_rotation)
-	_camera.rotation.z = 0.0
-	
-	global_transform.basis = Basis.from_euler(player_rotation)
 	
 	_rotation_input = 0.0
 	_tilt_input = 0.0

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://clwyo2n58vr60"]
+[gd_scene load_steps=8 format=3 uid="uid://clwyo2n58vr60"]
 
 [ext_resource type="Script" uid="uid://bcqm70t21l3cc" path="res://scenes/player/player.gd" id="1_8afob"]
+[ext_resource type="Shader" uid="uid://bv242b4qa1kcb" path="res://shaders/godot-psx-style-demo/shaders/psx_unlit.gdshader" id="2_dovo2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dm0k"]
 
@@ -18,15 +19,16 @@ gravity = Vector3(0, 0, 0)
 scale_min = 0.29999998
 scale_max = 0.39999998
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dovo2"]
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.8
-billboard_mode = 1
-billboard_keep_scale = true
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p47bc"]
+render_priority = 0
+shader = ExtResource("2_dovo2")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)
 
 [sub_resource type="QuadMesh" id="QuadMesh_gmlin"]
-material = SubResource("StandardMaterial3D_dovo2")
+material = SubResource("ShaderMaterial_p47bc")
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_8afob")
@@ -62,5 +64,6 @@ amount = 10000
 amount_ratio = 0.1
 lifetime = 2.0
 interpolate = false
+transform_align = 1
 process_material = SubResource("ParticleProcessMaterial_8afob")
 draw_pass_1 = SubResource("QuadMesh_gmlin")
