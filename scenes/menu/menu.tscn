@@ -111,6 +111,7 @@ Credits go here
 
 Made with Godot"
 horizontal_alignment = 1
+uppercase = true
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 visible = false

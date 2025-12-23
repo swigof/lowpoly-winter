@@ -38,6 +38,12 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray("res://addons/gdterm/plugin.cfg")
 
+[importer_defaults]
+
+font_data_dynamic={
+&"antialiasing": 0
+}
+
 [input]
 
 move_left={
