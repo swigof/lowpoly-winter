@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-@export var speed: int
-@export var fall_acceleration: int
-@export var jump_impulse: int
+@export var speed: float
+@export var fall_acceleration: float
+@export var jump_impulse: float
 
 const TILT_LOWER_LIMIT := deg_to_rad(-89.0)
 const TILT_UPPER_LIMIT := deg_to_rad(89.0)
@@ -32,8 +32,6 @@ func _physics_process(delta: float):
 			_pull_position = result.position
 			_pulling = true
 			_line.visible = true
-			velocity.x = 0
-			velocity.z = 0
 	elif Input.is_action_just_released("fire"):
 		_pulling = false
 		_line.visible = false
@@ -48,12 +46,10 @@ func _physics_process(delta: float):
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
 			velocity.z = move_toward(velocity.z, 0, speed)
-		
 		if not is_on_floor():
-			velocity.y = velocity.y - (fall_acceleration * delta)
+			velocity.y -= fall_acceleration * delta
 		elif Input.is_action_just_pressed("jump"):
 			velocity.y = jump_impulse
-	
 	else:
 		var mesh := ImmediateMesh.new()
 		mesh.surface_begin(Mesh.PRIMITIVE_LINES)
@@ -62,8 +58,9 @@ func _physics_process(delta: float):
 		mesh.surface_end()
 		_line.mesh = mesh
 		var pull_accel := _pull_position - position
+		velocity = velocity.slerp(pull_accel, delta)
 		velocity += pull_accel * delta
-	
+		
 	move_and_slide()
 	_update_camera(delta)
 
