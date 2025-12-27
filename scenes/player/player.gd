@@ -8,6 +8,7 @@ const TILT_LOWER_LIMIT := deg_to_rad(-89.0)
 const TILT_UPPER_LIMIT := deg_to_rad(89.0)
 
 var _line: MeshInstance3D
+var _pivot: Node3D
 var _camera: Camera3D
 var _pulling: bool
 var _pull_position: Vector3
@@ -20,7 +21,8 @@ func _ready():
 	_line = MeshInstance3D.new()
 	_line.top_level = true
 	add_child(_line)
-	_camera = $Camera3D
+	_pivot = $CameraPivot
+	_camera = $CameraPivot/Camera3D
 
 func _physics_process(delta: float):
 	if Input.is_action_just_pressed("fire"):
@@ -39,7 +41,7 @@ func _physics_process(delta: float):
 	if not _pulling:
 		var input_dir: Vector2
 		input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-		var direction := (_camera.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		var direction := (_pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
@@ -69,12 +71,17 @@ func _update_camera(delta: float):
 	_mouse_rotation.x = clamp(_mouse_rotation.x, TILT_LOWER_LIMIT, TILT_UPPER_LIMIT)
 	_mouse_rotation.y += _rotation_input * delta
 	
-	var camera_rotation := Vector3(_mouse_rotation.x,_mouse_rotation.y,0.0)
+	var pivot_rotation := Vector3(0.0,_mouse_rotation.y,0.0)
+	var camera_rotation := Vector3(_mouse_rotation.x,0.0,0.0)
 	
 	_camera.transform.basis = Basis.from_euler(camera_rotation)
+	_camera.rotation.z = 0.0
+	
+	_pivot.global_transform.basis = Basis.from_euler(pivot_rotation)
 	
 	_rotation_input = 0.0
 	_tilt_input = 0.0
+
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:

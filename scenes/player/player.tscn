@@ -5,12 +5,6 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dm0k"]
 
-[sub_resource type="Environment" id="Environment_dovo2"]
-fog_enabled = true
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bvp3"]
-size = Vector2(3, 3)
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8afob"]
 emission_shape = 3
 emission_box_extents = Vector3(50, 50, 50)
@@ -33,6 +27,12 @@ shader_parameter/uv_pan_velocity = Vector2(0, 0)
 [sub_resource type="QuadMesh" id="QuadMesh_gmlin"]
 material = SubResource("ShaderMaterial_p47bc")
 
+[sub_resource type="Environment" id="Environment_dovo2"]
+fog_enabled = true
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bvp3"]
+size = Vector2(3, 3)
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_8afob")
 speed = 14.0
@@ -42,12 +42,25 @@ jump_impulse = 20.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_7dm0k")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Snow" type="GPUParticles3D" parent="."]
+cast_shadow = 0
+gi_mode = 0
+amount = 10000
+amount_ratio = 0.1
+lifetime = 2.0
+interpolate = false
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_8afob")
+draw_pass_1 = SubResource("QuadMesh_gmlin")
+
+[node name="CameraPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 environment = SubResource("Environment_dovo2")
 far = 400.0
 
-[node name="Crosshair" type="TextureRect" parent="Camera3D"]
+[node name="Crosshair" type="TextureRect" parent="CameraPivot/Camera3D"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -60,14 +73,3 @@ offset_bottom = 1.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_1bvp3")
-
-[node name="Snow" type="GPUParticles3D" parent="."]
-cast_shadow = 0
-gi_mode = 0
-amount = 10000
-amount_ratio = 0.1
-lifetime = 2.0
-interpolate = false
-transform_align = 1
-process_material = SubResource("ParticleProcessMaterial_8afob")
-draw_pass_1 = SubResource("QuadMesh_gmlin")
