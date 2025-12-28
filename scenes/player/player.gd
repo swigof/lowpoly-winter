@@ -55,16 +55,8 @@ func _physics_process(delta: float):
 			_velocity_is_from_pull = false
 		elif velocity:
 			if _velocity_is_from_pull:
-				if is_on_floor():
-					velocity.x -= velocity.x * delta * 5
-					velocity.z -= velocity.z * delta * 5
-					if velocity.length_squared() < 1:
-						velocity.x = 0
-						velocity.z = 0
-				else:
-					velocity.x -= velocity.x * delta
-					velocity.z -= velocity.z * delta
-			else:
+				_apply_resistance(delta)
+			elif is_on_floor():
 				velocity.x = 0
 				velocity.z = 0
 		if not is_on_floor():
@@ -85,6 +77,19 @@ func _physics_process(delta: float):
 	_cap_velocity()
 	move_and_slide()
 	_update_camera(delta)
+
+func _apply_resistance(delta: float):
+	if is_on_floor():
+		# ground friction
+		velocity.x -= velocity.x * delta * 5
+		velocity.z -= velocity.z * delta * 5
+		if velocity.length_squared() < 1:
+			velocity.x = 0
+			velocity.z = 0
+	else:
+		# air drag
+		velocity.x -= velocity.x * delta
+		velocity.z -= velocity.z * delta
 
 func _cap_velocity():
 	if velocity.length_squared() > SQUARED_VELOCITY_CAP:
