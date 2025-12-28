@@ -12,6 +12,7 @@ var _pivot: Node3D
 var _camera: Camera3D
 var _pulling: bool
 var _pull_position: Vector3
+var _velocity_is_from_pull: bool
 
 var _mouse_rotation: Vector3
 var _rotation_input: float
@@ -34,6 +35,7 @@ func _physics_process(delta: float):
 			_pull_position = result.position
 			_pulling = true
 			_line.visible = true
+			_velocity_is_from_pull = true
 	elif Input.is_action_just_released("fire"):
 		_pulling = false
 		_line.visible = false
@@ -45,9 +47,21 @@ func _physics_process(delta: float):
 		if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
-		else:
-			velocity.x = move_toward(velocity.x, 0, speed)
-			velocity.z = move_toward(velocity.z, 0, speed)
+			_velocity_is_from_pull = false
+		elif velocity:
+			if _velocity_is_from_pull:
+				if is_on_floor():
+					velocity.x -= velocity.x * delta * 5
+					velocity.z -= velocity.z * delta * 5
+					if velocity.length_squared() < 1:
+						velocity.x = 0
+						velocity.z = 0
+				else:
+					velocity.x -= velocity.x * delta
+					velocity.z -= velocity.z * delta
+			else:
+				velocity.x = 0
+				velocity.z = 0
 		if not is_on_floor():
 			velocity.y -= fall_acceleration * delta
 		elif Input.is_action_just_pressed("jump"):
