@@ -52,14 +52,15 @@ func _physics_process(delta: float):
 		_line.visible = false
 		_velocity_start_acc = 0
 	
+	var input_dir: Vector2
+	input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	
 	if not _pulling:
-		var input_dir: Vector2
-		input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 		if input_dir:
 			var direction := _pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)
 			direction = direction.normalized()
 			if not is_on_floor() or velocity.length_squared() > _standard_speed_squared_cutoff:
-				var influence: float = 1 - min(_velocity_start_acc, 1)
+				var influence: float = 1 - min(_velocity_start_acc, 0.9)
 				var nudge_x := direction.x * speed * influence
 				var nudge_z := direction.z * speed * influence
 				_nudge_velocity = Vector3(nudge_x, 0, nudge_z)
@@ -89,6 +90,12 @@ func _physics_process(delta: float):
 		var pull_accel := _pull_position - position
 		velocity = velocity.slerp(pull_accel, delta)
 		velocity += pull_accel * delta
+		if input_dir:
+			var direction := _pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)
+			direction = direction.normalized()
+			var nudge_x := direction.x * speed * delta * 10
+			var nudge_z := direction.z * speed * delta * 10
+			_nudge_velocity = Vector3(nudge_x, 0, nudge_z)
 	
 	velocity += _nudge_velocity
 	_cap_velocity()
