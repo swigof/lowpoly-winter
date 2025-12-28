@@ -1,6 +1,9 @@
 extends CharacterBody3D
 
-@export var speed: float
+@export var speed: float:
+	set(val):
+		_standard_speed_squared_cutoff = val * val + 0.1
+		speed = val
 @export var fall_acceleration: float
 @export var jump_impulse: float
 
@@ -15,7 +18,7 @@ var _camera: Camera3D
 var _pulling: bool
 var _pull_position: Vector3
 var _velocity_is_from_pull: bool
-
+var _standard_speed_squared_cutoff: float
 var _mouse_rotation: Vector3
 var _rotation_input: float
 var _tilt_input: float
