@@ -19,6 +19,8 @@ var _pulling: bool
 var _pull_position: Vector3
 var _velocity_is_from_pull: bool
 var _standard_speed_squared_cutoff: float
+var _velocity_start_acc: float
+var _nudge_velocity: Vector3
 var _mouse_rotation: Vector3
 var _rotation_input: float
 var _tilt_input: float
@@ -31,6 +33,10 @@ func _ready():
 	_camera = $CameraPivot/Camera3D
 
 func _physics_process(delta: float):
+	_velocity_start_acc += delta
+	velocity -= _nudge_velocity
+	_nudge_velocity = Vector3.ZERO
+	
 	if Input.is_action_just_pressed("fire"):
 		var from := _camera.global_position
 		var to := _camera.global_position + -_camera.global_basis.z * 100
@@ -44,15 +50,24 @@ func _physics_process(delta: float):
 	elif Input.is_action_just_released("fire"):
 		_pulling = false
 		_line.visible = false
+		_velocity_start_acc = 0
 	
 	if not _pulling:
 		var input_dir: Vector2
 		input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-		var direction := (_pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		if direction:
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
-			_velocity_is_from_pull = false
+		if input_dir:
+			var direction := _pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)
+			direction = direction.normalized()
+			if not is_on_floor() or velocity.length_squared() > _standard_speed_squared_cutoff:
+				var influence: float = 1 - min(_velocity_start_acc, 1)
+				var nudge_x := direction.x * speed * influence
+				var nudge_z := direction.z * speed * influence
+				_nudge_velocity = Vector3(nudge_x, 0, nudge_z)
+				_apply_resistance(delta)
+			else:
+				velocity.x = direction.x * speed
+				velocity.z = direction.z * speed
+				_velocity_is_from_pull = false
 		elif velocity:
 			if _velocity_is_from_pull:
 				_apply_resistance(delta)
@@ -63,6 +78,7 @@ func _physics_process(delta: float):
 			velocity.y -= fall_acceleration * delta
 		elif Input.is_action_just_pressed("jump"):
 			velocity.y = jump_impulse
+			_velocity_start_acc = 0
 	else:
 		var mesh := ImmediateMesh.new()
 		mesh.surface_begin(Mesh.PRIMITIVE_LINES)
@@ -74,6 +90,7 @@ func _physics_process(delta: float):
 		velocity = velocity.slerp(pull_accel, delta)
 		velocity += pull_accel * delta
 	
+	velocity += _nudge_velocity
 	_cap_velocity()
 	move_and_slide()
 	_update_camera(delta)
@@ -110,7 +127,6 @@ func _update_camera(delta: float):
 	
 	_rotation_input = 0.0
 	_tilt_input = 0.0
-
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
