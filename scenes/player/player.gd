@@ -6,6 +6,8 @@ extends CharacterBody3D
 
 const TILT_LOWER_LIMIT := deg_to_rad(-89.0)
 const TILT_UPPER_LIMIT := deg_to_rad(89.0)
+const VELOCITY_CAP: float = 100
+const SQUARED_VELOCITY_CAP: float = VELOCITY_CAP * VELOCITY_CAP
 
 var _line: MeshInstance3D
 var _pivot: Node3D
@@ -76,9 +78,14 @@ func _physics_process(delta: float):
 		var pull_accel := _pull_position - position
 		velocity = velocity.slerp(pull_accel, delta)
 		velocity += pull_accel * delta
-		
+	
+	_cap_velocity()
 	move_and_slide()
 	_update_camera(delta)
+
+func _cap_velocity():
+	if velocity.length_squared() > SQUARED_VELOCITY_CAP:
+		velocity = velocity.normalized() * VELOCITY_CAP
 
 func _update_camera(delta: float):
 	_mouse_rotation.x += _tilt_input * delta
