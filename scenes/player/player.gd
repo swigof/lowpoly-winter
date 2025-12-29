@@ -61,8 +61,8 @@ func _physics_process(delta: float):
 			direction = direction.normalized()
 			if not is_on_floor() or velocity.length_squared() > _standard_speed_squared_cutoff:
 				var influence: float = 1 - min(_velocity_start_acc, 0.9)
-				var nudge_x := direction.x * speed * influence
-				var nudge_z := direction.z * speed * influence
+				var nudge_x := direction.x * speed * delta * 60 * influence
+				var nudge_z := direction.z * speed * delta * 60 * influence
 				_nudge_velocity = Vector3(nudge_x, 0, nudge_z)
 				_apply_resistance(delta)
 			else:
