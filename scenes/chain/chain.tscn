@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://08qpnlkebukg"]
+
+[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_clk7i"]
+[ext_resource type="Script" uid="uid://droutkb0874cm" path="res://scenes/chain/chain.gd" id="1_k0eps"]
+[ext_resource type="Texture2D" uid="uid://1ksvj2vaucnq" path="res://assets/textures/ambientCG-cc0-rust.png" id="2_8i5jj"]
+[ext_resource type="ArrayMesh" uid="uid://b1quabo7lk40n" path="res://assets/models/chain.obj" id="3_vsmvd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1qm8"]
+render_priority = 0
+shader = ExtResource("1_clk7i")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/albedoTex = ExtResource("2_8i5jj")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)
+
+[sub_resource type="MultiMesh" id="MultiMesh_voiob"]
+transform_format = 1
+mesh = ExtResource("3_vsmvd")
+
+[node name="Chain" type="MultiMeshInstance3D"]
+material_override = SubResource("ShaderMaterial_m1qm8")
+multimesh = SubResource("MultiMesh_voiob")
+script = ExtResource("1_k0eps")

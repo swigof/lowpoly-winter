@@ -12,9 +12,9 @@ const TILT_UPPER_LIMIT := deg_to_rad(89.0)
 const VELOCITY_CAP: float = 100
 const SQUARED_VELOCITY_CAP: float = VELOCITY_CAP * VELOCITY_CAP
 
-var _line: MeshInstance3D
 var _pivot: Node3D
 var _camera: Camera3D
+var _chain: Chain
 var _crosshair: TextureRect
 var _crosshair_default: Texture
 var _crosshair_target: Texture
@@ -29,12 +29,10 @@ var _rotation_input: float
 var _tilt_input: float
 
 func _ready():
-	_line = MeshInstance3D.new()
-	_line.top_level = true
-	add_child(_line)
 	_pivot = $CameraPivot
 	_camera = $CameraPivot/Camera3D
 	_crosshair = $CameraPivot/Camera3D/Crosshair
+	_chain = $Chain
 	_crosshair_default = load("res://assets/textures/crosshair-default.png")
 	_crosshair_target = load("res://assets/textures/crosshair-target.png")
 
@@ -52,12 +50,13 @@ func _physics_process(delta: float):
 	if Input.is_action_just_pressed("fire"):
 		if not ray_result.is_empty():
 			_pull_position = ray_result.position
+			_chain.target = _pull_position
+			_chain.is_active = true
 			_pulling = true
-			_line.visible = true
 			_velocity_is_from_pull = true
 	elif Input.is_action_just_released("fire"):
 		_pulling = false
-		_line.visible = false
+		_chain.is_active = false
 		_velocity_start_acc = 0
 	
 	var input_dir: Vector2
@@ -89,12 +88,6 @@ func _physics_process(delta: float):
 			velocity.y = jump_impulse
 			_velocity_start_acc = 0
 	else:
-		var mesh := ImmediateMesh.new()
-		mesh.surface_begin(Mesh.PRIMITIVE_LINES)
-		mesh.surface_add_vertex(_camera.global_position + Vector3(0,-0.1,0))
-		mesh.surface_add_vertex(_pull_position)
-		mesh.surface_end()
-		_line.mesh = mesh
 		var pull_accel := _pull_position - position
 		velocity = velocity.slerp(pull_accel, delta)
 		velocity += pull_accel * delta
