@@ -15,6 +15,9 @@ const SQUARED_VELOCITY_CAP: float = VELOCITY_CAP * VELOCITY_CAP
 var _line: MeshInstance3D
 var _pivot: Node3D
 var _camera: Camera3D
+var _crosshair: TextureRect
+var _crosshair_default: Texture
+var _crosshair_target: Texture
 var _pulling: bool
 var _pull_position: Vector3
 var _velocity_is_from_pull: bool
@@ -31,19 +34,24 @@ func _ready():
 	add_child(_line)
 	_pivot = $CameraPivot
 	_camera = $CameraPivot/Camera3D
+	_crosshair = $CameraPivot/Camera3D/Crosshair
+	_crosshair_default = load("res://assets/textures/crosshair-default.png")
+	_crosshair_target = load("res://assets/textures/crosshair-target.png")
 
 func _physics_process(delta: float):
 	_velocity_start_acc += delta
 	velocity -= _nudge_velocity
 	_nudge_velocity = Vector3.ZERO
 	
+	var ray_result = _get_forward_ray_intersect()
+	if ray_result.is_empty():
+		_crosshair.texture = _crosshair_default
+	else:
+		_crosshair.texture = _crosshair_target
+	
 	if Input.is_action_just_pressed("fire"):
-		var from := _camera.global_position
-		var to := _camera.global_position + -_camera.global_basis.z * 100
-		var q := PhysicsRayQueryParameters3D.create(from, to)
-		var result := get_world_3d().direct_space_state.intersect_ray(q)
-		if not result.is_empty():
-			_pull_position = result.position
+		if not ray_result.is_empty():
+			_pull_position = ray_result.position
 			_pulling = true
 			_line.visible = true
 			_velocity_is_from_pull = true
@@ -101,6 +109,12 @@ func _physics_process(delta: float):
 	_cap_velocity()
 	move_and_slide()
 	_update_camera(delta)
+
+func _get_forward_ray_intersect() -> Dictionary:
+	var from := _camera.global_position
+	var to := _camera.global_position + -_camera.global_basis.z * 100
+	var q := PhysicsRayQueryParameters3D.create(from, to)
+	return get_world_3d().direct_space_state.intersect_ray(q)
 
 func _apply_resistance(delta: float):
 	if is_on_floor():
