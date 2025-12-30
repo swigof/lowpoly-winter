@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 @export var speed: float:
 	set(val):
@@ -27,6 +27,9 @@ var _nudge_velocity: Vector3
 var _mouse_rotation: Vector3
 var _rotation_input: float
 var _tilt_input: float
+
+func show_crosshair(show: bool):
+	_crosshair.visible = show
 
 func _ready():
 	_pivot = $CameraPivot

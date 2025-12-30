@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://del5uh8qdlu0u"]
+[gd_scene load_steps=5 format=3 uid="uid://del5uh8qdlu0u"]
 
 [ext_resource type="Shader" uid="uid://b4mwl428x6mhl" path="res://shaders/godot-psx-style-demo/shaders/pp_band-dither.gdshader" id="1_tbgi4"]
-[ext_resource type="Script" uid="uid://dkte5i3ck256g" path="res://scenes/post_processing.gd" id="1_tefeu"]
+[ext_resource type="Script" uid="uid://dkte5i3ck256g" path="res://scenes/main.gd" id="1_tefeu"]
 [ext_resource type="Texture2D" uid="uid://b0ub3tqjyw46f" path="res://shaders/godot-psx-style-demo/shaders/psxdither.png" id="2_tefeu"]
-[ext_resource type="PackedScene" uid="uid://b7fao1fosmmg4" path="res://scenes/levels/world.tscn" id="4_jyhfs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jxqm2"]
 shader = ExtResource("1_tbgi4")
@@ -30,5 +29,3 @@ audio_listener_enable_2d = true
 audio_listener_enable_3d = true
 size = Vector2i(320, 240)
 render_target_update_mode = 4
-
-[node name="World" parent="Dither/Viewport" instance=ExtResource("4_jyhfs")]
