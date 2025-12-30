@@ -12,6 +12,8 @@ const TILT_UPPER_LIMIT := deg_to_rad(89.0)
 const VELOCITY_CAP: float = 100
 const SQUARED_VELOCITY_CAP: float = VELOCITY_CAP * VELOCITY_CAP
 
+var hook_max: float = 100
+
 var _pivot: Node3D
 var _camera: Camera3D
 var _chain: Chain
@@ -30,6 +32,9 @@ var _tilt_input: float
 
 func show_crosshair(value: bool):
 	_crosshair.visible = value
+
+func set_camera_fog_density(value: float):
+	_camera.environment.fog_density = value
 
 func _ready():
 	_pivot = $CameraPivot
@@ -108,7 +113,7 @@ func _physics_process(delta: float):
 
 func _get_forward_ray_intersect() -> Dictionary:
 	var from := _camera.global_position
-	var to := _camera.global_position + -_camera.global_basis.z * 100
+	var to := _camera.global_position + -_camera.global_basis.z * hook_max
 	var q := PhysicsRayQueryParameters3D.create(from, to)
 	return get_world_3d().direct_space_state.intersect_ray(q)
 
