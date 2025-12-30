@@ -44,8 +44,7 @@ shape = SubResource("CapsuleShape3D_7dm0k")
 [node name="Snow" type="GPUParticles3D" parent="."]
 cast_shadow = 0
 gi_mode = 0
-amount = 10000
-amount_ratio = 0.1
+amount = 1000
 lifetime = 2.0
 interpolate = false
 transform_align = 1
