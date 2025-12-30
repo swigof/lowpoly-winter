@@ -2,7 +2,9 @@ extends Node
 
 var _first_capture := true
 var _menu: Control
+var _level_scene: PackedScene
 var _level: Node3D
+var _player_scene: PackedScene
 var _player: Player
 
 func init_menu(parent: Node):
@@ -10,13 +12,27 @@ func init_menu(parent: Node):
 	_menu.visible = false
 	_menu.z_index = 1
 	parent.add_child(_menu)
-	
+
 func init_world(parent: Node):
-	_level = preload("res://scenes/levels/world.tscn").instantiate()
-	_player = preload("res://scenes/player/player.tscn").instantiate()
-	_player.position.y = 10
+	_level_scene = preload("res://scenes/levels/world.tscn")
+	_level = _level_scene.instantiate()
+	_player_scene = preload("res://scenes/player/player.tscn")
+	_player = _player_scene.instantiate()
+	_player.position = Vector3(0, 1, 0)
 	_level.add_child(_player)
 	parent.add_child(_level)
+
+func restart_level():
+	var level = _level_scene.instantiate()
+	var player = _player_scene.instantiate()
+	player.position = Vector3(0, 1, 0)
+	level.add_child(player)
+	_level.add_sibling(level)
+	_level.queue_free()
+	_player.queue_free()
+	_player = player
+	_level = level
+	unpause()
 
 func _input(event: InputEvent):
 	if not event is InputEventMouseButton or event.button_index != MOUSE_BUTTON_LEFT:

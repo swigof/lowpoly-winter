@@ -53,3 +53,6 @@ func _on_volume_slider_value_changed(value: float):
 	
 func _on_sens_slider_value_changed(value: float):
 	SettingsManager.change_sensitivity(value)
+
+func _on_reset_button_pressed():
+	GameManager.restart_level()

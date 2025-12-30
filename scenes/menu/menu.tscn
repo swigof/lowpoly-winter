@@ -41,6 +41,10 @@ layout_mode = 2
 layout_mode = 2
 text = "RESUME"
 
+[node name="ResetButton" type="Button" parent="VBoxContainer/TopLevelVBox"]
+layout_mode = 2
+text = "RESTART"
+
 [node name="SettingsButton" type="Button" parent="VBoxContainer/TopLevelVBox"]
 layout_mode = 2
 text = "SETTINGS"
@@ -119,6 +123,7 @@ layout_mode = 2
 text = "BACK"
 
 [connection signal="pressed" from="VBoxContainer/TopLevelVBox/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TopLevelVBox/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopLevelVBox/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopLevelVBox/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="value_changed" from="VBoxContainer/SettingsVBox/VolumeHBox/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
