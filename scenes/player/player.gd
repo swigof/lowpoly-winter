@@ -36,8 +36,8 @@ func _ready():
 	_camera = $CameraPivot/Camera3D
 	_crosshair = $CameraPivot/Camera3D/Crosshair
 	_chain = $Chain
-	_crosshair_default = load("res://assets/textures/crosshair-default.png")
-	_crosshair_target = load("res://assets/textures/crosshair-target.png")
+	_crosshair_default = preload("res://assets/textures/crosshair-default.png")
+	_crosshair_target = preload("res://assets/textures/crosshair-target.png")
 
 func _physics_process(delta: float):
 	_velocity_start_acc += delta
