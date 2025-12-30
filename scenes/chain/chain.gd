@@ -18,7 +18,7 @@ func _process(_d):
 	var unit_direction := direction / length
 	var count: int = ceil(length / SPACING)
 	multimesh.instance_count = count
-	var offset := SPACING / 2.0
+	var offset := fmod(length, SPACING * 2)
 	for i in range(0, count):
 		var distance := offset + SPACING * i
 		var pos := unit_direction * distance
