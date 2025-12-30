@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1t1qesvcf3iw"]
+
+[ext_resource type="ArrayMesh" uid="uid://wvtcxchskrdw" path="res://assets/models/Kenney-CC0/Rocket/rocket_baseB.obj" id="1_epqap"]
+[ext_resource type="ArrayMesh" uid="uid://ck2f05yh1ggie" path="res://assets/models/Kenney-CC0/Rocket/rocket_sidesA.obj" id="2_vsmuw"]
+[ext_resource type="ArrayMesh" uid="uid://cn1ebil66auh6" path="res://assets/models/Kenney-CC0/Rocket/rocket_topB.obj" id="3_a5ply"]
+[ext_resource type="Shader" uid="uid://bv242b4qa1kcb" path="res://shaders/godot-psx-style-demo/shaders/psx_unlit.gdshader" id="4_vsmuw"]
+
+[sub_resource type="Gradient" id="Gradient_vsmuw"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a5ply"]
+gradient = SubResource("Gradient_vsmuw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vsmuw"]
+direction = Vector3(0, -1, 0)
+spread = 15.0
+initial_velocity_min = 5.0
+initial_velocity_max = 15.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+color = Color(0.87194306, 0.34655285, 0, 1)
+color_ramp = SubResource("GradientTexture1D_a5ply")
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a5ply"]
+render_priority = 0
+shader = ExtResource("4_vsmuw")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vsmuw"]
+material = SubResource("ShaderMaterial_a5ply")
+
+[node name="Missile" type="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="RocketBaseB" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_epqap")
+
+[node name="RocketSidesA" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = ExtResource("2_vsmuw")
+
+[node name="RocketSidesA2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 2, 0)
+mesh = ExtResource("2_vsmuw")
+
+[node name="RocketTopB" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+mesh = ExtResource("3_a5ply")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48865867, 0)
+amount = 300
+lifetime = 0.3
+explosiveness = 0.1
+interpolate = false
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_vsmuw")
+draw_pass_1 = SubResource("QuadMesh_vsmuw")
