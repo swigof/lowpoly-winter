@@ -28,8 +28,8 @@ var _mouse_rotation: Vector3
 var _rotation_input: float
 var _tilt_input: float
 
-func show_crosshair(show: bool):
-	_crosshair.visible = show
+func show_crosshair(value: bool):
+	_crosshair.visible = value
 
 func _ready():
 	_pivot = $CameraPivot
