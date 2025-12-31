@@ -40,6 +40,20 @@ func show_crosshair(value: bool):
 func set_camera_fog_density(value: float):
 	_camera.environment.fog_density = value
 
+func set_camera_exposure(value: float):
+	_camera.environment.tonemap_exposure = value
+
+func camera_look_at(target: Vector3):
+	_pivot.look_at(target)
+	_pivot.rotation = Vector3(0, _pivot.rotation.y, 0)
+	_camera.look_at(target)
+	_camera.rotation = Vector3(_camera.rotation.x, 0, _camera.rotation.z)
+
+func stop_pull():
+	_pulling = false
+	_chain.is_active = false
+	_velocity_start_acc = 0
+
 func _ready():
 	_pivot = $CameraPivot
 	_camera = $CameraPivot/Camera3D
@@ -54,7 +68,7 @@ func _physics_process(delta: float):
 	velocity -= _nudge_velocity
 	_nudge_velocity = Vector3.ZERO
 	
-	var ray_result = _get_forward_ray_intersect()
+	var ray_result := _get_forward_ray_intersect()
 	if ray_result.is_empty():
 		_crosshair.texture = _crosshair_default
 	else:
@@ -127,9 +141,7 @@ func _process_input(ray_result: Dictionary) -> Vector2:
 			if _hooked_node is Missile:
 				_has_hooked_missile = true
 	elif Input.is_action_just_released("fire"):
-		_pulling = false
-		_chain.is_active = false
-		_velocity_start_acc = 0
+		stop_pull()
 	return Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 
 func _apply_resistance(delta: float):
