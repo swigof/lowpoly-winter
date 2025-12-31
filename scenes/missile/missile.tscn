@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1t1qesvcf3iw"]
+[gd_scene load_steps=16 format=3 uid="uid://b1t1qesvcf3iw"]
 
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_a5ply"]
 [ext_resource type="ArrayMesh" uid="uid://wvtcxchskrdw" path="res://assets/models/Kenney-CC0/Rocket/rocket_baseB.obj" id="1_epqap"]
@@ -13,6 +13,18 @@ shader_parameter/modulate_color = Color(0.33977845, 0.43321362, 0.35094354, 1)
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 shader_parameter/uv_pan_velocity = Vector2(0, 0)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a5ply"]
+points = PackedVector3Array(-0.057263196, 0, -0.9000001, -0.9000001, 0, -0.057263196, -0.057263196, 0.5999902, -0.9000001, 0.057086885, 0, -0.9000001, -0.9000001, 0, 0.057086885, -0.9000001, 0.5999902, -0.057263196, -0.057263196, 1.3, -0.5000392, 0.057086885, 0.5999902, -0.9000001, 0.9, 0, -0.057263196, -0.9000001, 0.5999902, 0.057086885, -0.057263196, 0, 0.9, -0.5000392, 1.3, -0.057263196, 0.057086885, 1.3, -0.5000392, 0.9, 0.5999902, -0.057263196, 0.9, 0, 0.057086885, -0.5000392, 1.3, 0.057086885, -0.057263196, 0.5999902, 0.9, 0.057086885, 0, 0.9, 0.4998629, 1.3, -0.057263196, 0.9, 0.5999902, 0.057086885, -0.057263196, 1.3, 0.4998629, 0.057086885, 0.5999902, 0.9, 0.4998629, 1.3, 0.057086885, 0.057086885, 1.3, 0.4998629)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j0ryr"]
+points = PackedVector3Array(0.5, 1, 0.20702821, 0.5, 0, 0.20702821, 0.5, 1, -0.20712608, 0.20702821, 1, 0.5, 0.5, 0, -0.20712608, 0.20702821, 0, 0.5, 0.28318322, 0.8999609, -0.42394283, 0.20702821, 1, -0.5, -0.20712608, 1, 0.5, 0.20702821, 0, -0.5, -0.20712608, 0, 0.5, -0.20712608, 1, -0.5, -0.5, 1, 0.20702821, -0.42394283, 0.8999609, 0.28318322, -0.20712608, 0, -0.5, -0.5, 0, 0.20702821, -0.28328115, 0.8999609, -0.42394283, -0.5, 1, -0.20712608, -0.5, 0, -0.20712608, -0.42394283, 0.8999609, -0.28328115)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t4xr1"]
+points = PackedVector3Array(0.5, 1, 0.20702821, 0.5, 0, 0.20702821, 0.5, 1, -0.20712608, 0.20702821, 1, 0.5, 0.5, 0, -0.20712608, 0.20702821, 0, 0.5, 0.28318322, 0.8999609, -0.42394283, 0.20702821, 1, -0.5, -0.20712608, 1, 0.5, 0.20702821, 0, -0.5, -0.20712608, 0, 0.5, -0.20712608, 1, -0.5, -0.5, 1, 0.20702821, -0.42394283, 0.8999609, 0.28318322, -0.20712608, 0, -0.5, -0.5, 0, 0.20702821, -0.28328115, 0.8999609, -0.42394283, -0.5, 1, -0.20712608, -0.5, 0, -0.20712608, -0.42394283, 0.8999609, -0.28328115)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lkknv"]
+points = PackedVector3Array(-0.5, 0, -0.20712608, -0.5, 0, 0.20702821, -0.43754894, 0.24991192, -0.18128425, -0.20712608, 0, -0.5, -0.20712608, 0, 0.5, -0.43754894, 0.24991192, 0.18118638, -0.18128425, 0.24991192, -0.43754894, -0.025939703, 1.1, -0.025939703, 0.20702821, 0, -0.5, 0.20702821, 0, 0.5, -0.18128425, 0.24991192, 0.43745106, -0.025939703, 1.1, 0.025841832, 0.18118638, 0.24991192, -0.43754894, 0.025841832, 1.1, -0.025939703, 0.5, 0, -0.20712608, 0.5, 0, 0.20702821, 0.18118638, 0.24991192, 0.43745106, 0.025841832, 1.1, 0.025841832, 0.43745106, 0.24991192, -0.18128425, 0.43745106, 0.24991192, 0.18118638)
 
 [sub_resource type="Gradient" id="Gradient_vsmuw"]
 
@@ -42,27 +54,42 @@ shader_parameter/uv_pan_velocity = Vector2(0, 0)
 [sub_resource type="QuadMesh" id="QuadMesh_vsmuw"]
 material = SubResource("ShaderMaterial_a5ply")
 
-[node name="Missile" type="Node3D"]
+[node name="Missile" type="StaticBody3D"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="RocketBaseB" type="MeshInstance3D" parent="."]
 material_override = SubResource("ShaderMaterial_j0ryr")
 mesh = ExtResource("1_epqap")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_a5ply")
+
 [node name="RocketSidesA" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = SubResource("ShaderMaterial_j0ryr")
 mesh = ExtResource("2_vsmuw")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("ConvexPolygonShape3D_j0ryr")
+
 [node name="RocketSidesA2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 2, 0)
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 0, 2, 0)
 material_override = SubResource("ShaderMaterial_j0ryr")
 mesh = ExtResource("2_vsmuw")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 0, 2, 0)
+shape = SubResource("ConvexPolygonShape3D_t4xr1")
 
 [node name="RocketTopB" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 material_override = SubResource("ShaderMaterial_j0ryr")
 mesh = ExtResource("3_a5ply")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("ConvexPolygonShape3D_lkknv")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48865867, 0)
@@ -70,6 +97,6 @@ amount = 300
 lifetime = 0.3
 explosiveness = 0.1
 interpolate = false
-transform_align = 1
+transform_align = 3
 process_material = SubResource("ParticleProcessMaterial_vsmuw")
 draw_pass_1 = SubResource("QuadMesh_vsmuw")
