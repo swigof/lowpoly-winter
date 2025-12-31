@@ -22,7 +22,8 @@ var _crosshair: TextureRect
 var _crosshair_default: Texture
 var _crosshair_target: Texture
 var _pulling: bool
-var _pull_position: Vector3
+var _hooked_node: Node3D
+var _local_pull_position: Vector3
 var _velocity_is_from_pull: bool
 var _standard_speed_squared_cutoff: float
 var _velocity_start_acc: float
@@ -30,7 +31,7 @@ var _nudge_velocity: Vector3
 var _mouse_rotation: Vector3
 var _rotation_input: float
 var _tilt_input: float
-var _hooked_missile: Missile = null
+var _has_hooked_missile: bool
 
 func show_crosshair(value: bool):
 	_crosshair.visible = value
@@ -58,7 +59,7 @@ func _physics_process(delta: float):
 		_crosshair.texture = _crosshair_target
 	
 	var input_dir: Vector2
-	if not _hooked_missile:
+	if not _has_hooked_missile:
 		input_dir = _process_input(ray_result)
 	
 	if not _pulling:
@@ -87,7 +88,9 @@ func _physics_process(delta: float):
 			velocity.y = jump_impulse
 			_velocity_start_acc = 0
 	else:
-		var pull_accel := _pull_position - position
+		var target := _hooked_node.to_global(_local_pull_position)
+		_chain.target = target
+		var pull_accel := target - position
 		velocity = velocity.slerp(pull_accel, delta)
 		velocity += pull_accel * delta
 		if input_dir:
@@ -111,13 +114,15 @@ func _get_forward_ray_intersect() -> Dictionary:
 func _process_input(ray_result: Dictionary) -> Vector2:
 	if Input.is_action_just_pressed("fire"):
 		if not ray_result.is_empty():
-			_pull_position = ray_result.position
-			_chain.target = _pull_position
+			var global_ray_position = ray_result.position
+			_hooked_node = ray_result.collider
+			_local_pull_position = _hooked_node.to_local(global_ray_position)
+			_chain.target = global_ray_position
 			_chain.is_active = true
 			_pulling = true
 			_velocity_is_from_pull = true
-			if ray_result.collider is Missile:
-				_hooked_missile = ray_result.collider
+			if _hooked_node is Missile:
+				_has_hooked_missile = true
 	elif Input.is_action_just_released("fire"):
 		_pulling = false
 		_chain.is_active = false
