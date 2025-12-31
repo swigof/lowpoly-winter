@@ -35,7 +35,7 @@ fog_enabled = true
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_8afob")
 speed = 14.0
-fall_acceleration = 75.0
+fall_acceleration = 60.0
 jump_impulse = 20.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

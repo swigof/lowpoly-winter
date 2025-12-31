@@ -27,8 +27,6 @@ var _hooked_node: Node3D
 var _local_pull_position: Vector3
 var _velocity_is_from_pull: bool
 var _standard_speed_squared_cutoff: float
-var _velocity_start_acc: float
-var _nudge_velocity: Vector3
 var _mouse_rotation: Vector3
 var _rotation_input: float
 var _tilt_input: float
@@ -52,7 +50,6 @@ func camera_look_at(target: Vector3):
 func stop_pull():
 	_pulling = false
 	_chain.is_active = false
-	_velocity_start_acc = 0
 
 func _ready():
 	_pivot = $CameraPivot
@@ -64,10 +61,6 @@ func _ready():
 	_crosshair_target = preload("res://assets/textures/crosshair-target.png")
 
 func _physics_process(delta: float):
-	_velocity_start_acc += delta
-	velocity -= _nudge_velocity
-	_nudge_velocity = Vector3.ZERO
-	
 	var ray_result := _get_forward_ray_intersect()
 	if ray_result.is_empty():
 		_crosshair.texture = _crosshair_default
@@ -83,10 +76,8 @@ func _physics_process(delta: float):
 			var direction := _pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)
 			direction = direction.normalized()
 			if not is_on_floor() or velocity.length_squared() > _standard_speed_squared_cutoff:
-				var influence: float = 1 - min(_velocity_start_acc, 0.9)
-				var nudge_x := direction.x * speed * delta * 60 * influence
-				var nudge_z := direction.z * speed * delta * 60 * influence
-				_nudge_velocity = Vector3(nudge_x, 0, nudge_z)
+				velocity.x = lerp(velocity.x, direction.x * speed, 2 * delta)
+				velocity.z = lerp(velocity.z, direction.z * speed, 2 * delta)
 				_apply_resistance(delta)
 			else:
 				velocity.x = direction.x * speed
@@ -102,7 +93,6 @@ func _physics_process(delta: float):
 			velocity.y -= fall_acceleration * delta
 		elif Input.is_action_just_pressed("jump"):
 			velocity.y = jump_impulse
-			_velocity_start_acc = 0
 	else:
 		var target := _hooked_node.to_global(_local_pull_position)
 		_chain.target = target
@@ -112,11 +102,8 @@ func _physics_process(delta: float):
 		if input_dir:
 			var direction := _pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)
 			direction = direction.normalized()
-			var nudge_x := direction.x * speed * delta * 10
-			var nudge_z := direction.z * speed * delta * 10
-			_nudge_velocity = Vector3(nudge_x, 0, nudge_z)
+			velocity = lerp(velocity, direction * speed, 0.5 * delta)
 	
-	velocity += _nudge_velocity
 	_cap_velocity()
 	move_and_slide()
 	if not _has_hooked_missile:
