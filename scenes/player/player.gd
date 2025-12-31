@@ -12,6 +12,7 @@ const TILT_UPPER_LIMIT := deg_to_rad(89.0)
 const VELOCITY_CAP: float = 100
 const SQUARED_VELOCITY_CAP: float = VELOCITY_CAP * VELOCITY_CAP
 const HOOK_DISTANCE_DEFAULT: float = 100
+const CAMERA_FOG_DEFAULT: float = 0.01
 
 var hook_max: float = HOOK_DISTANCE_DEFAULT
 
@@ -44,6 +45,7 @@ func _ready():
 	_camera = $CameraPivot/Camera3D
 	_crosshair = $CameraPivot/Camera3D/Crosshair
 	_chain = $Chain
+	_camera.environment.fog_density = CAMERA_FOG_DEFAULT
 	_crosshair_default = preload("res://assets/textures/crosshair-default.png")
 	_crosshair_target = preload("res://assets/textures/crosshair-target.png")
 

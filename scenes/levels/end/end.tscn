@@ -7,11 +7,11 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_5bcbc"]
 size = Vector3(350, 200, 200)
 
-[node name="End" type="Node3D" node_paths=PackedStringArray("area", "missile")]
+[node name="End" type="Node3D" node_paths=PackedStringArray("area_shape", "missile")]
 script = ExtResource("1_8v4vh")
-area = NodePath("Area3D")
+area_shape = NodePath("Area3D/CollisionShape3D")
 missile = NodePath("Missile")
-missile_speed = 1.0
+missile_speed = 0.5
 missile_start_position = Vector3(250, 90, 90)
 
 [node name="Cube1" parent="." instance=ExtResource("1_5bcbc")]
