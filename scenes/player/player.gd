@@ -105,7 +105,8 @@ func _physics_process(delta: float):
 	velocity += _nudge_velocity
 	_cap_velocity()
 	move_and_slide()
-	_update_camera(delta)
+	if not _has_hooked_missile:
+		_update_camera(delta)
 
 func _get_forward_ray_intersect() -> Dictionary:
 	var from := _camera.global_position
