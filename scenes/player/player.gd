@@ -30,6 +30,7 @@ var _nudge_velocity: Vector3
 var _mouse_rotation: Vector3
 var _rotation_input: float
 var _tilt_input: float
+var _hooked_missile: Missile = null
 
 func show_crosshair(value: bool):
 	_crosshair.visible = value
@@ -56,20 +57,9 @@ func _physics_process(delta: float):
 	else:
 		_crosshair.texture = _crosshair_target
 	
-	if Input.is_action_just_pressed("fire"):
-		if not ray_result.is_empty():
-			_pull_position = ray_result.position
-			_chain.target = _pull_position
-			_chain.is_active = true
-			_pulling = true
-			_velocity_is_from_pull = true
-	elif Input.is_action_just_released("fire"):
-		_pulling = false
-		_chain.is_active = false
-		_velocity_start_acc = 0
-	
 	var input_dir: Vector2
-	input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	if not _hooked_missile:
+		input_dir = _process_input(ray_result)
 	
 	if not _pulling:
 		if input_dir:
@@ -117,6 +107,22 @@ func _get_forward_ray_intersect() -> Dictionary:
 	var to := _camera.global_position + -_camera.global_basis.z * hook_max
 	var q := PhysicsRayQueryParameters3D.create(from, to)
 	return get_world_3d().direct_space_state.intersect_ray(q)
+
+func _process_input(ray_result: Dictionary) -> Vector2:
+	if Input.is_action_just_pressed("fire"):
+		if not ray_result.is_empty():
+			_pull_position = ray_result.position
+			_chain.target = _pull_position
+			_chain.is_active = true
+			_pulling = true
+			_velocity_is_from_pull = true
+			if ray_result.collider is Missile:
+				_hooked_missile = ray_result.collider
+	elif Input.is_action_just_released("fire"):
+		_pulling = false
+		_chain.is_active = false
+		_velocity_start_acc = 0
+	return Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 
 func _apply_resistance(delta: float):
 	if is_on_floor():
