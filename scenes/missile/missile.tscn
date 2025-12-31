@@ -1,9 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1t1qesvcf3iw"]
+[gd_scene load_steps=12 format=3 uid="uid://b1t1qesvcf3iw"]
 
+[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_a5ply"]
 [ext_resource type="ArrayMesh" uid="uid://wvtcxchskrdw" path="res://assets/models/Kenney-CC0/Rocket/rocket_baseB.obj" id="1_epqap"]
 [ext_resource type="ArrayMesh" uid="uid://ck2f05yh1ggie" path="res://assets/models/Kenney-CC0/Rocket/rocket_sidesA.obj" id="2_vsmuw"]
 [ext_resource type="ArrayMesh" uid="uid://cn1ebil66auh6" path="res://assets/models/Kenney-CC0/Rocket/rocket_topB.obj" id="3_a5ply"]
 [ext_resource type="Shader" uid="uid://bv242b4qa1kcb" path="res://shaders/godot-psx-style-demo/shaders/psx_unlit.gdshader" id="4_vsmuw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j0ryr"]
+render_priority = 0
+shader = ExtResource("1_a5ply")
+shader_parameter/modulate_color = Color(0.33977845, 0.43321362, 0.35094354, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)
 
 [sub_resource type="Gradient" id="Gradient_vsmuw"]
 
@@ -37,18 +46,22 @@ material = SubResource("ShaderMaterial_a5ply")
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="RocketBaseB" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_j0ryr")
 mesh = ExtResource("1_epqap")
 
 [node name="RocketSidesA" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("ShaderMaterial_j0ryr")
 mesh = ExtResource("2_vsmuw")
 
 [node name="RocketSidesA2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 2, 0)
+material_override = SubResource("ShaderMaterial_j0ryr")
 mesh = ExtResource("2_vsmuw")
 
 [node name="RocketTopB" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+material_override = SubResource("ShaderMaterial_j0ryr")
 mesh = ExtResource("3_a5ply")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
