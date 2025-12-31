@@ -36,7 +36,7 @@ fog_enabled = true
 script = ExtResource("1_8afob")
 speed = 14.0
 fall_acceleration = 60.0
-jump_impulse = 20.0
+jump_impulse = 18.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_7dm0k")
