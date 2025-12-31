@@ -7,12 +7,6 @@ var _level: Node3D
 var _player_scene: PackedScene
 var _player: Player
 
-func set_fog_density(value: float):
-	_player.set_camera_fog_density(value)
-
-func set_hook_distance(value: float):
-	_player.hook_max = value
-
 func init_menu(parent: Node):
 	_menu = preload("res://scenes/menu/menu.tscn").instantiate()
 	_menu.visible = false

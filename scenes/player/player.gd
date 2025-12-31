@@ -11,8 +11,9 @@ const TILT_LOWER_LIMIT := deg_to_rad(-89.0)
 const TILT_UPPER_LIMIT := deg_to_rad(89.0)
 const VELOCITY_CAP: float = 100
 const SQUARED_VELOCITY_CAP: float = VELOCITY_CAP * VELOCITY_CAP
+const HOOK_DISTANCE_DEFAULT: float = 100
 
-var hook_max: float = 100
+var hook_max: float = HOOK_DISTANCE_DEFAULT
 
 var _pivot: Node3D
 var _camera: Camera3D
