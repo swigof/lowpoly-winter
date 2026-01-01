@@ -1,16 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7fao1fosmmg4"]
+[gd_scene load_steps=4 format=3 uid="uid://b7fao1fosmmg4"]
 
 [ext_resource type="AudioStream" uid="uid://br8dip5vvakx7" path="res://assets/music/II.+Andante+Cantabile-MusopenStringQuartet-CC0.mp3" id="2_w2p53"]
 [ext_resource type="PackedScene" uid="uid://3d88kudufm44" path="res://scenes/cube/cube.tscn" id="3_7xgas"]
+[ext_resource type="PackedScene" uid="uid://dle3qblha8lve" path="res://scenes/break_chain_sign.tscn" id="3_lfyvx"]
 
 [node name="Main" type="Node3D"]
-
-[node name="Music" type="AudioStreamPlayer3D" parent="."]
-process_mode = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 25)
-stream = ExtResource("2_w2p53")
-autoplay = true
-parameters/looping = true
 
 [node name="Cube1" parent="." instance=ExtResource("3_7xgas")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -50, 0)
@@ -35,3 +29,13 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 450, 157.49048)
 
 [node name="Cube8" parent="." instance=ExtResource("3_7xgas")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 525, 217.86253)
+
+[node name="Sign" parent="." instance=ExtResource("3_lfyvx")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -42.86772)
+
+[node name="Music" type="AudioStreamPlayer3D" parent="."]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.119633, 2.5257232, 13.736177)
+stream = ExtResource("2_w2p53")
+autoplay = true
+parameters/looping = true
