@@ -38,7 +38,7 @@ mesh = ExtResource("2_auymt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29304424, 0.054018587)
 double_sided = false
 texture_filter = 0
-modulate = Color(0.28514376, 0.12314037, 0.1493294, 1)
+modulate = Color(0.6509804, 0.12156863, 0.14901961, 1)
 text = "BREAK
 THE
 CHAIN"
