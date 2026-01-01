@@ -33,6 +33,7 @@ material = SubResource("ShaderMaterial_p47bc")
 fog_enabled = true
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
+floor_snap_length = 0.2
 script = ExtResource("1_8afob")
 speed = 14.0
 fall_acceleration = 60.0
