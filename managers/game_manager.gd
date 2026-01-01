@@ -34,6 +34,13 @@ func restart_level():
 	_level = level
 	unpause()
 
+func reset_player():
+	var player = _player_scene.instantiate()
+	player.position = Vector3(0, 1, 0)
+	_level.add_child(player)
+	_player.queue_free()
+	_player = player
+
 func _input(event: InputEvent):
 	if not event is InputEventMouseButton or event.button_index != MOUSE_BUTTON_LEFT:
 		return
@@ -47,6 +54,8 @@ func _process(_delta: float):
 	var mouse_visible := Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE
 	if (mouse_visible and not _first_capture) or Input.is_action_just_pressed("pause"):
 		pause()
+	if _player and _player.global_position.y < -500:
+		reset_player()
 
 func pause():
 	_menu.visible = true
