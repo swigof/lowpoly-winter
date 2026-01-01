@@ -117,6 +117,30 @@ Made with Godot"
 horizontal_alignment = 1
 uppercase = true
 
+[node name="ResetVBox" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ResetLabel" type="Label" parent="VBoxContainer/ResetVBox"]
+layout_mode = 2
+text = "GO BACK TO THE BOTTOM?"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="ResetHBox" type="HBoxContainer" parent="VBoxContainer/ResetVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="YesButton" type="Button" parent="VBoxContainer/ResetVBox/ResetHBox"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "YES"
+
+[node name="NoButton" type="Button" parent="VBoxContainer/ResetVBox/ResetHBox"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "NO"
+
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 visible = false
 layout_mode = 2
@@ -128,4 +152,6 @@ text = "BACK"
 [connection signal="pressed" from="VBoxContainer/TopLevelVBox/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="value_changed" from="VBoxContainer/SettingsVBox/VolumeHBox/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/SettingsVBox/SensHBox/SensSlider" to="." method="_on_sens_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/ResetVBox/ResetHBox/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ResetVBox/ResetHBox/NoButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

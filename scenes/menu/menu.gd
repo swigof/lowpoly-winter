@@ -9,6 +9,7 @@ var _in_settings := false
 @onready var top_container := $VBoxContainer/TopLevelVBox
 @onready var settings_container := $VBoxContainer/SettingsVBox
 @onready var credits_container := $VBoxContainer/CreditsVBox
+@onready var reset_container := $VBoxContainer/ResetVBox
 @onready var back_button := $VBoxContainer/BackButton
 
 func _ready():
@@ -46,6 +47,7 @@ func _on_back_button_pressed():
 	top_container.visible = true
 	settings_container.visible = false
 	credits_container.visible = false
+	reset_container.visible = false
 	back_button.visible = false
 
 func _on_volume_slider_value_changed(value: float):
@@ -55,4 +57,13 @@ func _on_sens_slider_value_changed(value: float):
 	SettingsManager.change_sensitivity(value)
 
 func _on_reset_button_pressed():
+	top_container.visible = false
+	reset_container.visible = true
+
+func _on_yes_button_pressed():
+	top_container.visible = true
+	settings_container.visible = false
+	credits_container.visible = false
+	reset_container.visible = false
+	back_button.visible = false
 	GameManager.restart_level()
