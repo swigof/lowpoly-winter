@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgr4at3e71uas"]
+
+[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_tu87o"]
+[ext_resource type="ArrayMesh" uid="uid://bk4mh5anvp5t5" path="res://assets/models/Kenney-CC0/NatureKit/plant_bushDetailed.obj" id="2_6ftm5"]
+[ext_resource type="Shader" uid="uid://bv242b4qa1kcb" path="res://shaders/godot-psx-style-demo/shaders/psx_unlit.gdshader" id="3_jpk7d"]
+[ext_resource type="AudioStream" uid="uid://cp2dcslpn2w4u" path="res://assets/sfx/selector_cc0_brushwood-in-the-fire-2.mp3" id="4_6ftm5"]
+
+[sub_resource type="GDScript" id="GDScript_6ftm5"]
+script/source = "extends Node3D
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8g13"]
+render_priority = 0
+shader = ExtResource("1_tu87o")
+shader_parameter/modulate_color = Color(0.32932252, 0.536452, 0.3458368, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x11nt"]
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.049999997
+scale_max = 0.25
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.019999977
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tu87o"]
+render_priority = 0
+shader = ExtResource("3_jpk7d")
+shader_parameter/modulate_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_f8bao"]
+material = SubResource("ShaderMaterial_tu87o")
+
+[node name="Bush" type="Node3D"]
+script = SubResource("GDScript_6ftm5")
+
+[node name="PlantBushDetailed" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_d8g13")
+mesh = ExtResource("2_6ftm5")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57323396, 0)
+amount = 200
+lifetime = 2.0
+local_coords = true
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_x11nt")
+draw_pass_1 = SubResource("QuadMesh_f8bao")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_6ftm5")
+volume_db = -10.0
+autoplay = true
+max_distance = 200.0
+parameters/looping = true
