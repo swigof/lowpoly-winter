@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=3 uid="uid://do73k31krc8w7"]
+
+[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_drx7m"]
+[ext_resource type="Texture2D" uid="uid://b8q0myb6ta1r1" path="res://assets/models/Kenney-CC0/CityKitCommercial/Textures/colormap.png" id="2_8uhr2"]
+[ext_resource type="ArrayMesh" uid="uid://brdexivj5wlwe" path="res://assets/models/Kenney-CC0/CityKitCommercial/building-skyscraper-a.obj" id="3_3br4m"]
+[ext_resource type="ArrayMesh" uid="uid://da06taanjjyqk" path="res://assets/models/Kenney-CC0/CityKitCommercial/building-skyscraper-b.obj" id="4_4lp1f"]
+[ext_resource type="ArrayMesh" uid="uid://c0yx3vcon5jbo" path="res://assets/models/Kenney-CC0/CityKitCommercial/building-skyscraper-d.obj" id="5_07bxp"]
+[ext_resource type="ArrayMesh" uid="uid://c6ag24w186pcq" path="res://assets/models/Kenney-CC0/CityKitCommercial/building-skyscraper-e.obj" id="6_q8eg3"]
+[ext_resource type="ArrayMesh" uid="uid://bg1l31qy70ds2" path="res://assets/models/Kenney-CC0/NatureKit/rock_tallA.obj" id="7_obbxu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bkge1"]
+render_priority = 0
+shader = ExtResource("1_drx7m")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/albedoTex = ExtResource("2_8uhr2")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_at152"]
+render_priority = 0
+shader = ExtResource("1_drx7m")
+shader_parameter/modulate_color = Color(0.54065776, 0.3480534, 0.30562034, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)
+
+[node name="city" type="Node3D"]
+
+[node name="BuildingSkyscraperA" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -11.924683, -1.9073486e-06, -14.097561)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("3_3br4m")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperB" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.6256104, -1.9073486e-06, -3.653138)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("4_4lp1f")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperD" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 13.716797, -1.9073486e-06, 6.9630313)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("5_07bxp")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperE" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.999995, 0.009599309, 0, -0.009599309, 9.999995, 0, 0, 0, 10, -11.979431, -1.9073486e-06, 3.0195794)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("6_q8eg3")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperA2" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.780832, 0, 4.7850795, 0, 10, 0, -4.7850795, 0, 8.780832, -16.54834, -1.9073486e-06, 19.636034)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("3_3br4m")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperB2" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.780832, 0, 4.7850795, 0, 10, 0, -4.7850795, 0, 8.780832, 0.34768677, -1.9073486e-06, 22.323185)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("4_4lp1f")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperD2" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.780832, 0, 4.7850795, 0, 10, 0, -4.7850795, 0, 8.780832, 16.044678, -1.9073486e-06, 25.859337)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("5_07bxp")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperE2" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.780828, 0.008428993, 4.7850795, -0.009599309, 9.999995, 0, -4.7850776, -0.004593346, 8.780832, -8.405731, -1.9073486e-06, 34.692505)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("6_q8eg3")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperA3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.862856, 0, 1.6504754, 0, 10, 0, -1.6504754, 0, -9.862856, 39.191162, -1.9073486e-06, -7.443078)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("3_3br4m")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperB3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.862856, 0, 1.6504754, 0, 10, 0, -1.6504754, 0, -9.862856, 27.550537, -1.9073486e-06, -19.980705)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("4_4lp1f")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperD3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.862856, 0, 1.6504754, 0, 10, 0, -1.6504754, 0, -9.862856, 7.6367188, -1.9073486e-06, -18.721909)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("5_07bxp")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperE3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.862851, -0.00946766, 1.6504754, -0.009599309, 9.999995, 0, -1.6504747, -0.0015843424, -9.862856, 42.070313, -1.9073486e-06, -24.316433)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("6_q8eg3")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperA4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.915878, 0, -8.708281, 0, 10, 0, 8.708281, 0, -4.915878, 63.826202, -1.9073486e-06, 8.601236)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("3_3br4m")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperB4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.915878, 0, -8.708281, 0, 10, 0, 8.708281, 0, -4.915878, 48.069733, -1.9073486e-06, 15.266861)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("4_4lp1f")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperD4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.915878, 0, -8.708281, 0, 10, 0, 8.708281, 0, -4.915878, 32.881012, -1.9073486e-06, 20.577425)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("5_07bxp")
+skeleton = NodePath("../..")
+
+[node name="BuildingSkyscraperE4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.9158754, -0.0047189035, -8.708281, -0.009599309, 9.999995, 0, 8.708276, 0.0083593475, -4.915878, 48.94702, -1.9073486e-06, 0.13898373)
+material_override = SubResource("ShaderMaterial_bkge1")
+mesh = ExtResource("6_q8eg3")
+skeleton = NodePath("../..")
+
+[node name="RockTallB" type="MeshInstance3D" parent="."]
+transform = Transform3D(-762.9955, 0, 646.40356, 0, 999.9998, 0, -646.40356, 0, -762.9955, 222.21478, -994.6913, 12.561546)
+material_override = SubResource("ShaderMaterial_at152")
+mesh = ExtResource("7_obbxu")
+skeleton = NodePath("../..")
