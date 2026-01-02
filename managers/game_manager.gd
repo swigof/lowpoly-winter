@@ -26,8 +26,8 @@ func init_world(parent: Node):
 	stopwatch = 0
 
 func restart():
-	var level = _level_scene.instantiate()
-	var player = _player_scene.instantiate()
+	var level := _level_scene.instantiate()
+	var player := _player_scene.instantiate()
 	player.position = Vector3(0, 1, 0)
 	level.add_child(player)
 	_level.add_sibling(level)
@@ -39,7 +39,7 @@ func restart():
 	unpause()
 
 func reset_player():
-	var player = _player_scene.instantiate()
+	var player: Player = _player_scene.instantiate()
 	player.position = Vector3(0, 1, 0)
 	_level.add_child(player)
 	_player.queue_free()

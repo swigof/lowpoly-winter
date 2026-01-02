@@ -59,6 +59,7 @@ func _ready():
 	_camera.environment.fog_density = CAMERA_FOG_DEFAULT
 	_crosshair_default = preload("res://assets/textures/crosshair-default.png")
 	_crosshair_target = preload("res://assets/textures/crosshair-target.png")
+	_chain.is_active = false
 
 func _physics_process(delta: float):
 	var ray_result := _get_forward_ray_intersect()
