@@ -15,6 +15,7 @@ const HOOK_DISTANCE_DEFAULT: float = 100
 const CAMERA_FOG_DEFAULT: float = 0.01
 
 var hook_max: float = HOOK_DISTANCE_DEFAULT
+var last_stable_footing: Vector3 = Vector3(0, 1, 0)
 
 var _pivot: Node3D
 var _camera: Camera3D
@@ -109,6 +110,10 @@ func _physics_process(delta: float):
 	move_and_slide()
 	if not _has_hooked_missile:
 		_update_camera(delta)
+		
+func _process(_d):
+	if is_on_floor() and not _pulling:
+		last_stable_footing = position
 
 func _get_forward_ray_intersect() -> Dictionary:
 	var from := _camera.global_position

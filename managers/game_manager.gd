@@ -1,6 +1,7 @@
 extends Node
 
 var stopwatch: float
+var reset_height: float = -100
 
 var _first_capture := true
 var _menu: Control
@@ -40,7 +41,7 @@ func restart():
 
 func reset_player():
 	var player: Player = _player_scene.instantiate()
-	player.position = Vector3(0, 1, 0)
+	player.position = _player.last_stable_footing
 	_level.add_child(player)
 	_player.queue_free()
 	_player = player
@@ -59,7 +60,7 @@ func _process(delta: float):
 	var mouse_visible := Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE
 	if (mouse_visible and not _first_capture) or Input.is_action_just_pressed("pause"):
 		pause()
-	if _player and _player.global_position.y < -500:
+	if _player and _player.global_position.y < reset_height:
 		reset_player()
 
 func pause():
