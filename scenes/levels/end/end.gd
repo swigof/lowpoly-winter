@@ -50,6 +50,7 @@ func _start_cutscene():
 	missile.visible = false
 	_player.stop_pull()
 	_player.velocity = Vector3.ZERO
+	_player.show_crosshair(false)
 	_player.set_camera_exposure(0)
 	_player.global_position = cutscene_marker.global_position
 	_player.camera_look_at(camera_target.global_position)
@@ -57,7 +58,6 @@ func _start_cutscene():
 
 func _on_cutscene_timer_timeout():
 	_player.set_camera_exposure(1)
-	_player.show_crosshair(false)
 	var firework: Firework = _firework_scene.instantiate()
 	firework.position = missile.position
 	add_child(firework)
