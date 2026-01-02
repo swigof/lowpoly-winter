@@ -1,5 +1,8 @@
 extends Node3D
 
+@export var missile_speed: float
+@export var missile_start_position: Vector3
+@export_group("Nodes")
 @export var area_shape: CollisionShape3D
 @export var missile: Node3D
 @export var cutscene_marker: Marker3D
@@ -7,8 +10,8 @@ extends Node3D
 @export var cutscene_timer: Timer
 @export var firework_timer: Timer
 @export var cutscene_music: AudioStreamPlayer3D
-@export var missile_speed: float
-@export var missile_start_position: Vector3
+@export var end_label: Label3D
+@export var text_animation: AnimationPlayer
 
 var _player: Player
 var _missile_forward_vector: Vector3
@@ -65,6 +68,10 @@ func _on_cutscene_timer_timeout():
 	add_child(firework)
 	cutscene_music.play()
 	firework_timer.start()
+	var minutes := int(GameManager.stopwatch / 60)
+	var seconds := int(GameManager.stopwatch - minutes * 60)
+	end_label.text = "Freed from the chain in\n%02d:%02d" % [minutes, seconds]
+	text_animation.play("text_fade")
 
 func _on_firework_timer_timeout():
 	var firework: Firework = _firework_scene.instantiate()

@@ -1,5 +1,7 @@
 extends Node
 
+var stopwatch: float
+
 var _first_capture := true
 var _menu: Control
 var _level_scene: PackedScene
@@ -21,8 +23,9 @@ func init_world(parent: Node):
 	_player.position = Vector3(0, 1, 0)
 	_level.add_child(_player)
 	parent.add_child(_level)
+	stopwatch = 0
 
-func restart_level():
+func restart():
 	var level = _level_scene.instantiate()
 	var player = _player_scene.instantiate()
 	player.position = Vector3(0, 1, 0)
@@ -32,6 +35,7 @@ func restart_level():
 	_player.queue_free()
 	_player = player
 	_level = level
+	stopwatch = 0
 	unpause()
 
 func reset_player():
@@ -48,9 +52,10 @@ func _input(event: InputEvent):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		_first_capture = false
 
-func _process(_delta: float):
+func _process(delta: float):
 	if get_tree().paused:
 		return
+	stopwatch += delta
 	var mouse_visible := Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE
 	if (mouse_visible and not _first_capture) or Input.is_action_just_pressed("pause"):
 		pause()

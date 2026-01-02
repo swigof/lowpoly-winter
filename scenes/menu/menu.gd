@@ -66,4 +66,4 @@ func _on_yes_button_pressed():
 	credits_container.visible = false
 	reset_container.visible = false
 	back_button.visible = false
-	GameManager.restart_level()
+	GameManager.restart()
