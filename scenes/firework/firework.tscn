@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1ww68tmfaphe"]
+[gd_scene load_steps=9 format=3 uid="uid://c1ww68tmfaphe"]
+
+[ext_resource type="Script" uid="uid://bm7ban3rumq21" path="res://scenes/firework/firework.gd" id="1_vlmwb"]
 
 [sub_resource type="Curve" id="Curve_sugp2"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9019607, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -45,3 +47,6 @@ interpolate = false
 transform_align = 1
 process_material = SubResource("ParticleProcessMaterial_sugp2")
 draw_pass_1 = SubResource("QuadMesh_tbgi4")
+script = ExtResource("1_vlmwb")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

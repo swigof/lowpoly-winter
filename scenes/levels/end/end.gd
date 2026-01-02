@@ -12,7 +12,7 @@ var _player: Player
 var _missile_forward_vector: Vector3
 var _missile_is_moving: bool
 var _area_box: BoxShape3D
-var _firework_scene: PackedScene = preload("res://scenes/firework.tscn")
+var _firework_scene: PackedScene = preload("res://scenes/firework/firework.tscn")
 
 func _ready():
 	_area_box = area_shape.shape
@@ -55,9 +55,9 @@ func _start_cutscene():
 	_player.camera_look_at(camera_target.global_position)
 	cutscene_timer.start(1)
 
-func _on_cutscene_timer_timeout() -> void:
+func _on_cutscene_timer_timeout():
 	_player.set_camera_exposure(1)
-	var firework: GPUParticles3D = _firework_scene.instantiate()
-	add_child(firework)
+	_player.show_crosshair(false)
+	var firework: Firework = _firework_scene.instantiate()
 	firework.position = missile.position
-	firework.restart()
+	add_child(firework)
