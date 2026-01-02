@@ -5,6 +5,8 @@ extends Node3D
 @export var cutscene_marker: Marker3D
 @export var camera_target: Marker3D
 @export var cutscene_timer: Timer
+@export var firework_timer: Timer
+@export var cutscene_music: AudioStreamPlayer3D
 @export var missile_speed: float
 @export var missile_start_position: Vector3
 
@@ -61,3 +63,13 @@ func _on_cutscene_timer_timeout():
 	var firework: Firework = _firework_scene.instantiate()
 	firework.position = missile.position
 	add_child(firework)
+	cutscene_music.play()
+	firework_timer.start()
+
+func _on_firework_timer_timeout():
+	var firework: Firework = _firework_scene.instantiate()
+	firework.position.x = randf_range(200, 300)
+	firework.position.y = randf_range(50, 100)
+	firework.position.z = randf_range(-75, 150)
+	add_child(firework)
+	firework_timer.start(randf_range(0.5, 2))

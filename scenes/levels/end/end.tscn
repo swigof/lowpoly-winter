@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cl182bqbqcjl7"]
+[gd_scene load_steps=9 format=3 uid="uid://cl182bqbqcjl7"]
 
 [ext_resource type="PackedScene" uid="uid://3d88kudufm44" path="res://scenes/cube/cube.tscn" id="1_5bcbc"]
 [ext_resource type="Script" uid="uid://b6vugiauevg6y" path="res://scenes/levels/end/end.gd" id="1_8v4vh"]
 [ext_resource type="PackedScene" uid="uid://b1t1qesvcf3iw" path="res://scenes/missile/missile.tscn" id="2_fb5ls"]
 [ext_resource type="PackedScene" uid="uid://b3fmle2ang8j2" path="res://scenes/blackrock.tscn" id="4_7dpgc"]
 [ext_resource type="PackedScene" uid="uid://dprh04nnaa7hi" path="res://scenes/audio_text/audio_text.tscn" id="5_noalq"]
+[ext_resource type="AudioStream" uid="uid://46qxn340a5ga" path="res://assets/music/anosci-ccby-it's a chill summer day, huh.mp3" id="6_noalq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5bcbc"]
 size = Vector3(350, 200, 200)
@@ -12,13 +13,15 @@ size = Vector3(350, 200, 200)
 [sub_resource type="SphereShape3D" id="SphereShape3D_gd5ey"]
 radius = 5.0
 
-[node name="End" type="Node3D" node_paths=PackedStringArray("area_shape", "missile", "cutscene_marker", "camera_target", "cutscene_timer")]
+[node name="End" type="Node3D" node_paths=PackedStringArray("area_shape", "missile", "cutscene_marker", "camera_target", "cutscene_timer", "firework_timer", "cutscene_music")]
 script = ExtResource("1_8v4vh")
 area_shape = NodePath("Area3D/CollisionShape3D")
 missile = NodePath("Missile")
 cutscene_marker = NodePath("CutscenePosition")
 camera_target = NodePath("CameraTarget")
 cutscene_timer = NodePath("CutsceneTimer")
+firework_timer = NodePath("FireworkTimer")
+cutscene_music = NodePath("08AnosciIt\'sAChillSummerDay,Huh")
 missile_speed = 0.5
 missile_start_position = Vector3(250, 90, 90)
 
@@ -50,11 +53,22 @@ transform = Transform3D(0.02923157, 0, -1.2496581, 0, 1.25, 0, 1.2496581, 0, 0.0
 
 [node name="AudioText2" parent="." instance=ExtResource("5_noalq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.782104, 2.8491735, -0.06331682)
-texts = Array[String](["Be rid of the chain once and for all", "This is your only way"])
+texts = Array[String](["Pull yourself away from fate", "Be rid of the chain once and for all", "This is your only way"])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AudioText2"]
 shape = SubResource("SphereShape3D_gd5ey")
 
+[node name="08AnosciIt\'sAChillSummerDay,Huh" type="AudioStreamPlayer3D" parent="."]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.8634, 1.8391669, -6.6798863)
+stream = ExtResource("6_noalq")
+attenuation_model = 3
+parameters/looping = true
+
+[node name="FireworkTimer" type="Timer" parent="."]
+wait_time = 4.0
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="timeout" from="CutsceneTimer" to="." method="_on_cutscene_timer_timeout"]
+[connection signal="timeout" from="FireworkTimer" to="." method="_on_firework_timer_timeout"]
