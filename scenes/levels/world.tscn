@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7fao1fosmmg4"]
+[gd_scene load_steps=8 format=3 uid="uid://b7fao1fosmmg4"]
 
 [ext_resource type="PackedScene" uid="uid://uope70ms21et" path="res://scenes/levels/area_1.tscn" id="1_tsias"]
 [ext_resource type="PackedScene" uid="uid://bahtprl48hif0" path="res://scenes/levels/area_2.tscn" id="2_7k8c1"]
 [ext_resource type="PackedScene" uid="uid://fyfh3ch1ev1f" path="res://scenes/levels/area_3.tscn" id="3_w2p53"]
 [ext_resource type="PackedScene" uid="uid://bx3x7mwkwixnu" path="res://scenes/levels/area_4.tscn" id="4_w2p53"]
 [ext_resource type="PackedScene" uid="uid://cl182bqbqcjl7" path="res://scenes/levels/end/end.tscn" id="5_7xgas"]
+[ext_resource type="PackedScene" uid="uid://c0oyij2xckg8v" path="res://scenes/reset_plane/reset_plane.tscn" id="7_0lift"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0lift"]
+size = Vector3(2000, 100, 1000)
 
 [node name="Main" type="Node3D"]
 
@@ -21,3 +25,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1729.6912, -2772.8945)
 
 [node name="End" parent="." instance=ExtResource("5_7xgas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.93991, 2760.5398, -2884.7852)
+
+[node name="ResetPlane6" parent="." instance=ExtResource("7_0lift")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -149.03195, -409.025)
+shape = SubResource("BoxShape3D_0lift")
+
+[node name="ResetPlane7" parent="." instance=ExtResource("7_0lift")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ResetPlane7"]
+transform = Transform3D(1, 0, 0, 0, 0.86640036, -0.49935007, 0, 0.49935007, 0.86640036, 0, 66.783966, -1025.9796)
+shape = SubResource("BoxShape3D_0lift")
+
+[node name="ResetPlane8" parent="." instance=ExtResource("7_0lift")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane8"]
+transform = Transform3D(1, 0, 0, 0, 0.8755573, -0.4831143, 0, 0.4831143, 0.8755573, 0, 544.4396, -1868.6022)
+shape = SubResource("BoxShape3D_0lift")
+
+[node name="ResetPlane9" parent="." instance=ExtResource("7_0lift")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane9"]
+transform = Transform3D(1, 0, 0, 0, 0.8989242, -0.43810436, 0, 0.43810436, 0.8989242, 0, 1362.4988, -2554.1882)
+shape = SubResource("BoxShape3D_0lift")
+
+[node name="ResetPlane11" parent="." instance=ExtResource("7_0lift")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane11"]
+transform = Transform3D(1, 0, 0, 0, -0.0010995828, 0.9999994, 0, -0.9999994, -0.0010995828, 0, 692.3328, -2083.1465)
+shape = SubResource("BoxShape3D_0lift")
+
+[node name="ResetPlane10" parent="." instance=ExtResource("7_0lift")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1478.629, -3326.4246)
+shape = SubResource("BoxShape3D_0lift")

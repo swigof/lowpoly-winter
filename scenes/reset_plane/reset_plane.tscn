@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0oyij2xckg8v"]
+
+[ext_resource type="Script" uid="uid://bgf3whseqoe6h" path="res://scenes/reset_plane/reset_plane.gd" id="1_g800e"]
+
+[node name="ResetPlane" type="Area3D"]
+script = ExtResource("1_g800e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
