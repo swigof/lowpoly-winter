@@ -12,6 +12,7 @@ extends Node3D
 @export var cutscene_music: AudioStreamPlayer3D
 @export var end_label: Label3D
 @export var text_animation: AnimationPlayer
+@export var audio_text: AudioText
 
 var _player: Player
 var _missile_forward_vector: Vector3
@@ -59,6 +60,8 @@ func _start_cutscene():
 	_player.set_camera_exposure(0)
 	_player.global_position = cutscene_marker.global_position
 	_player.camera_look_at(camera_target.global_position)
+	remove_child(audio_text)
+	audio_text.queue_free()
 	cutscene_timer.start(1)
 
 func _on_cutscene_timer_timeout():

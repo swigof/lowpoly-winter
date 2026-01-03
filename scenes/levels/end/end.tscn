@@ -70,7 +70,7 @@ buffer = PackedFloat32Array(3.435517, 0.7965385, 9.323262, 49.41071, -9.336395, 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dgsdh"]
 points = PackedVector3Array(-25, 0, -25, -25, 0, 25, 25, 0, -25, 25, 0, 25)
 
-[node name="End" type="Node3D" node_paths=PackedStringArray("area_shape", "missile", "cutscene_marker", "camera_target", "cutscene_timer", "firework_timer", "cutscene_music", "end_label", "text_animation")]
+[node name="End" type="Node3D" node_paths=PackedStringArray("area_shape", "missile", "cutscene_marker", "camera_target", "cutscene_timer", "firework_timer", "cutscene_music", "end_label", "text_animation", "audio_text")]
 script = ExtResource("1_8v4vh")
 missile_speed = 0.5
 missile_start_position = Vector3(250, 90, 90)
@@ -83,6 +83,7 @@ firework_timer = NodePath("FireworkTimer")
 cutscene_music = NodePath("08AnosciIt\'sAChillSummerDay,Huh")
 end_label = NodePath("EndLabel")
 text_animation = NodePath("EndLabel/AnimationPlayer")
+audio_text = NodePath("AudioText2")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 0)
