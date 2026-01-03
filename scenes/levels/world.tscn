@@ -1,41 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7fao1fosmmg4"]
+[gd_scene load_steps=3 format=3 uid="uid://b7fao1fosmmg4"]
 
-[ext_resource type="AudioStream" uid="uid://br8dip5vvakx7" path="res://assets/music/II.+Andante+Cantabile-MusopenStringQuartet-CC0.mp3" id="2_w2p53"]
-[ext_resource type="PackedScene" uid="uid://3d88kudufm44" path="res://scenes/cube/cube.tscn" id="3_7xgas"]
-[ext_resource type="PackedScene" uid="uid://dle3qblha8lve" path="res://scenes/break_chain_sign.tscn" id="3_lfyvx"]
+[ext_resource type="PackedScene" uid="uid://uope70ms21et" path="res://scenes/levels/area_1.tscn" id="1_tsias"]
+[ext_resource type="PackedScene" uid="uid://bahtprl48hif0" path="res://scenes/levels/area_2.tscn" id="2_7k8c1"]
 
 [node name="Main" type="Node3D"]
 
-[node name="Cube1" parent="." instance=ExtResource("3_7xgas")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -50, 0)
+[node name="Area1" parent="." instance=ExtResource("1_tsias")]
 
-[node name="Cube2" parent="." instance=ExtResource("3_7xgas")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 75, -40)
-
-[node name="Cube3" parent="." instance=ExtResource("3_7xgas")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 150, -16.629)
-
-[node name="Cube4" parent="." instance=ExtResource("3_7xgas")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 225, 21.980162)
-
-[node name="Cube5" parent="." instance=ExtResource("3_7xgas")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 300, 53.7758)
-
-[node name="Cube6" parent="." instance=ExtResource("3_7xgas")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 375, 94.65628)
-
-[node name="Cube7" parent="." instance=ExtResource("3_7xgas")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 450, 157.49048)
-
-[node name="Cube8" parent="." instance=ExtResource("3_7xgas")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 525, 217.86253)
-
-[node name="Sign" parent="." instance=ExtResource("3_lfyvx")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -42.86772)
-
-[node name="Music" type="AudioStreamPlayer3D" parent="."]
-process_mode = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.119633, 2.5257232, 13.736177)
-stream = ExtResource("2_w2p53")
-autoplay = true
-parameters/looping = true
+[node name="Area2" parent="." instance=ExtResource("2_7k8c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 220.42496, -793.3397)
