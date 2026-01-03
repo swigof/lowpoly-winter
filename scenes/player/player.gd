@@ -23,6 +23,7 @@ var _chain: Chain
 var _crosshair: TextureRect
 var _crosshair_default: Texture
 var _crosshair_target: Texture
+var _wind_player: AudioStreamPlayer3D
 var _pulling: bool
 var _hooked_node: Node3D
 var _local_pull_position: Vector3
@@ -56,6 +57,7 @@ func _ready():
 	_pivot = $CameraPivot
 	_camera = $CameraPivot/Camera3D
 	_crosshair = $CameraPivot/Camera3D/Crosshair
+	_wind_player = $AudioStreamPlayer3D
 	_chain = $Chain
 	_camera.environment.fog_density = CAMERA_FOG_DEFAULT
 	_crosshair_default = preload("res://assets/textures/crosshair-default.png")
@@ -114,6 +116,16 @@ func _physics_process(delta: float):
 func _process(_d):
 	if is_on_floor() and not _pulling:
 		last_stable_footing = position
+	
+	if velocity.length_squared() > 200 and not _wind_player.playing:
+		_wind_player.play()
+	elif velocity.length_squared() < 200 and _wind_player.playing:
+		_wind_player.stop()
+	
+	if _wind_player.playing:
+		var wind_factor := inverse_lerp(200, 10000, velocity.length_squared())
+		_wind_player.volume_db = lerp(-20.0, 0.0, wind_factor)
+		_wind_player.pitch_scale = lerp(0.5, 5.0, wind_factor)
 
 func _get_forward_ray_intersect() -> Dictionary:
 	var from := _camera.global_position

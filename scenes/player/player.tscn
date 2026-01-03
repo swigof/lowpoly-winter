@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://clwyo2n58vr60"]
+[gd_scene load_steps=11 format=3 uid="uid://clwyo2n58vr60"]
 
 [ext_resource type="Script" uid="uid://bcqm70t21l3cc" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Shader" uid="uid://bv242b4qa1kcb" path="res://shaders/godot-psx-style-demo/shaders/psx_unlit.gdshader" id="2_dovo2"]
 [ext_resource type="Texture2D" uid="uid://cjjrvgnnr5vs6" path="res://assets/textures/crosshair-default.png" id="3_gmlin"]
 [ext_resource type="PackedScene" uid="uid://08qpnlkebukg" path="res://scenes/chain/chain.tscn" id="4_lvxji"]
+[ext_resource type="AudioStream" uid="uid://dwsmov0x7af5y" path="res://assets/sfx/wind.mp3" id="5_p47bc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dm0k"]
 
@@ -75,3 +76,9 @@ grow_vertical = 2
 texture = ExtResource("3_gmlin")
 
 [node name="Chain" parent="." instance=ExtResource("4_lvxji")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_p47bc")
+attenuation_model = 3
+max_db = -5.0
+parameters/looping = true
