@@ -1,0 +1,170 @@
+[gd_scene load_steps=6 format=3 uid="uid://fyfh3ch1ev1f"]
+
+[ext_resource type="PackedScene" uid="uid://cfu3nom0n7ict" path="res://scenes/manta-ray/manta-ray.tscn" id="1_tm4d3"]
+
+[sub_resource type="Curve3D" id="Curve3D_lfyvx"]
+closed = true
+_data = {
+"points": PackedVector3Array(-20, 0, 0, 20, 0, 0, 0, 50, 0, 0, 20, 0, 0, -20, 0, 50, 0, 0, 20, 0, 0, -20, 0, 0, 0, -50, 0, 0, -20, 0, 0, 20, 0, -50, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Animation" id="Animation_lfyvx"]
+resource_name = "follow-path"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_w2p53"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2p53"]
+_data = {
+&"RESET": SubResource("Animation_w2p53"),
+&"follow-path": SubResource("Animation_lfyvx")
+}
+
+[node name="Area3" type="Node3D"]
+
+[node name="mantapath" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -20.643799, 23.109375)
+curve = SubResource("Curve3D_lfyvx")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="mantapath"]
+transform = Transform3D(4.3711044e-08, 0, 0.99989057, 0, 0.99989057, 0, -0.99999213, 0, 4.3706606e-08, 0, 50, 0)
+use_model_front = true
+
+[node name="Quaternius-cc0-Manta ray" parent="mantapath/PathFollow3D" instance=ExtResource("1_tm4d3")]
+transform = Transform3D(1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="mantapath/PathFollow3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_w2p53")
+}
+autoplay = "follow-path"
+
+[node name="mantapath2" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.19802856, 39.98767, -26.024414)
+curve = SubResource("Curve3D_lfyvx")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="mantapath2"]
+transform = Transform3D(4.3711044e-08, 0, 0.99989057, 0, 0.99989057, 0, -0.99999213, 0, 4.3706606e-08, 0, 50, 0)
+use_model_front = true
+
+[node name="Quaternius-cc0-Manta ray" parent="mantapath2/PathFollow3D" instance=ExtResource("1_tm4d3")]
+transform = Transform3D(1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="mantapath2/PathFollow3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_w2p53")
+}
+autoplay = "follow-path"
+
+[node name="mantapath3" type="Path3D" parent="."]
+transform = Transform3D(0.35805833, 0.9336992, -4.0813287e-08, 0, -4.371139e-08, -1, -0.9336992, 0.35805833, -1.5651226e-08, 0, 109.09888, -127.0564)
+curve = SubResource("Curve3D_lfyvx")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="mantapath3"]
+transform = Transform3D(4.3711044e-08, 0, 0.99989057, 0, 0.99989057, 0, -0.99999213, 0, 4.3706606e-08, 0, 50, 0)
+use_model_front = true
+
+[node name="Quaternius-cc0-Manta ray" parent="mantapath3/PathFollow3D" instance=ExtResource("1_tm4d3")]
+transform = Transform3D(1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="mantapath3/PathFollow3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_w2p53")
+}
+autoplay = "follow-path"
+
+[node name="mantapath4" type="Path3D" parent="."]
+transform = Transform3D(-0.64899665, -0.76079124, 3.325524e-08, 0, -4.371139e-08, -1, 0.76079124, -0.64899665, 2.8368545e-08, 0, 177.45764, -224.21191)
+curve = SubResource("Curve3D_lfyvx")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="mantapath4"]
+transform = Transform3D(4.3711044e-08, 0, 0.99989057, 0, 0.99989057, 0, -0.99999213, 0, 4.3706606e-08, 0, 50, 0)
+use_model_front = true
+
+[node name="Quaternius-cc0-Manta ray" parent="mantapath4/PathFollow3D" instance=ExtResource("1_tm4d3")]
+transform = Transform3D(1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="mantapath4/PathFollow3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_w2p53")
+}
+autoplay = "follow-path"
+
+[node name="mantapath5" type="Path3D" parent="."]
+transform = Transform3D(-0.51417005, 0.85768825, -3.7490743e-08, 0, -4.371139e-08, -1, -0.85768825, -0.51417005, 2.2475087e-08, 0, 235.32397, -318.09985)
+curve = SubResource("Curve3D_lfyvx")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="mantapath5"]
+transform = Transform3D(4.3711044e-08, 0, 0.99989057, 0, 0.99989057, 0, -0.99999213, 0, 4.3706606e-08, 0, 50, 0)
+use_model_front = true
+
+[node name="Quaternius-cc0-Manta ray" parent="mantapath5/PathFollow3D" instance=ExtResource("1_tm4d3")]
+transform = Transform3D(1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="mantapath5/PathFollow3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_w2p53")
+}
+autoplay = "follow-path"
+
+[node name="mantapath6" type="Path3D" parent="."]
+transform = Transform3D(-0.8088016, -0.5880817, 2.5705866e-08, 0, -4.371139e-08, -1, 0.5880817, -0.8088016, 3.535384e-08, 0, 298.92505, -412.45874)
+curve = SubResource("Curve3D_lfyvx")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="mantapath6"]
+transform = Transform3D(4.3711044e-08, 0, 0.99989057, 0, 0.99989057, 0, -0.99999213, 0, 4.3706606e-08, 0, 50, 0)
+use_model_front = true
+
+[node name="Quaternius-cc0-Manta ray" parent="mantapath6/PathFollow3D" instance=ExtResource("1_tm4d3")]
+transform = Transform3D(1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="mantapath6/PathFollow3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_w2p53")
+}
+autoplay = "follow-path"
+
+[node name="mantapath7" type="Path3D" parent="."]
+transform = Transform3D(0.57227457, -0.8200621, 3.584605e-08, 0, -4.371139e-08, -1, 0.8200621, 0.57227457, -2.5014916e-08, 0, 370.3457, -506.29614)
+curve = SubResource("Curve3D_lfyvx")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="mantapath7"]
+transform = Transform3D(4.3711044e-08, 0, 0.99989057, 0, 0.99989057, 0, -0.99999213, 0, 4.3706606e-08, 0, 50, 0)
+use_model_front = true
+
+[node name="Quaternius-cc0-Manta ray" parent="mantapath7/PathFollow3D" instance=ExtResource("1_tm4d3")]
+transform = Transform3D(1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="mantapath7/PathFollow3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_w2p53")
+}
+autoplay = "follow-path"
