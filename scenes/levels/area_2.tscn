@@ -140,7 +140,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_de0io")
 
 [node name="TreeDetailed" type="MeshInstance3D" parent="."]
-transform = Transform3D(143.73878, 0, 478.89365, 0, 499.99997, 0, -478.89365, 0, 143.73878, -93.53618, -209.99689, -149.52515)
+transform = Transform3D(499.4136, 0, 24.206932, 0, 500.00003, 0, -24.206932, 0, 499.4136, -43.029434, -209.99689, -256.5039)
 mesh = ExtResource("10_uqets")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_de0io")
@@ -153,7 +153,7 @@ surface_material_override/2 = SubResource("ShaderMaterial_8c33x")
 shape = SubResource("ConcavePolygonShape3D_y40x4")
 
 [node name="TreeDetailed2" type="MeshInstance3D" parent="."]
-transform = Transform3D(302.07007, 0, -398.43903, 0, 499.99997, 0, 398.43903, 0, 302.07007, 220.9167, -60.848114, -296.7213)
+transform = Transform3D(-422.8639, 0, 266.80725, 0, 499.99997, 0, -266.80725, 0, -422.8639, 261.30612, -60.848114, -374.41016)
 mesh = ExtResource("10_uqets")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_de0io")
