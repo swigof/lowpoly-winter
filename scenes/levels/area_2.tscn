@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bahtprl48hif0"]
+[gd_scene load_steps=30 format=3 uid="uid://bahtprl48hif0"]
 
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_npypc"]
 [ext_resource type="Texture2D" uid="uid://dh62pgewpea3p" path="res://assets/textures/GGBotNet-CC0/y2k_grass.png" id="2_8mgey"]
@@ -6,11 +6,15 @@
 [ext_resource type="ArrayMesh" uid="uid://djwebfqgfqnie" path="res://assets/models/Kenney-CC0/NatureKit/plant_bushSmall.obj" id="4_7gfxo"]
 [ext_resource type="PackedScene" uid="uid://dgr4at3e71uas" path="res://scenes/bush.tscn" id="5_8htnc"]
 [ext_resource type="PackedScene" uid="uid://dprh04nnaa7hi" path="res://scenes/audio_text/audio_text.tscn" id="6_fsrp6"]
+[ext_resource type="AudioStream" uid="uid://bsgkd4ku2hb7k" path="res://resources/lama.tres" id="7_8htnc"]
 [ext_resource type="ArrayMesh" uid="uid://d1d1vh2hjjvy8" path="res://assets/models/Kenney-CC0/NatureKit/plant_bush.obj" id="7_n8hei"]
 [ext_resource type="Texture2D" uid="uid://n4xxnydlca4s" path="res://assets/models/Kenney-CC0/SurvivalKit/Textures/colormap.png" id="8_0qu47"]
 [ext_resource type="ArrayMesh" uid="uid://c8qj5q34wafbf" path="res://assets/models/Kenney-CC0/SurvivalKit/tree-log.obj" id="9_4hyrb"]
 [ext_resource type="ArrayMesh" uid="uid://c4neyk8d7pasr" path="res://assets/models/Kenney-CC0/NatureKit/tree_detailed.obj" id="10_uqets"]
-[ext_resource type="PackedScene" uid="uid://cqxnviu88yij3" path="res://scenes/heron.tscn" id="11_sa3x5"]
+[ext_resource type="AudioStream" uid="uid://cvdc070wbx7a8" path="res://assets/sfx/a1234_cc0_crow-calls/1.wav" id="12_7gfxo"]
+[ext_resource type="PackedScene" uid="uid://cob4q4dn0etrc" path="res://scenes/raven.tscn" id="12_8mgey"]
+[ext_resource type="AudioStream" uid="uid://v8rmdb3qoq0i" path="res://assets/sfx/a1234_cc0_crow-calls/2.wav" id="13_8htnc"]
+[ext_resource type="AudioStream" uid="uid://bgfna4xynq0wf" path="res://assets/sfx/a1234_cc0_crow-calls/3.wav" id="14_fsrp6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w2p53"]
 render_priority = 0
@@ -120,6 +124,7 @@ transform = Transform3D(1.6289806, 0, -1.1603544, 0, 2, 0, 1.1603544, 0, 1.62898
 [node name="AudioText" parent="Bush" instance=ExtResource("6_fsrp6")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3.4011078, 0)
 texts = Array[String](["The green eyed heretic arrives", "What makes you think you can climb to the heavens?", "Freedom is not for the lost"])
+audios = Array[AudioStream]([ExtResource("7_8htnc"), ExtResource("7_8htnc"), ExtResource("7_8htnc")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bush/AudioText"]
 shape = SubResource("SphereShape3D_dp8al")
@@ -227,9 +232,8 @@ mesh = ExtResource("9_4hyrb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_de0io")
 
-[node name="MeshHeron" parent="." instance=ExtResource("11_sa3x5")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 64.522316, 1012.32605, -1201.1687)
-skeleton = NodePath("../..")
+[node name="Raven" parent="." instance=ExtResource("12_8mgey")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 64.52779, 1011.4481, -1201.548)
 
 [node name="TreeLog3" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.7505553, 0, 3.3065593, 0, 5, 0, -3.3065593, 0, 3.7505553, 64.541, 1011, -1151.323)
@@ -272,8 +276,9 @@ mesh = ExtResource("9_4hyrb")
 shape = SubResource("ConcavePolygonShape3D_de0io")
 
 [node name="AudioText" parent="." instance=ExtResource("6_fsrp6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.505264, 1013.38074, -1200.8257)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.505264, 1013.1534, -1200.8862)
 texts = Array[String](["Ah the burgeoning diamond", "Freedom is but a stones throw away", "Fly! So those below may walk"])
+audios = Array[AudioStream]([ExtResource("12_7gfxo"), ExtResource("13_8htnc"), ExtResource("14_fsrp6")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AudioText"]
 shape = SubResource("SphereShape3D_de0io")

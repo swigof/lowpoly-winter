@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://cl182bqbqcjl7"]
+[gd_scene load_steps=18 format=3 uid="uid://cl182bqbqcjl7"]
 
 [ext_resource type="Script" uid="uid://b6vugiauevg6y" path="res://scenes/levels/end/end.gd" id="1_8v4vh"]
 [ext_resource type="PackedScene" uid="uid://b1t1qesvcf3iw" path="res://scenes/missile/missile.tscn" id="2_fb5ls"]
 [ext_resource type="PackedScene" uid="uid://b3fmle2ang8j2" path="res://scenes/blackrock.tscn" id="4_7dpgc"]
+[ext_resource type="AudioStream" uid="uid://dp25ktivaojvr" path="res://resources/fltts.tres" id="5_dgsdh"]
 [ext_resource type="PackedScene" uid="uid://dprh04nnaa7hi" path="res://scenes/audio_text/audio_text.tscn" id="5_noalq"]
 [ext_resource type="AudioStream" uid="uid://46qxn340a5ga" path="res://assets/music/anosci-ccby-it's a chill summer day, huh.mp3" id="6_noalq"]
 [ext_resource type="ArrayMesh" uid="uid://gnc3ej38tung" path="res://assets/models/Kenney-CC0/BlasterKit/OBJ format/smoke.obj" id="7_f1un0"]
@@ -110,6 +111,7 @@ transform = Transform3D(0.02923157, 0, -1.2496581, 0, 1.25, 0, 1.2496581, 0, 0.0
 [node name="AudioText2" parent="." instance=ExtResource("5_noalq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.782104, 2.8491735, -0.06331682)
 texts = Array[String](["Pull yourself away from fate", "Be rid of the chain once and for all", "This is your only way"])
+audios = Array[AudioStream]([ExtResource("5_dgsdh"), ExtResource("5_dgsdh"), ExtResource("5_dgsdh")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AudioText2"]
 shape = SubResource("SphereShape3D_gd5ey")

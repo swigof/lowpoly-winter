@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://uope70ms21et"]
+[gd_scene load_steps=22 format=3 uid="uid://uope70ms21et"]
 
 [ext_resource type="PackedScene" uid="uid://wxc5hdvbfvcx" path="res://scenes/stone_tower.tscn" id="1_bqfyp"]
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="2_k3sua"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b3fmle2ang8j2" path="res://scenes/blackrock.tscn" id="10_48ppj"]
 [ext_resource type="PackedScene" uid="uid://dprh04nnaa7hi" path="res://scenes/audio_text/audio_text.tscn" id="11_3jnwd"]
 [ext_resource type="PackedScene" uid="uid://dle3qblha8lve" path="res://scenes/break_chain_sign.tscn" id="12_apgnl"]
+[ext_resource type="AudioStream" uid="uid://dp25ktivaojvr" path="res://resources/fltts.tres" id="12_k3sua"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q418o"]
 render_priority = 0
@@ -135,6 +136,7 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -1.7569655, 71.88864
 [node name="AudioText" parent="." instance=ExtResource("11_3jnwd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5381546, 75.11417, -390.82104)
 texts = Array[String](["My sweet pebble", "Rise from rock bottom", "Only you may will it"])
+audios = Array[AudioStream]([ExtResource("12_k3sua"), ExtResource("12_k3sua"), ExtResource("12_k3sua")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AudioText"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5156517)

@@ -1,0 +1,20 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=8 format=3 uid="uid://bsgkd4ku2hb7k"]
+
+[ext_resource type="AudioStream" uid="uid://8kry408xa7g0" path="res://assets/sfx/delay-lama/lama-01.wav" id="1_acacm"]
+[ext_resource type="AudioStream" uid="uid://bbh3kmt46pard" path="res://assets/sfx/delay-lama/lama-02.wav" id="2_tf3k5"]
+[ext_resource type="AudioStream" uid="uid://dglu21ljlq4bq" path="res://assets/sfx/delay-lama/lama-03.wav" id="3_adksm"]
+[ext_resource type="AudioStream" uid="uid://iq7baamfrnyb" path="res://assets/sfx/delay-lama/lama-04.wav" id="4_r7sq1"]
+[ext_resource type="AudioStream" uid="uid://bslkwcvgymofh" path="res://assets/sfx/delay-lama/lama-05.wav" id="5_orjts"]
+[ext_resource type="AudioStream" uid="uid://egv50xydp5kv" path="res://assets/sfx/delay-lama/lama-06.wav" id="6_vfnu2"]
+[ext_resource type="AudioStream" uid="uid://d1cf682poaiq0" path="res://assets/sfx/delay-lama/lama-07.wav" id="7_sry02"]
+
+[resource]
+random_pitch = 1.1
+streams_count = 7
+stream_0/stream = ExtResource("1_acacm")
+stream_1/stream = ExtResource("2_tf3k5")
+stream_2/stream = ExtResource("3_adksm")
+stream_3/stream = ExtResource("4_r7sq1")
+stream_4/stream = ExtResource("5_orjts")
+stream_5/stream = ExtResource("6_vfnu2")
+stream_6/stream = ExtResource("7_sry02")
