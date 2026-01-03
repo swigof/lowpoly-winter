@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3fmle2ang8j2"]
+[gd_scene load_steps=9 format=3 uid="uid://b3fmle2ang8j2"]
 
 [ext_resource type="PackedScene" uid="uid://dksj7ulhsforo" path="res://assets/models/jetsu-ccby-Man_In_Suit.fbx" id="1_1e1ul"]
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="2_ms7lt"]
 [ext_resource type="ArrayMesh" uid="uid://bg1l31qy70ds2" path="res://assets/models/Kenney-CC0/NatureKit/rock_tallA.obj" id="3_gfc25"]
+[ext_resource type="Texture2D" uid="uid://b3b425wdvfpyv" path="res://assets/textures/GGBotNet-CC0/y2k_stone.png" id="3_qwdql"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ms7lt"]
 render_priority = 0
@@ -18,8 +19,9 @@ points = PackedVector3Array(0.2972436, 0.009548783, 0.9627598, 0.27635276, -0.01
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qwdql"]
 render_priority = 0
 shader = ExtResource("2_ms7lt")
-shader_parameter/modulate_color = Color(0.2744221, 0.26385683, 0.26368856, 1)
-shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/albedoTex = ExtResource("3_qwdql")
+shader_parameter/uv_scale = Vector2(0.01, 0.01)
 shader_parameter/uv_offset = Vector2(0, 0)
 shader_parameter/uv_pan_velocity = Vector2(0, 0)
 
