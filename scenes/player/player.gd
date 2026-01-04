@@ -24,6 +24,7 @@ var _crosshair: TextureRect
 var _crosshair_default: Texture
 var _crosshair_target: Texture
 var _wind_player: AudioStreamPlayer3D
+var _reset_player: AudioStreamPlayer3D
 var _pulling: bool
 var _hooked_node: Node3D
 var _local_pull_position: Vector3
@@ -53,11 +54,15 @@ func stop_pull():
 	_pulling = false
 	_chain.is_active = false
 
+func play_reset_sound():
+	_reset_player.play(0.16)
+
 func _ready():
 	_pivot = $CameraPivot
 	_camera = $CameraPivot/Camera3D
 	_crosshair = $CameraPivot/Camera3D/Crosshair
 	_wind_player = $AudioStreamPlayer3D
+	_reset_player = $ResetSoundPlayer
 	_chain = $Chain
 	_camera.environment.fog_density = CAMERA_FOG_DEFAULT
 	_crosshair_default = preload("res://assets/textures/crosshair-default.png")

@@ -45,6 +45,7 @@ func reset_player():
 	_level.add_child(player)
 	_player.queue_free()
 	_player = player
+	_player.play_reset_sound()
 
 func _input(event: InputEvent):
 	if not event is InputEventMouseButton or event.button_index != MOUSE_BUTTON_LEFT:
