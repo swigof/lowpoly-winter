@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=3 uid="uid://bx3x7mwkwixnu"]
+[gd_scene load_steps=164 format=3 uid="uid://bx3x7mwkwixnu"]
 
 [ext_resource type="ArrayMesh" uid="uid://c0yx3vcon5jbo" path="res://assets/models/Kenney-CC0/CityKitCommercial/building-skyscraper-d.obj" id="1_wsnfk"]
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="2_jw6dw"]
@@ -74,6 +74,9 @@
 [ext_resource type="ArrayMesh" uid="uid://bt5ryavubayi5" path="res://assets/models/Kenney-CC0/CarKit/truck-flat.obj" id="72_2ihh4"]
 [ext_resource type="ArrayMesh" uid="uid://pm608mnj8tq8" path="res://assets/models/Kenney-CC0/CarKit/truck.obj" id="73_7d6h4"]
 [ext_resource type="ArrayMesh" uid="uid://dstbysglal1eh" path="res://assets/models/Kenney-CC0/CarKit/van.obj" id="74_qt52g"]
+[ext_resource type="ArrayMesh" uid="uid://b53n7unwd8niu" path="res://assets/models/Kenney-CC0/FurnitureKit/speaker.obj" id="75_jw6dw"]
+[ext_resource type="Material" uid="uid://dyyopplgy6v53" path="res://shaders/kenney-psx-shader-black.tres" id="76_5i40c"]
+[ext_resource type="AudioStream" uid="uid://br8dip5vvakx7" path="res://assets/music/II.+Andante+Cantabile-MusopenStringQuartet-CC0.mp3" id="76_68m88"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mmplq"]
 render_priority = 0
@@ -416,6 +419,17 @@ points = PackedVector3Array(0.75, 0.7999021, 0.62269497, 0.75, 0.6998825, 0.6226
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dqmm1"]
 points = PackedVector3Array(0.75, 0.8999119, 0.6226605, 0.75, 0.6999755, 0.6226605, 0.75, 0.8999119, 0.5227926, 0.4498825, 1.2999167, 0.6498481, 0.54987276, 0.7123972, 1.1997944, 0.54987276, 0.6484387, 1.2498628, 0.6206441, 0.39987275, 1.2705902, 0.649863, 0.39987275, 1.1997944, 0.75, 0.6999755, 0.5227926, 0.649863, 0.19993638, 1.1997944, 0.649863, 0.39987275, -1.2500637, 0.649863, 0.5757586, -1.0357919, 0.649863, 0.6377349, -0.9550362, 0.4498825, 1.2999167, -1.1501957, 0.299677, 1.35, 0.4622258, -0.45002937, 1.2999167, 0.6498481, -0.55001956, 0.7123972, 1.1997944, -0.55001956, 0.6484387, 1.2498628, 0.124951065, 0.32494617, 1.3499998, 0.54987276, 0.39987275, 1.2999314, 0.6206441, 0.19993638, 1.2705902, 0.649863, 0.19993638, -1.2500637, 0.59994125, 0.053651135, 0.82589567, 0.59994125, 0.044929523, 0.75994503, 0.6206441, 0.39987275, -1.3208594, 0.54987276, 0.79987764, -1.3502007, 0.36677766, 1.2071506, -1.1873434, -0.45002937, 1.2999167, -1.1501957, 0.299677, 1.35, -0.96230423, -0.2998238, 1.35, 0.4622258, -0.75, 0.8999119, 0.6226605, -0.6207909, 0.39987275, 1.2705902, -0.55001956, 0.39987275, 1.2999314, -0.12509787, 0.32494617, 1.3499998, 0.17487276, 0.2749951, 1.3499998, 0.54987276, 0.19993638, 1.2999314, 0.124951065, 0.14998531, 1.3499998, 0.499951, 0.010175215, 0.83747065, 0.59994125, 0.044929523, -0.76014584, 0.59994125, 0.053651135, -0.8260963, 0.6206441, 0.19993638, -1.3208594, 0.499951, 0, 0.75994503, 0.54987276, 0.19993638, -1.3502007, 0.17487276, 0.2749951, -1.4, 0.124951065, 0.32494617, -1.4, -0.55001956, 0.79987764, -1.3502007, -0.36692443, 1.2071506, -1.1873434, -0.2998238, 1.35, -0.96230423, -0.6500098, 0.6377349, -0.9550362, -0.75, 0.8999119, 0.5227926, -0.6500098, 0.39987275, 1.1997944, -0.75, 0.6999755, 0.6226605, -0.6207909, 0.19993638, 1.2705902, -0.55001956, 0.19993638, 1.2999314, -0.17501956, 0.2749951, 1.3499998, 0.17487276, 0.19993638, 1.3499998, -0.12509787, 0.14998531, 1.3499998, -0.5000979, 0.010175215, 0.83747065, 0.499951, 0, -0.76014584, 0.499951, 0.010175215, -0.8376713, 0.124951065, 0.14998531, -1.4, -0.5000979, 0, 0.75994503, 0.17487276, 0.19993638, -1.4, -0.12509787, 0.32494617, -1.4, -0.6207909, 0.39987275, -1.3208594, -0.6500098, 0.39987275, -1.2500637, -0.6500098, 0.5757586, -1.0357919, -0.17501956, 0.2749951, -1.4, -0.55001956, 0.19993638, -1.3502007, -0.75, 0.6999755, 0.5227926, -0.6500098, 0.19993638, 1.1997944, -0.6000881, 0.053651135, 0.82589567, -0.17501956, 0.19993638, 1.3499998, -0.6000881, 0.044929523, 0.75994503, -0.5000979, 0, -0.76014584, -0.5000979, 0.010175215, -0.8376713, -0.12509787, 0.14998531, -1.4, -0.6207909, 0.19993638, -1.3208594, -0.6500098, 0.19993638, -1.2500637, -0.17501956, 0.19993638, -1.4, -0.6000881, 0.044929523, -0.76014584, -0.6000881, 0.053651135, -0.8260963)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iolum"]
+render_priority = 0
+shader = ExtResource("2_jw6dw")
+shader_parameter/modulate_color = Color(0.3403393, 0.34033933, 0.3403393, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jw6dw"]
+points = PackedVector3Array(-0.148, 1.69198e-17, 3.609557e-16, 0, 1.69198e-17, 3.609557e-16, -0.148, 1.69198e-17, 0.148, -0.148, 0.2384008, 3.609557e-16, 0, 1.69198e-17, 0.148, 0, 0.2384008, 3.609557e-16, -0.148, 0.6363999, 0.148, -0.148, 0.6363999, 0.014791308, 0, 0.6363999, 0.148, 0, 0.6363999, 0.014791308)
+
 [node name="Area4" type="Node3D"]
 
 [node name="BuildingSkyscraperD" type="MeshInstance3D" parent="."]
@@ -629,7 +643,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_7uklg")
 
 [node name="Desk" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.815775, 1.1944098, -0.6178127, 0.9436575, -4.638225, -1.6113281, -0.9580281, 1.4353583, -4.692753, 100.57298, 672.5381, -99.384766)
+transform = Transform3D(4.815775, 1.1944098, -0.6178127, 0.9436575, -4.638225, -1.6113281, -0.9580281, 1.4353583, -4.692753, 87.25763, 672.5381, -117.635445)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("24_ahp74")
 skeleton = NodePath("../..")
@@ -739,7 +753,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_73u64")
 
 [node name="SideTableDrawers" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.125298, -0.94683236, 2.6618457, 1.2507086, 4.836131, -0.21809694, -2.5333066, 0.84578156, 4.2269387, 67.23212, 737.8889, -124.87427)
+transform = Transform3D(4.125298, -0.94683236, 2.6618457, 1.2507086, 4.836131, -0.21809694, -2.5333066, 0.84578156, 4.2269387, 67.23212, 716.85815, -124.87427)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("35_3w7dk")
 skeleton = NodePath("../..")
@@ -948,7 +962,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_t8lms")
 
 [node name="DeliveryFlat" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.6870072, 3.8432336, 1.7348056, -2.0702019, 0.58971256, -4.512926, -3.6734533, -3.1435328, 1.2743413, 26.926842, 702.7383, -129.09009)
+transform = Transform3D(-2.6870072, 3.8432336, 1.7348056, -2.0702019, 0.58971256, -4.512926, -3.6734533, -3.1435328, 1.2743413, 39.22326, 702.7383, -129.09009)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("56_hoti3")
 skeleton = NodePath("../..")
@@ -1154,3 +1168,24 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Van/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_dqmm1")
+
+[node name="Speaker" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.4758744, 0.85718644, 2.0571284, 0.09036765, -4.6813583, 1.7540579, 2.226742, -1.5330089, -4.2061267, 48.910084, 451.86774, -115.98952)
+mesh = ExtResource("75_jw6dw")
+surface_material_override/0 = ExtResource("6_hci42")
+surface_material_override/1 = ExtResource("76_5i40c")
+surface_material_override/2 = ExtResource("6_hci42")
+surface_material_override/3 = SubResource("ShaderMaterial_iolum")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Speaker"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Speaker/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_jw6dw")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Speaker"]
+stream = ExtResource("76_68m88")
+unit_size = 100.0
+max_db = 0.0
+autoplay = true
+max_distance = 500.0
+parameters/looping = true
