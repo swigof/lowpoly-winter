@@ -4,6 +4,7 @@ var stopwatch: float
 var reset_height: float = -100
 
 var _first_capture := true
+var _last_frame_captured := true
 var _menu: Control
 var _level_scene: PackedScene
 var _level: Node3D
@@ -52,6 +53,7 @@ func _input(event: InputEvent):
 		return
 	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED and not get_tree().paused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		_last_frame_captured = true
 		_first_capture = false
 
 func _process(delta: float):
@@ -59,7 +61,12 @@ func _process(delta: float):
 		return
 	stopwatch += delta
 	var mouse_visible := Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE
-	if (mouse_visible and not _first_capture) or Input.is_action_just_pressed("pause"):
+	if mouse_visible and not _first_capture:
+		if _last_frame_captured:
+			_last_frame_captured = false
+		else:
+			pause()
+	if Input.is_action_just_pressed("pause"):
 		pause()
 	if _player and _player.global_position.y < reset_height:
 		reset_player()
@@ -69,6 +76,7 @@ func pause():
 	get_tree().paused = true
 	_player.show_crosshair(false)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	_last_frame_captured = false
 
 func unpause():
 	_menu.visible = false
@@ -76,3 +84,4 @@ func unpause():
 	_player.show_crosshair(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	_first_capture = false
+	_last_frame_captured = true
