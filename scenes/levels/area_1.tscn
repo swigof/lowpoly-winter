@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://uope70ms21et"]
+[gd_scene load_steps=28 format=3 uid="uid://uope70ms21et"]
 
 [ext_resource type="PackedScene" uid="uid://wxc5hdvbfvcx" path="res://scenes/stone_tower.tscn" id="1_bqfyp"]
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="2_k3sua"]
@@ -11,8 +11,13 @@
 [ext_resource type="ArrayMesh" uid="uid://bynbhcqq5gwnp" path="res://assets/models/Kenney-CC0/NatureKit/rock_largeF.obj" id="9_1ywvm"]
 [ext_resource type="PackedScene" uid="uid://b3fmle2ang8j2" path="res://scenes/blackrock.tscn" id="10_48ppj"]
 [ext_resource type="PackedScene" uid="uid://dprh04nnaa7hi" path="res://scenes/audio_text/audio_text.tscn" id="11_3jnwd"]
+[ext_resource type="AudioStream" uid="uid://bx7jarxko01pp" path="res://assets/music/Hark!_The_Herald_Angels_Sing.mid.mp3" id="11_7hxnj"]
 [ext_resource type="PackedScene" uid="uid://dle3qblha8lve" path="res://scenes/break_chain_sign.tscn" id="12_apgnl"]
 [ext_resource type="AudioStream" uid="uid://dp25ktivaojvr" path="res://resources/fltts.tres" id="12_k3sua"]
+[ext_resource type="Material" uid="uid://cmm0hhonfeyim" path="res://shaders/kenney-psx-shader-brown.tres" id="15_2raby"]
+[ext_resource type="ArrayMesh" uid="uid://mxunw5jxn5w2" path="res://assets/models/Kenney-CC0/FurnitureKit/radio.obj" id="15_jc1us"]
+[ext_resource type="Material" uid="uid://cmpwm61v6mwmg" path="res://shaders/kenney-psx-shader-white.tres" id="16_66fb3"]
+[ext_resource type="Material" uid="uid://dyyopplgy6v53" path="res://shaders/kenney-psx-shader-black.tres" id="17_1ywvm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q418o"]
 render_priority = 0
@@ -43,6 +48,14 @@ points = PackedVector3Array(0.25767303, 0.2110227, -0.4494912, 0.30174446, 0.258
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_k3sua"]
 radius = 8.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_48ppj"]
+render_priority = 0
+shader = ExtResource("2_k3sua")
+shader_parameter/modulate_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)
 
 [node name="Area1" type="Node3D"]
 
@@ -435,3 +448,21 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB8/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_gs7m4")
+
+[node name="Radio" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.9983337, 0, 0.08162359, 0, 2, 0, -0.08162359, 0, -1.9983337, -3.9099605, 71.88698, -389.9851)
+mesh = ExtResource("15_jc1us")
+surface_material_override/0 = ExtResource("15_2raby")
+surface_material_override/1 = ExtResource("16_66fb3")
+surface_material_override/2 = ExtResource("16_66fb3")
+surface_material_override/3 = ExtResource("17_1ywvm")
+surface_material_override/4 = SubResource("ShaderMaterial_48ppj")
+surface_material_override/5 = ExtResource("15_2raby")
+
+[node name="Hark!TheHeraldAngelsSing_mid" type="AudioStreamPlayer3D" parent="Radio"]
+transform = Transform3D(-0.49958342, 0, -0.020405898, 0, 0.5, 0, 0.020405898, 0, -0.49958342, -0.140831, 0.07791519, 0.05105591)
+stream = ExtResource("11_7hxnj")
+max_db = -10.0
+autoplay = true
+max_distance = 300.0
+parameters/looping = true
