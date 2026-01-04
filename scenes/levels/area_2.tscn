@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bahtprl48hif0"]
+[gd_scene load_steps=33 format=3 uid="uid://bahtprl48hif0"]
 
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_npypc"]
 [ext_resource type="Texture2D" uid="uid://dh62pgewpea3p" path="res://assets/textures/GGBotNet-CC0/y2k_grass.png" id="2_8mgey"]
@@ -11,10 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://n4xxnydlca4s" path="res://assets/models/Kenney-CC0/SurvivalKit/Textures/colormap.png" id="8_0qu47"]
 [ext_resource type="ArrayMesh" uid="uid://c8qj5q34wafbf" path="res://assets/models/Kenney-CC0/SurvivalKit/tree-log.obj" id="9_4hyrb"]
 [ext_resource type="ArrayMesh" uid="uid://c4neyk8d7pasr" path="res://assets/models/Kenney-CC0/NatureKit/tree_detailed.obj" id="10_uqets"]
-[ext_resource type="AudioStream" uid="uid://c0equkidx2v6p" path="res://assets/sfx/a1234_trp_cc0_crow-calls/trp.wav" id="12_7gfxo"]
 [ext_resource type="PackedScene" uid="uid://cob4q4dn0etrc" path="res://scenes/raven.tscn" id="12_8mgey"]
-[ext_resource type="AudioStream" uid="uid://daveyqgtsvror" path="res://assets/sfx/a1234_trp_cc0_crow-calls/chuckling-crows-2.wav" id="13_8htnc"]
+[ext_resource type="AudioStream" uid="uid://cl003oqqkt8g4" path="res://assets/sfx/a1234_trp_cc0_crow-calls/trp-1.wav" id="13_0qu47"]
+[ext_resource type="AudioStream" uid="uid://bcsq5j4grw2nt" path="res://assets/sfx/a1234_trp_cc0_crow-calls/trp-2.wav" id="14_4hyrb"]
 [ext_resource type="AudioStream" uid="uid://dii7xtc0n8iuc" path="res://assets/sfx/a1234_trp_cc0_crow-calls/chuckling-crows-1.wav" id="14_fsrp6"]
+[ext_resource type="AudioStream" uid="uid://ch5k3rhvl6k26" path="res://assets/music/13f_panska_petruzelova_anna_cc0_birds-singing-in-the-forest.mp3" id="16_0qu47"]
+[ext_resource type="AudioStream" uid="uid://y617h0hiecc8" path="res://assets/music/filmcow-cc0-residential night - frogs, crickets, distant traffic.mp3" id="17_4hyrb"]
+[ext_resource type="AudioStream" uid="uid://dlwuql6i4lei7" path="res://assets/music/nimlos_cc0_forest_cicada_loop.mp3" id="18_uqets"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w2p53"]
 render_priority = 0
@@ -278,7 +281,31 @@ shape = SubResource("ConcavePolygonShape3D_de0io")
 [node name="AudioText" parent="." instance=ExtResource("6_fsrp6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.505264, 1013.1534, -1200.8862)
 texts = Array[String](["Ah the burgeoning diamond", "Freedom is but a stones throw away", "Fly! So those below may walk"])
-audios = Array[AudioStream]([ExtResource("12_7gfxo"), ExtResource("13_8htnc"), ExtResource("14_fsrp6")])
+audios = Array[AudioStream]([ExtResource("13_0qu47"), ExtResource("14_4hyrb"), ExtResource("14_fsrp6")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AudioText"]
 shape = SubResource("SphereShape3D_de0io")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.763123, 369.3739, -325.24506)
+stream = ExtResource("16_0qu47")
+unit_size = 100.0
+autoplay = true
+max_distance = 500.0
+parameters/looping = true
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.00159, 686.447, -680.27686)
+stream = ExtResource("17_4hyrb")
+unit_size = 100.0
+autoplay = true
+max_distance = 500.0
+parameters/looping = true
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.29518, 884.3023, -1060.0913)
+stream = ExtResource("18_uqets")
+unit_size = 100.0
+autoplay = true
+max_distance = 500.0
+parameters/looping = true
