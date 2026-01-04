@@ -11,10 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://n4xxnydlca4s" path="res://assets/models/Kenney-CC0/SurvivalKit/Textures/colormap.png" id="8_0qu47"]
 [ext_resource type="ArrayMesh" uid="uid://c8qj5q34wafbf" path="res://assets/models/Kenney-CC0/SurvivalKit/tree-log.obj" id="9_4hyrb"]
 [ext_resource type="ArrayMesh" uid="uid://c4neyk8d7pasr" path="res://assets/models/Kenney-CC0/NatureKit/tree_detailed.obj" id="10_uqets"]
-[ext_resource type="AudioStream" uid="uid://cvdc070wbx7a8" path="res://assets/sfx/a1234_cc0_crow-calls/1.wav" id="12_7gfxo"]
+[ext_resource type="AudioStream" uid="uid://c0equkidx2v6p" path="res://assets/sfx/a1234_trp_cc0_crow-calls/trp.wav" id="12_7gfxo"]
 [ext_resource type="PackedScene" uid="uid://cob4q4dn0etrc" path="res://scenes/raven.tscn" id="12_8mgey"]
-[ext_resource type="AudioStream" uid="uid://v8rmdb3qoq0i" path="res://assets/sfx/a1234_cc0_crow-calls/2.wav" id="13_8htnc"]
-[ext_resource type="AudioStream" uid="uid://bgfna4xynq0wf" path="res://assets/sfx/a1234_cc0_crow-calls/3.wav" id="14_fsrp6"]
+[ext_resource type="AudioStream" uid="uid://daveyqgtsvror" path="res://assets/sfx/a1234_trp_cc0_crow-calls/chuckling-crows-2.wav" id="13_8htnc"]
+[ext_resource type="AudioStream" uid="uid://dii7xtc0n8iuc" path="res://assets/sfx/a1234_trp_cc0_crow-calls/chuckling-crows-1.wav" id="14_fsrp6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w2p53"]
 render_priority = 0
