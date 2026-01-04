@@ -118,7 +118,6 @@ audios = Array[AudioStream]([ExtResource("5_dgsdh"), ExtResource("5_dgsdh"), Ext
 shape = SubResource("SphereShape3D_gd5ey")
 
 [node name="08AnosciIt\'sAChillSummerDay,Huh" type="AudioStreamPlayer3D" parent="."]
-process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.8634, 1.8391669, -6.6798863)
 stream = ExtResource("6_noalq")
 attenuation_model = 3
