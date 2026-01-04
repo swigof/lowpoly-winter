@@ -36,7 +36,13 @@ var _tilt_input: float
 var _has_hooked_missile: bool
 
 func show_crosshair(value: bool):
-	_crosshair.visible = value
+	if _crosshair:
+		_crosshair.visible = value
+
+func remove_crosshair():
+	_camera.remove_child(_crosshair)
+	_crosshair.queue_free()
+	_crosshair = null
 
 func set_camera_fog_density(value: float):
 	_camera.environment.fog_density = value
@@ -71,10 +77,11 @@ func _ready():
 
 func _physics_process(delta: float):
 	var ray_result := _get_forward_ray_intersect()
-	if ray_result.is_empty():
-		_crosshair.texture = _crosshair_default
-	else:
-		_crosshair.texture = _crosshair_target
+	if _crosshair:
+		if ray_result.is_empty():
+			_crosshair.texture = _crosshair_default
+		else:
+			_crosshair.texture = _crosshair_target
 	
 	var input_dir: Vector2
 	if not _has_hooked_missile:
