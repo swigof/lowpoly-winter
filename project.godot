@@ -38,6 +38,9 @@ enabled=PackedStringArray("res://addons/gdterm/plugin.cfg")
 font_data_dynamic={
 &"antialiasing": 0
 }
+mp3={
+&"loop": true
+}
 
 [input]
 
