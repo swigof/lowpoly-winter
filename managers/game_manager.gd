@@ -43,6 +43,7 @@ func restart():
 func reset_player():
 	var player: Player = _player_scene.instantiate()
 	player.position = _player.last_stable_footing
+	player.last_stable_footing = _player.last_stable_footing
 	_level.add_child(player)
 	_player.queue_free()
 	_player = player

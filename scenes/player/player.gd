@@ -125,7 +125,7 @@ func _physics_process(delta: float):
 	move_and_slide()
 	if not _has_hooked_missile:
 		_update_camera(delta)
-		
+
 func _process(_d):
 	if is_on_floor() and not _pulling:
 		last_stable_footing = position
