@@ -1184,6 +1184,7 @@ shape = SubResource("ConvexPolygonShape3D_jw6dw")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Speaker"]
 stream = ExtResource("76_68m88")
+volume_db = -5.0
 unit_size = 100.0
 max_db = 0.0
 autoplay = true
