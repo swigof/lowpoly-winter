@@ -33,6 +33,7 @@ var _standard_speed_squared_cutoff: float
 var _mouse_rotation: Vector3
 var _rotation_input: float
 var _tilt_input: float
+var _last_mouse_x: float
 var _has_hooked_missile: bool
 
 func show_crosshair(value: bool):
@@ -196,5 +197,9 @@ func _update_camera(delta: float):
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		_rotation_input = -event.relative.x * SettingsManager.look_sensitivity
+		var _mouse_x: float = event.relative.x
+		# Catch firefox mousedrift bug
+		if _last_mouse_x != _mouse_x or _mouse_x < 0.333 or _mouse_x > 0.334:
+			_rotation_input = -event.relative.x * SettingsManager.look_sensitivity
 		_tilt_input = -event.relative.y * SettingsManager.look_sensitivity
+		_last_mouse_x = event.relative.x
