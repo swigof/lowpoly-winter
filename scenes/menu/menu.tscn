@@ -27,17 +27,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -17.0
-offset_right = 100.0
-offset_bottom = 17.0
+offset_left = -150.0
+offset_top = -69.0
+offset_right = 150.0
+offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TopLevelVBox" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="PlayButton" type="Button" parent="VBoxContainer/TopLevelVBox"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "RESUME"
 
@@ -154,7 +156,9 @@ text = "NO"
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 visible = false
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 text = "BACK"
 
 [connection signal="pressed" from="VBoxContainer/TopLevelVBox/PlayButton" to="." method="_on_play_button_pressed"]
