@@ -109,11 +109,22 @@ layout_mode = 2
 
 [node name="Credits" type="Label" parent="VBoxContainer/CreditsVBox"]
 layout_mode = 2
-text = "A game by swigof
+text = "A GAME BY SWIGOF
 
-Credits go here
+RAVEN
+BY POLY BY GOOGLE
+LICENSED VIA CC-BY
 
-Made with Godot"
+MAN IN SUIT
+BY JETSU
+LICENSED VIA CC-BY
+
+IT'S A CHILL SUMMER DAY, HUH
+BY ANOSCI
+LICENSED VIA CC-BY
+
+MANY OTHER ASSETS BY
+MANY OTHER WONDERFUL PEOPLE"
 horizontal_alignment = 1
 uppercase = true
 
