@@ -16,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://bcsq5j4grw2nt" path="res://assets/sfx/a1234_trp_cc0_crow-calls/trp-2.wav" id="14_4hyrb"]
 [ext_resource type="AudioStream" uid="uid://dii7xtc0n8iuc" path="res://assets/sfx/a1234_trp_cc0_crow-calls/chuckling-crows-1.wav" id="14_fsrp6"]
 [ext_resource type="AudioStream" uid="uid://ch5k3rhvl6k26" path="res://assets/music/13f_panska_petruzelova_anna_cc0_birds-singing-in-the-forest.mp3" id="16_0qu47"]
-[ext_resource type="AudioStream" uid="uid://y617h0hiecc8" path="res://assets/music/filmcow-cc0-residential night - frogs, crickets, distant traffic.mp3" id="17_4hyrb"]
+[ext_resource type="AudioStream" uid="uid://y617h0hiecc8" path="res://assets/music/filmcow-residential night - frogs, crickets, distant traffic.mp3" id="17_4hyrb"]
 [ext_resource type="AudioStream" uid="uid://dlwuql6i4lei7" path="res://assets/music/nimlos_cc0_forest_cicada_loop.mp3" id="18_uqets"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w2p53"]
