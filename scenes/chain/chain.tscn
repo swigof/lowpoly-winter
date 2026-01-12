@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://droutkb0874cm" path="res://scenes/chain/chain.gd" id="1_k0eps"]
 [ext_resource type="Texture2D" uid="uid://1ksvj2vaucnq" path="res://assets/textures/ambientCG-cc0-rust.png" id="2_8i5jj"]
 [ext_resource type="ArrayMesh" uid="uid://b1quabo7lk40n" path="res://assets/models/chain.obj" id="3_vsmvd"]
-[ext_resource type="AudioStream" uid="uid://cgohhlin15n7a" path="res://assets/sfx/filmcow-knife-hit-19.wav" id="5_8i5jj"]
-[ext_resource type="AudioStream" uid="uid://bvr8tna6n58mo" path="res://assets/sfx/filmcow-spring-tension-14.wav" id="6_vsmvd"]
+[ext_resource type="AudioStream" uid="uid://cgohhlin15n7a" path="res://assets/sfx/filmcow/filmcow-knife-hit-19.wav" id="5_8i5jj"]
+[ext_resource type="AudioStream" uid="uid://bvr8tna6n58mo" path="res://assets/sfx/filmcow/filmcow-spring-tension-14.wav" id="6_vsmvd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1qm8"]
 render_priority = 0
