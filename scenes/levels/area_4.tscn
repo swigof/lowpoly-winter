@@ -76,7 +76,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dstbysglal1eh" path="res://assets/models/Kenney-CC0/CarKit/van.obj" id="74_qt52g"]
 [ext_resource type="ArrayMesh" uid="uid://b53n7unwd8niu" path="res://assets/models/Kenney-CC0/FurnitureKit/speaker.obj" id="75_jw6dw"]
 [ext_resource type="Material" uid="uid://dyyopplgy6v53" path="res://shaders/kenney-psx-shader-black.tres" id="76_5i40c"]
-[ext_resource type="AudioStream" uid="uid://br8dip5vvakx7" path="res://assets/music/II.+Andante+Cantabile-MusopenStringQuartet-CC0.mp3" id="76_68m88"]
+[ext_resource type="AudioStream" uid="uid://br8dip5vvakx7" path="res://assets/music/II.+Andante+Cantabile-MusopenStringQuartet.mp3" id="76_68m88"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mmplq"]
 render_priority = 0
