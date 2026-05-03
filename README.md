@@ -2,8 +2,6 @@
 
 A first person platformer with a grappling hook
 
-Made in Godot 4.5
-
 An effort in making a slick movement system. Turns out doing that isn't trivial and copying the
 physics from Quake / Half-Life is what most people start with. As such, the grappling leaves
 something to be desired and is a little janky. I find it kind of charming though. Leaning into the
@@ -24,6 +22,6 @@ The `assets` folder of the archive should be placed in the project's top level d
 
 ## Building
 
-Open the project in Godot and use the export dialog with preset Web (Runnable) to build
+Open the project in Godot 4.6 and use the export dialog with preset Web (Runnable) to build
 
 Build files will be placed in build/web/
