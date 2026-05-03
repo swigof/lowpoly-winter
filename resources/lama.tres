@@ -1,4 +1,4 @@
-[gd_resource type="AudioStreamRandomizer" load_steps=8 format=3 uid="uid://bsgkd4ku2hb7k"]
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://bsgkd4ku2hb7k"]
 
 [ext_resource type="AudioStream" uid="uid://8kry408xa7g0" path="res://assets/sfx/swigof-cc0/delay-lama/lama-01.wav" id="1_acacm"]
 [ext_resource type="AudioStream" uid="uid://bbh3kmt46pard" path="res://assets/sfx/swigof-cc0/delay-lama/lama-02.wav" id="2_tf3k5"]

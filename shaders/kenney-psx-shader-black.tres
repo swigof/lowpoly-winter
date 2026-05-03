@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dyyopplgy6v53"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dyyopplgy6v53"]
 
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_4f166"]
 

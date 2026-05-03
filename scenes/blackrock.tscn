@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3fmle2ang8j2"]
+[gd_scene format=3 uid="uid://b3fmle2ang8j2"]
 
 [ext_resource type="PackedScene" uid="uid://dksj7ulhsforo" path="res://assets/models/jetsu-ccby-Man_In_Suit.fbx" id="1_1e1ul"]
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="2_ms7lt"]
@@ -28,27 +28,27 @@ shader_parameter/uv_pan_velocity = Vector2(0, 0)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gfc25"]
 points = PackedVector3Array(-0.4915344, 0, -0.15635735, -0.20410031, 0, -0.32227808, -0.4915344, 0, 0.17561784, -0.33930117, 0.32287654, -0.09536594, -0.011547387, 0.9959259, -0.21534246, 0.048980236, 0, -0.3416054, 0.057736993, 0.9959259, -0.25526777, 0.049076498, 0.4864595, -0.3010782, -0.20410031, 0, 0.34160545, 0.042821646, 0.9959259, -0.026683718, -0.33930117, 0.32287654, -0.050826162, 0.049076498, 0, -0.3416054, 0.21160614, 0.9959259, -0.16645572, 0.31110626, 0, 0.2533284, 0.049076498, 0.4864595, 0.19681773, 0.048980236, 0.4864595, 0.19681773, 0.21160614, 0.9959259, -0.07757679, 0.29975134, 0, -0.19688454, 0.4914382, 0, 0.12385538, 0.42542553, 0, -0.1074706, 0.264628, 0.4864595, -0.17662095)
 
-[node name="blackrock" instance=ExtResource("1_1e1ul")]
+[node name="blackrock" unique_id=6250219 instance=ExtResource("1_1e1ul")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 
 [node name="man_in_suit" parent="." index="0"]
 material_overlay = SubResource("ShaderMaterial_ms7lt")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="man_in_suit" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="man_in_suit" index="0" unique_id=986203071]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="man_in_suit/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="man_in_suit/StaticBody3D" index="0" unique_id=131428397]
 shape = SubResource("ConvexPolygonShape3D_ms7lt")
 
 [node name="floor" parent="." index="1"]
 visible = false
 mesh = null
 
-[node name="RockB" type="MeshInstance3D" parent="." index="2"]
+[node name="RockB" type="MeshInstance3D" parent="." index="2" unique_id=772178837]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.015940875, 1.4910961, 0.05934331)
 material_override = SubResource("ShaderMaterial_qwdql")
 mesh = ExtResource("3_gfc25")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockB" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockB" index="0" unique_id=1447009108]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockB/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockB/StaticBody3D" index="0" unique_id=1044003671]
 shape = SubResource("ConvexPolygonShape3D_gfc25")

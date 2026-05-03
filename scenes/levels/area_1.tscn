@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://uope70ms21et"]
+[gd_scene format=3 uid="uid://uope70ms21et"]
 
 [ext_resource type="PackedScene" uid="uid://wxc5hdvbfvcx" path="res://scenes/stone_tower.tscn" id="1_bqfyp"]
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="2_k3sua"]
@@ -57,399 +57,399 @@ shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 shader_parameter/uv_pan_velocity = Vector2(0, 0)
 
-[node name="Area1" type="Node3D"]
+[node name="Area1" type="Node3D" unique_id=1173193314]
 
-[node name="StoneTower" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower" parent="." unique_id=633459254 instance=ExtResource("1_bqfyp")]
 
-[node name="StoneTower2" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower2" parent="." unique_id=2086683217 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
 
-[node name="StoneTower3" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower3" parent="." unique_id=827085046 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -20)
 
-[node name="StoneTower4" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower4" parent="." unique_id=224021509 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.388, 40, -321.83356)
 
-[node name="StoneTower5" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower5" parent="." unique_id=664340947 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.841095, 59.648148, -375.41284)
 
-[node name="RockLargeA" type="MeshInstance3D" parent="."]
+[node name="RockLargeA" type="MeshInstance3D" parent="." unique_id=1967634129]
 transform = Transform3D(0.019423964, 0.03392625, -4.9998474, -0.034630094, 4.999766, 0.033791065, 4.9998426, 0.034497768, 0.019658035, -3.093083, 75.718376, -403.86945)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("4_7hxnj")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeA"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeA" unique_id=1540939505]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeA/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeA/StaticBody3D" unique_id=988534484]
 shape = SubResource("ConvexPolygonShape3D_pj0xw")
 
-[node name="RockLargeB" type="MeshInstance3D" parent="."]
+[node name="RockLargeB" type="MeshInstance3D" parent="." unique_id=703589590]
 transform = Transform3D(1.5217862, -4.153734, 2.3303769, 4.0808635, -0.12425421, -2.8863673, 2.4557524, 2.780476, 3.3523474, -1.5376854, 143.9431, -460.86697)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("5_jc1us")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB" unique_id=67663160]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB/StaticBody3D" unique_id=774318334]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_gs7m4")
 
-[node name="RockLargeC" type="MeshInstance3D" parent="."]
+[node name="RockLargeC" type="MeshInstance3D" parent="." unique_id=1159724229]
 transform = Transform3D(2.3636765, -4.4060225, 0, 4.4060225, 2.3636765, 0, 0, 0, 5, 9.398719, 89.91152, -409.0649)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("6_3h7ce")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeC"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeC" unique_id=1591856712]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeC/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeC/StaticBody3D" unique_id=931478777]
 shape = SubResource("ConvexPolygonShape3D_btahq")
 
-[node name="RockLargeD" type="MeshInstance3D" parent="."]
+[node name="RockLargeD" type="MeshInstance3D" parent="." unique_id=226677262]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 2.5263433, 126.8741, -453.77997)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("7_2raby")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeD"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeD" unique_id=137820400]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeD/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeD/StaticBody3D" unique_id=1626507087]
 shape = SubResource("ConvexPolygonShape3D_px3xn")
 
-[node name="RockLargeE" type="MeshInstance3D" parent="."]
+[node name="RockLargeE" type="MeshInstance3D" parent="." unique_id=1420850376]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1.6606331, 98.85118, -421.41486)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("8_66fb3")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeE"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeE" unique_id=804108645]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeE/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeE/StaticBody3D" unique_id=1710847849]
 shape = SubResource("ConvexPolygonShape3D_8cjxf")
 
-[node name="RockLargeF" type="MeshInstance3D" parent="."]
+[node name="RockLargeF" type="MeshInstance3D" parent="." unique_id=530904324]
 transform = Transform3D(3.4877644, 3.5826666, 0, -3.5826666, 3.4877644, 0, 0, 0, 5, -6.8955016, 112.19078, -434.12384)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("9_1ywvm")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeF"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeF" unique_id=277820822]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeF/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeF/StaticBody3D" unique_id=2037177454]
 shape = SubResource("ConvexPolygonShape3D_jtmcs")
 
-[node name="StoneTower6" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower6" parent="." unique_id=1677767447 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 71.887405, -385.41284)
 
-[node name="blackrock" parent="." instance=ExtResource("10_48ppj")]
+[node name="blackrock" parent="." unique_id=1559260681 instance=ExtResource("10_48ppj")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -1.7569655, 71.88864, -390.13257)
 
-[node name="AudioText" parent="." instance=ExtResource("11_3jnwd")]
+[node name="AudioText" parent="." unique_id=956249918 instance=ExtResource("11_3jnwd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5381546, 75.11417, -390.82104)
 texts = Array[String](["My sweet pebble", "Rise from rock bottom", "Only you may will it"])
 audios = Array[AudioStream]([ExtResource("12_k3sua"), ExtResource("12_k3sua"), ExtResource("12_k3sua")])
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioText"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioText" unique_id=412047975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5156517)
 shape = SubResource("SphereShape3D_k3sua")
 
-[node name="Sign" parent="." instance=ExtResource("12_apgnl")]
+[node name="Sign" parent="." unique_id=499490869 instance=ExtResource("12_apgnl")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.46738183, -0.37863195, -7.6099596)
 skeleton = NodePath("../..")
 
-[node name="StoneTower7" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower7" parent="." unique_id=1926292295 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(0.9999977, -0.0021467532, 0, 0.0021467532, 0.9999977, 0, 0, 0, 1, 6.333, 3, -134.43875)
 
-[node name="StoneTower8" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower8" parent="." unique_id=1736962143 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6079764, 4, -149.35548)
 
-[node name="StoneTower9" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower9" parent="." unique_id=1687251250 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.998, 5, -158.72078)
 
-[node name="StoneTower10" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower10" parent="." unique_id=105525987 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 46.545044, -183.52087)
 
-[node name="StoneTower11" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower11" parent="." unique_id=1897132607 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.484, 40, -240.99774)
 
-[node name="StoneTower12" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower12" parent="." unique_id=1911830307 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -30)
 
-[node name="StoneTower13" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower13" parent="." unique_id=276371172 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -40)
 
-[node name="StoneTower14" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower14" parent="." unique_id=629770767 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -50)
 
-[node name="StoneTower15" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower15" parent="." unique_id=1999808611 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -60)
 
-[node name="StoneTower16" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower16" parent="." unique_id=76662112 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -70)
 
-[node name="StoneTower17" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower17" parent="." unique_id=813756694 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -80)
 
-[node name="StoneTower18" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower18" parent="." unique_id=892480979 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -90)
 
-[node name="StoneTower19" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower19" parent="." unique_id=278371930 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -100)
 
-[node name="StoneTower20" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower20" parent="." unique_id=427413198 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -110)
 
-[node name="StoneTower21" parent="." instance=ExtResource("1_bqfyp")]
+[node name="StoneTower21" parent="." unique_id=793993639 instance=ExtResource("1_bqfyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -120)
 
-[node name="RockLargeB2" type="MeshInstance3D" parent="."]
+[node name="RockLargeB2" type="MeshInstance3D" parent="." unique_id=517490103]
 transform = Transform3D(-2.9883618, 0.3582851, -3.9926584, -3.72097, -2.1005964, 2.596514, -1.4913349, 4.523177, 1.5221013, 3.0786572, 47.168785, -180.38083)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("5_jc1us")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB2" unique_id=2066681451]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB2/StaticBody3D" unique_id=1809104703]
 shape = SubResource("ConvexPolygonShape3D_gs7m4")
 
-[node name="RockLargeB3" type="MeshInstance3D" parent="."]
+[node name="RockLargeB3" type="MeshInstance3D" parent="." unique_id=967512860]
 transform = Transform3D(4.2565126, -1.0594827, -2.399916, 1.4180489, 4.777481, 0.4059686, 2.207088, -1.0262423, 4.367562, -5.2792687, 39.754883, -242.67775)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("5_jc1us")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB3" unique_id=601537163]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB3/StaticBody3D" unique_id=536681439]
 shape = SubResource("ConvexPolygonShape3D_gs7m4")
 
-[node name="RockLargeA2" type="MeshInstance3D" parent="."]
+[node name="RockLargeA2" type="MeshInstance3D" parent="." unique_id=235041301]
 transform = Transform3D(0.019423964, 0.033926245, -4.9998474, -0.7591594, -4.941898, -0.036482204, -4.941994, 0.7592778, -0.014047183, -3.093083, 217.2167, -537.5525)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("4_7hxnj")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeA2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeA2" unique_id=286101981]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeA2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeA2/StaticBody3D" unique_id=1885749959]
 shape = SubResource("ConvexPolygonShape3D_pj0xw")
 
-[node name="RockLargeB4" type="MeshInstance3D" parent="."]
+[node name="RockLargeB4" type="MeshInstance3D" parent="." unique_id=1693797625]
 transform = Transform3D(1.521786, -4.153734, 2.3303769, -4.4188285, -0.31851202, 2.317865, -1.7771084, -2.7649655, -3.7678707, -1.5376854, 158.90042, -470.45145)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("5_jc1us")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB4" unique_id=1001516392]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB4/StaticBody3D" unique_id=1703241865]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_gs7m4")
 
-[node name="RockLargeC2" type="MeshInstance3D" parent="."]
+[node name="RockLargeC2" type="MeshInstance3D" parent="." unique_id=1611173347]
 transform = Transform3D(2.3636768, -4.4060225, 0, -4.350202, -2.333731, -0.7933757, 0.69912624, 0.3750567, -4.936654, 9.398719, 204.02777, -530.1708)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("6_3h7ce")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeC2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeC2" unique_id=1324700930]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeC2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeC2/StaticBody3D" unique_id=1949210395]
 shape = SubResource("ConvexPolygonShape3D_btahq")
 
-[node name="RockLargeD2" type="MeshInstance3D" parent="."]
+[node name="RockLargeD2" type="MeshInstance3D" parent="." unique_id=1258335231]
 transform = Transform3D(5, 0, 0, 0, -4.936654, -0.7933757, 0, 0.7933757, -4.936654, 2.5263433, 174.62863, -480.15714)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("7_2raby")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeD2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeD2" unique_id=1524717340]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeD2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeD2/StaticBody3D" unique_id=1031597983]
 shape = SubResource("ConvexPolygonShape3D_px3xn")
 
-[node name="RockLargeE2" type="MeshInstance3D" parent="."]
+[node name="RockLargeE2" type="MeshInstance3D" parent="." unique_id=1585212934]
 transform = Transform3D(5, 0, 0, 0, -4.936654, -0.7933757, 0, 0.7933757, -4.936654, 1.6606331, 197.161, -516.55884)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("8_66fb3")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeE2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeE2" unique_id=1375398573]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeE2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeE2/StaticBody3D" unique_id=1097301858]
 shape = SubResource("ConvexPolygonShape3D_8cjxf")
 
-[node name="RockLargeF2" type="MeshInstance3D" parent="."]
+[node name="RockLargeF2" type="MeshInstance3D" parent="." unique_id=1998369511]
 transform = Transform3D(3.4877644, 3.5826666, 0, 3.5372772, -3.4435773, -0.7933757, -0.5684801, 0.55342144, -4.936654, -6.895501, 186.00699, -501.8941)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("9_1ywvm")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeF2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeF2" unique_id=904776808]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeF2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeF2/StaticBody3D" unique_id=842395222]
 shape = SubResource("ConvexPolygonShape3D_jtmcs")
 
-[node name="RockLargeA3" type="MeshInstance3D" parent="."]
+[node name="RockLargeA3" type="MeshInstance3D" parent="." unique_id=1937675398]
 transform = Transform3D(0.019423964, 0.033926245, -4.9998474, -1.1092801, -4.8752546, -0.037390187, -4.8753586, 1.1093913, -0.011412639, -3.093083, 338.34753, -718.945)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("4_7hxnj")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeA3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeA3" unique_id=1489966658]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeA3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeA3/StaticBody3D" unique_id=718573853]
 shape = SubResource("ConvexPolygonShape3D_pj0xw")
 
-[node name="RockLargeB5" type="MeshInstance3D" parent="."]
+[node name="RockLargeB5" type="MeshInstance3D" parent="." unique_id=116271420]
 transform = Transform3D(1.521786, -4.153734, 2.3303769, -4.5341973, -0.5146687, 2.0435672, -1.4578125, -2.7352514, -3.9234142, -1.5376854, 284.9594, -647.8603)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("5_jc1us")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB5" unique_id=1678520404]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB5/StaticBody3D" unique_id=1309976429]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_gs7m4")
 
-[node name="RockLargeC3" type="MeshInstance3D" parent="."]
+[node name="RockLargeC3" type="MeshInstance3D" parent="." unique_id=1143558627]
 transform = Transform3D(2.3636768, -4.4060225, 0, -4.289347, -2.3010845, -1.143029, 1.0072423, 0.54035026, -4.8675957, 9.398719, 325.71793, -710.6425)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("6_3h7ce")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeC3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeC3" unique_id=1861621392]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeC3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeC3/StaticBody3D" unique_id=590488030]
 shape = SubResource("ConvexPolygonShape3D_btahq")
 
-[node name="RockLargeD3" type="MeshInstance3D" parent="."]
+[node name="RockLargeD3" type="MeshInstance3D" parent="." unique_id=261493948]
 transform = Transform3D(5, 0, 0, 0, -4.8675957, -1.143029, 0, 1.143029, -4.8675957, 2.5263433, 299.95633, -658.6616)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("7_2raby")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeD3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeD3" unique_id=31780874]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeD3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeD3/StaticBody3D" unique_id=682194091]
 shape = SubResource("ConvexPolygonShape3D_px3xn")
 
-[node name="RockLargeE3" type="MeshInstance3D" parent="."]
+[node name="RockLargeE3" type="MeshInstance3D" parent="." unique_id=545724965]
 transform = Transform3D(5, 0, 0, 0, -4.8675957, -1.143029, 0, 1.143029, -4.8675957, 1.6606331, 319.8383, -696.5759)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("8_66fb3")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeE3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeE3" unique_id=2044095781]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeE3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeE3/StaticBody3D" unique_id=1189701024]
 shape = SubResource("ConvexPolygonShape3D_8cjxf")
 
-[node name="RockLargeF3" type="MeshInstance3D" parent="."]
+[node name="RockLargeF3" type="MeshInstance3D" parent="." unique_id=1386917513]
 transform = Transform3D(3.4877644, 3.5826666, 0, 3.4877944, -3.3954053, -1.143029, -0.81901836, 0.7973231, -4.867595, -6.895501, 309.7573, -681.15393)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("9_1ywvm")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeF3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeF3" unique_id=1487165098]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeF3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeF3/StaticBody3D" unique_id=450796689]
 shape = SubResource("ConvexPolygonShape3D_jtmcs")
 
-[node name="RockLargeA4" type="MeshInstance3D" parent="."]
+[node name="RockLargeA4" type="MeshInstance3D" parent="." unique_id=1544220359]
 transform = Transform3D(0.019423962, 0.03392624, -4.999847, 1.8688247, 4.6374564, 0.03872739, 4.637577, -1.8689177, 0.005335156, -3.093083, 231.15692, -556.4547)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("4_7hxnj")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeA4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeA4" unique_id=1977212927]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeA4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeA4/StaticBody3D" unique_id=661256597]
 shape = SubResource("ConvexPolygonShape3D_pj0xw")
 
-[node name="RockLargeB6" type="MeshInstance3D" parent="."]
+[node name="RockLargeB6" type="MeshInstance3D" parent="." unique_id=1464690384]
 transform = Transform3D(1.521786, -4.153734, 2.3303769, 4.708071, 0.9421648, -1.3951286, 0.71987903, 2.6189332, 4.1979713, -1.5376854, 272.58926, -635.1103)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("5_jc1us")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB6" unique_id=459762658]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB6/StaticBody3D" unique_id=2072840408]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_gs7m4")
 
-[node name="RockLargeC4" type="MeshInstance3D" parent="."]
+[node name="RockLargeC4" type="MeshInstance3D" parent="." unique_id=1286012918]
 transform = Transform3D(2.363677, -4.4060225, 2.3644438e-08, 4.0751805, 2.1861918, 1.9009142, -1.6750941, -0.89862937, 4.6245565, 9.398719, 242.30908, -566.656)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("6_3h7ce")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeC4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeC4" unique_id=1315381744]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeC4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeC4/StaticBody3D" unique_id=1655867246]
 shape = SubResource("ConvexPolygonShape3D_btahq")
 
-[node name="RockLargeD4" type="MeshInstance3D" parent="."]
+[node name="RockLargeD4" type="MeshInstance3D" parent="." unique_id=1515563989]
 transform = Transform3D(4.9999995, 0, 0, 0, 4.6245565, 1.900914, 0, -1.900914, 4.6245565, 2.5263433, 259.4963, -622.06604)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("7_2raby")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeD4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeD4" unique_id=1366632297]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeD4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeD4/StaticBody3D" unique_id=1966095526]
 shape = SubResource("ConvexPolygonShape3D_px3xn")
 
-[node name="RockLargeE4" type="MeshInstance3D" parent="."]
+[node name="RockLargeE4" type="MeshInstance3D" parent="." unique_id=1346480273]
 transform = Transform3D(4.9999995, 0, 0, 0, 4.6245565, 1.900914, 0, -1.900914, 4.6245565, 1.6606331, 245.88226, -581.4773)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("8_66fb3")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeE4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeE4" unique_id=1423920958]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeE4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeE4/StaticBody3D" unique_id=734368799]
 shape = SubResource("ConvexPolygonShape3D_8cjxf")
 
-[node name="RockLargeF4" type="MeshInstance3D" parent="."]
+[node name="RockLargeF4" type="MeshInstance3D" parent="." unique_id=86503872]
 transform = Transform3D(3.4877644, 3.5826666, -2.3644438e-08, -3.313649, 3.2258737, 1.9009144, 1.3620682, -1.3259882, 4.6245565, -6.895501, 253.38849, -598.30347)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("9_1ywvm")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeF4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeF4" unique_id=1568581952]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeF4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeF4/StaticBody3D" unique_id=1502512402]
 shape = SubResource("ConvexPolygonShape3D_jtmcs")
 
-[node name="RockLargeB7" type="MeshInstance3D" parent="."]
+[node name="RockLargeB7" type="MeshInstance3D" parent="." unique_id=922922199]
 transform = Transform3D(4.2565126, -1.0594827, -2.399916, 1.4180489, 4.777481, 0.4059686, 2.207088, -1.0262423, 4.367562, -2.7569308, 39.754883, -323.60596)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("5_jc1us")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB7" unique_id=10457086]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB7/StaticBody3D" unique_id=2015883541]
 shape = SubResource("ConvexPolygonShape3D_gs7m4")
 
-[node name="RockLargeB8" type="MeshInstance3D" parent="."]
+[node name="RockLargeB8" type="MeshInstance3D" parent="." unique_id=1555829394]
 transform = Transform3D(4.2565126, -1.0594827, -2.399916, -1.3246465, 3.0801425, -3.7091827, 2.264379, 3.7934446, 2.3414454, 3.847031, 71.84168, -383.30716)
 material_override = SubResource("ShaderMaterial_q418o")
 mesh = ExtResource("5_jc1us")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RockLargeB8" unique_id=1686383677]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RockLargeB8/StaticBody3D" unique_id=292099582]
 shape = SubResource("ConvexPolygonShape3D_gs7m4")
 
-[node name="Radio" type="MeshInstance3D" parent="."]
+[node name="Radio" type="MeshInstance3D" parent="." unique_id=1501977426]
 transform = Transform3D(-1.9983337, 0, 0.08162359, 0, 2, 0, -0.08162359, 0, -1.9983337, -3.9099605, 71.88698, -389.9851)
 mesh = ExtResource("15_jc1us")
 surface_material_override/0 = ExtResource("15_2raby")
@@ -459,7 +459,7 @@ surface_material_override/3 = ExtResource("17_1ywvm")
 surface_material_override/4 = SubResource("ShaderMaterial_48ppj")
 surface_material_override/5 = ExtResource("15_2raby")
 
-[node name="Hark!TheHeraldAngelsSing_mid" type="AudioStreamPlayer3D" parent="Radio"]
+[node name="Hark!TheHeraldAngelsSing_mid" type="AudioStreamPlayer3D" parent="Radio" unique_id=1594444548]
 transform = Transform3D(-0.49958342, 0, -0.020405898, 0, 0.5, 0, 0.020405898, 0, -0.49958342, -0.140831, 0.07791519, 0.05105591)
 stream = ExtResource("11_7hxnj")
 max_db = -10.0

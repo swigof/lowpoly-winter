@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhdy32kixks6s"]
+[gd_scene format=3 uid="uid://bhdy32kixks6s"]
 
 [ext_resource type="Theme" uid="uid://cehcviwjpw3tj" path="res://scenes/menu/menu_theme.tres" id="1_klgdb"]
 [ext_resource type="Script" uid="uid://dowvlylligkxi" path="res://scenes/menu/menu.gd" id="2_mcvr8"]
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" unique_id=1599844603]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -14,13 +14,13 @@ grow_vertical = 2
 theme = ExtResource("1_klgdb")
 script = ExtResource("2_mcvr8")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1825597646]
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 240.0
 color = Color(0, 0, 0, 0.1882353)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1502113641]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,66 +34,66 @@ offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TopLevelVBox" type="VBoxContainer" parent="VBoxContainer"]
+[node name="TopLevelVBox" type="VBoxContainer" parent="VBoxContainer" unique_id=365777754]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="PlayButton" type="Button" parent="VBoxContainer/TopLevelVBox"]
+[node name="PlayButton" type="Button" parent="VBoxContainer/TopLevelVBox" unique_id=89005729]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "RESUME"
 
-[node name="ResetButton" type="Button" parent="VBoxContainer/TopLevelVBox"]
+[node name="ResetButton" type="Button" parent="VBoxContainer/TopLevelVBox" unique_id=1560524168]
 layout_mode = 2
 text = "RESTART"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer/TopLevelVBox"]
+[node name="SettingsButton" type="Button" parent="VBoxContainer/TopLevelVBox" unique_id=1564935417]
 layout_mode = 2
 text = "SETTINGS"
 
-[node name="CreditsButton" type="Button" parent="VBoxContainer/TopLevelVBox"]
+[node name="CreditsButton" type="Button" parent="VBoxContainer/TopLevelVBox" unique_id=578002029]
 layout_mode = 2
 text = "CREDITS"
 
-[node name="SettingsVBox" type="VBoxContainer" parent="VBoxContainer"]
+[node name="SettingsVBox" type="VBoxContainer" parent="VBoxContainer" unique_id=1175066133]
 visible = false
 layout_mode = 2
 
-[node name="SettingsLabel" type="Label" parent="VBoxContainer/SettingsVBox"]
+[node name="SettingsLabel" type="Label" parent="VBoxContainer/SettingsVBox" unique_id=1070461764]
 layout_mode = 2
 text = "SETTINGS"
 horizontal_alignment = 1
 
-[node name="VolumeHBox" type="HBoxContainer" parent="VBoxContainer/SettingsVBox"]
+[node name="VolumeHBox" type="HBoxContainer" parent="VBoxContainer/SettingsVBox" unique_id=710051985]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/SettingsVBox/VolumeHBox"]
+[node name="Label" type="Label" parent="VBoxContainer/SettingsVBox/VolumeHBox" unique_id=903514301]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "VOLUME"
 horizontal_alignment = 2
 
-[node name="VolumeSlider" type="HSlider" parent="VBoxContainer/SettingsVBox/VolumeHBox"]
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer/SettingsVBox/VolumeHBox" unique_id=838501884]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="Value" type="Label" parent="VBoxContainer/SettingsVBox/VolumeHBox"]
+[node name="Value" type="Label" parent="VBoxContainer/SettingsVBox/VolumeHBox" unique_id=1499496185]
 layout_mode = 2
 text = "100"
 
-[node name="SensHBox" type="HBoxContainer" parent="VBoxContainer/SettingsVBox"]
+[node name="SensHBox" type="HBoxContainer" parent="VBoxContainer/SettingsVBox" unique_id=2121228708]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/SettingsVBox/SensHBox"]
+[node name="Label" type="Label" parent="VBoxContainer/SettingsVBox/SensHBox" unique_id=878421581]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "SENSITIVITY"
 horizontal_alignment = 2
 
-[node name="SensSlider" type="HSlider" parent="VBoxContainer/SettingsVBox/SensHBox"]
+[node name="SensSlider" type="HSlider" parent="VBoxContainer/SettingsVBox/SensHBox" unique_id=1410594060]
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = 0.01
@@ -101,15 +101,15 @@ max_value = 0.5
 step = 0.01
 value = 0.09999999999999999
 
-[node name="Value" type="Label" parent="VBoxContainer/SettingsVBox/SensHBox"]
+[node name="Value" type="Label" parent="VBoxContainer/SettingsVBox/SensHBox" unique_id=1379823649]
 layout_mode = 2
 text = "1.0"
 
-[node name="CreditsVBox" type="VBoxContainer" parent="VBoxContainer"]
+[node name="CreditsVBox" type="VBoxContainer" parent="VBoxContainer" unique_id=1685761693]
 visible = false
 layout_mode = 2
 
-[node name="Credits" type="Label" parent="VBoxContainer/CreditsVBox"]
+[node name="Credits" type="Label" parent="VBoxContainer/CreditsVBox" unique_id=2123980027]
 layout_mode = 2
 text = "A GAME BY SWIGOF
 
@@ -130,31 +130,31 @@ MANY OTHER WONDERFUL PEOPLE"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="ResetVBox" type="VBoxContainer" parent="VBoxContainer"]
+[node name="ResetVBox" type="VBoxContainer" parent="VBoxContainer" unique_id=1985951019]
 visible = false
 layout_mode = 2
 
-[node name="ResetLabel" type="Label" parent="VBoxContainer/ResetVBox"]
+[node name="ResetLabel" type="Label" parent="VBoxContainer/ResetVBox" unique_id=2040077941]
 layout_mode = 2
 text = "GO BACK TO THE BOTTOM?"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="ResetHBox" type="HBoxContainer" parent="VBoxContainer/ResetVBox"]
+[node name="ResetHBox" type="HBoxContainer" parent="VBoxContainer/ResetVBox" unique_id=549170471]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="YesButton" type="Button" parent="VBoxContainer/ResetVBox/ResetHBox"]
+[node name="YesButton" type="Button" parent="VBoxContainer/ResetVBox/ResetHBox" unique_id=1238572850]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "YES"
 
-[node name="NoButton" type="Button" parent="VBoxContainer/ResetVBox/ResetHBox"]
+[node name="NoButton" type="Button" parent="VBoxContainer/ResetVBox/ResetHBox" unique_id=1532890271]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "NO"
 
-[node name="BackButton" type="Button" parent="VBoxContainer"]
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=736938326]
 visible = false
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2

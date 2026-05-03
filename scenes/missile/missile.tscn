@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1t1qesvcf3iw"]
+[gd_scene format=3 uid="uid://b1t1qesvcf3iw"]
 
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_a5ply"]
 [ext_resource type="ArrayMesh" uid="uid://wvtcxchskrdw" path="res://assets/models/Kenney-CC0/Rocket/rocket_baseB.obj" id="1_epqap"]
@@ -55,45 +55,45 @@ shader_parameter/uv_pan_velocity = Vector2(0, 0)
 [sub_resource type="QuadMesh" id="QuadMesh_vsmuw"]
 material = SubResource("ShaderMaterial_a5ply")
 
-[node name="Missile" type="StaticBody3D"]
+[node name="Missile" type="StaticBody3D" unique_id=874739143]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 script = ExtResource("1_j0ryr")
 
-[node name="RocketBaseB" type="MeshInstance3D" parent="."]
+[node name="RocketBaseB" type="MeshInstance3D" parent="." unique_id=1568071805]
 material_override = SubResource("ShaderMaterial_j0ryr")
 mesh = ExtResource("1_epqap")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=297453210]
 shape = SubResource("ConvexPolygonShape3D_a5ply")
 
-[node name="RocketSidesA" type="MeshInstance3D" parent="."]
+[node name="RocketSidesA" type="MeshInstance3D" parent="." unique_id=367372230]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = SubResource("ShaderMaterial_j0ryr")
 mesh = ExtResource("2_vsmuw")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2015902814]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("ConvexPolygonShape3D_j0ryr")
 
-[node name="RocketSidesA2" type="MeshInstance3D" parent="."]
+[node name="RocketSidesA2" type="MeshInstance3D" parent="." unique_id=879715884]
 transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 0, 2, 0)
 material_override = SubResource("ShaderMaterial_j0ryr")
 mesh = ExtResource("2_vsmuw")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1627989950]
 transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 0, 2, 0)
 shape = SubResource("ConvexPolygonShape3D_t4xr1")
 
-[node name="RocketTopB" type="MeshInstance3D" parent="."]
+[node name="RocketTopB" type="MeshInstance3D" parent="." unique_id=76132601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 material_override = SubResource("ShaderMaterial_j0ryr")
 mesh = ExtResource("3_a5ply")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=869806774]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 shape = SubResource("ConvexPolygonShape3D_lkknv")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=883936531]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48865867, 0)
 amount = 300
 lifetime = 0.3

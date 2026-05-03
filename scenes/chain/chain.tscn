@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://08qpnlkebukg"]
+[gd_scene format=3 uid="uid://08qpnlkebukg"]
 
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_clk7i"]
 [ext_resource type="Script" uid="uid://droutkb0874cm" path="res://scenes/chain/chain.gd" id="1_k0eps"]
@@ -30,20 +30,20 @@ random_pitch = 1.05
 streams_count = 1
 stream_0/stream = ExtResource("6_vsmvd")
 
-[node name="Chain" type="MultiMeshInstance3D" node_paths=PackedStringArray("hit_sound_player", "shoot_sound_player")]
+[node name="Chain" type="MultiMeshInstance3D" unique_id=245692240 node_paths=PackedStringArray("hit_sound_player", "shoot_sound_player")]
 material_override = SubResource("ShaderMaterial_m1qm8")
 multimesh = SubResource("MultiMesh_voiob")
 script = ExtResource("1_k0eps")
 hit_sound_player = NodePath("HitSoundPlayer")
 shoot_sound_player = NodePath("ShootSoundPlayer")
 
-[node name="HitSoundPlayer" type="AudioStreamPlayer3D" parent="."]
+[node name="HitSoundPlayer" type="AudioStreamPlayer3D" parent="." unique_id=429197367]
 stream = SubResource("AudioStreamRandomizer_8i5jj")
 volume_db = -15.0
 unit_size = 200.0
 max_db = 0.0
 max_distance = 100.0
 
-[node name="ShootSoundPlayer" type="AudioStreamPlayer3D" parent="."]
+[node name="ShootSoundPlayer" type="AudioStreamPlayer3D" parent="." unique_id=919079557]
 stream = SubResource("AudioStreamRandomizer_m1qm8")
 volume_db = -25.0

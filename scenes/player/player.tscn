@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://clwyo2n58vr60"]
+[gd_scene format=3 uid="uid://clwyo2n58vr60"]
 
 [ext_resource type="Script" uid="uid://bcqm70t21l3cc" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Shader" uid="uid://bv242b4qa1kcb" path="res://shaders/godot-psx-style-demo/shaders/psx_unlit.gdshader" id="2_dovo2"]
@@ -34,17 +34,17 @@ material = SubResource("ShaderMaterial_p47bc")
 [sub_resource type="Environment" id="Environment_dovo2"]
 fog_enabled = true
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=631324161]
 floor_snap_length = 0.2
 script = ExtResource("1_8afob")
 speed = 14.0
 fall_acceleration = 60.0
 jump_impulse = 18.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=867037860]
 shape = SubResource("CapsuleShape3D_7dm0k")
 
-[node name="Snow" type="GPUParticles3D" parent="."]
+[node name="Snow" type="GPUParticles3D" parent="." unique_id=1338765849]
 cast_shadow = 0
 gi_mode = 0
 amount = 1000
@@ -54,14 +54,14 @@ transform_align = 1
 process_material = SubResource("ParticleProcessMaterial_8afob")
 draw_pass_1 = SubResource("QuadMesh_gmlin")
 
-[node name="CameraPivot" type="Node3D" parent="."]
+[node name="CameraPivot" type="Node3D" parent="." unique_id=986312754]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=659611514]
 environment = SubResource("Environment_dovo2")
 far = 400.0
 
-[node name="Crosshair" type="TextureRect" parent="CameraPivot/Camera3D"]
+[node name="Crosshair" type="TextureRect" parent="CameraPivot/Camera3D" unique_id=1423155374]
 modulate = Color(1, 0.7444212, 0.98535687, 1)
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,15 +76,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_gmlin")
 
-[node name="Chain" parent="." instance=ExtResource("4_lvxji")]
+[node name="Chain" parent="." unique_id=1124798204 instance=ExtResource("4_lvxji")]
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=32768426]
 stream = ExtResource("5_p47bc")
 attenuation_model = 3
 max_db = -5.0
 parameters/looping = true
 
-[node name="ResetSoundPlayer" type="AudioStreamPlayer3D" parent="."]
+[node name="ResetSoundPlayer" type="AudioStreamPlayer3D" parent="." unique_id=858373593]
 stream = ExtResource("6_75vfm")
 attenuation_model = 3
 max_db = 0.0

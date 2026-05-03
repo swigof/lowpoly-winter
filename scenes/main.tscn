@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://del5uh8qdlu0u"]
+[gd_scene format=3 uid="uid://del5uh8qdlu0u"]
 
 [ext_resource type="Shader" uid="uid://b4mwl428x6mhl" path="res://shaders/godot-psx-style-demo/shaders/pp_band-dither.gdshader" id="1_tbgi4"]
 [ext_resource type="Script" uid="uid://dkte5i3ck256g" path="res://scenes/main.gd" id="1_tefeu"]
@@ -10,11 +10,11 @@ shader_parameter/dither_tex = ExtResource("2_tefeu")
 shader_parameter/col_depth = 15.0
 shader_parameter/dither_banding = true
 
-[node name="PostProcessing" type="CanvasLayer"]
+[node name="PostProcessing" type="CanvasLayer" unique_id=167920241]
 layer = 0
 script = ExtResource("1_tefeu")
 
-[node name="Dither" type="SubViewportContainer" parent="."]
+[node name="Dither" type="SubViewportContainer" parent="." unique_id=1010333402]
 material = SubResource("ShaderMaterial_jxqm2")
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Viewport" type="SubViewport" parent="Dither"]
+[node name="Viewport" type="SubViewport" parent="Dither" unique_id=501496503]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true

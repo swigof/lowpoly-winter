@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgr4at3e71uas"]
+[gd_scene format=3 uid="uid://dgr4at3e71uas"]
 
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_tu87o"]
 [ext_resource type="ArrayMesh" uid="uid://bk4mh5anvp5t5" path="res://assets/models/Kenney-CC0/NatureKit/plant_bushDetailed.obj" id="2_6ftm5"]
@@ -38,15 +38,15 @@ shader_parameter/uv_pan_velocity = Vector2(0, 0)
 [sub_resource type="QuadMesh" id="QuadMesh_f8bao"]
 material = SubResource("ShaderMaterial_tu87o")
 
-[node name="Bush" type="Node3D"]
+[node name="Bush" type="Node3D" unique_id=1081166001]
 script = SubResource("GDScript_6ftm5")
 
-[node name="PlantBushDetailed" type="MeshInstance3D" parent="."]
+[node name="PlantBushDetailed" type="MeshInstance3D" parent="." unique_id=15967826]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_d8g13")
 mesh = ExtResource("2_6ftm5")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=139768491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57323396, 0)
 amount = 200
 lifetime = 2.0
@@ -55,7 +55,7 @@ transform_align = 1
 process_material = SubResource("ParticleProcessMaterial_x11nt")
 draw_pass_1 = SubResource("QuadMesh_f8bao")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=121447411]
 stream = ExtResource("4_6ftm5")
 volume_db = -10.0
 autoplay = true

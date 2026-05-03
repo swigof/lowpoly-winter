@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=3 uid="uid://bx3x7mwkwixnu"]
+[gd_scene format=3 uid="uid://bx3x7mwkwixnu"]
 
 [ext_resource type="ArrayMesh" uid="uid://c0yx3vcon5jbo" path="res://assets/models/Kenney-CC0/CityKitCommercial/building-skyscraper-d.obj" id="1_wsnfk"]
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="2_jw6dw"]
@@ -430,746 +430,746 @@ shader_parameter/uv_pan_velocity = Vector2(0, 0)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jw6dw"]
 points = PackedVector3Array(-0.148, 1.69198e-17, 3.609557e-16, 0, 1.69198e-17, 3.609557e-16, -0.148, 1.69198e-17, 0.148, -0.148, 0.2384008, 3.609557e-16, 0, 1.69198e-17, 0.148, 0, 0.2384008, 3.609557e-16, -0.148, 0.6363999, 0.148, -0.148, 0.6363999, 0.014791308, 0, 0.6363999, 0.148, 0, 0.6363999, 0.014791308)
 
-[node name="Area4" type="Node3D"]
+[node name="Area4" type="Node3D" unique_id=1166160973]
 
-[node name="BuildingSkyscraperD" type="MeshInstance3D" parent="."]
+[node name="BuildingSkyscraperD" type="MeshInstance3D" parent="." unique_id=1253531189]
 transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 58.838257, -1162.992, -50.326416)
 mesh = ExtResource("1_wsnfk")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_mmplq")
 surface_material_override/1 = SubResource("ShaderMaterial_de0io")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="BuildingSkyscraperD"]
+[node name="StaticBody3D" type="StaticBody3D" parent="BuildingSkyscraperD" unique_id=406987651]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BuildingSkyscraperD/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BuildingSkyscraperD/StaticBody3D" unique_id=1748748314]
 shape = SubResource("ConcavePolygonShape3D_xidr1")
 
-[node name="Bathtub" type="MeshInstance3D" parent="."]
+[node name="Bathtub" type="MeshInstance3D" parent="." unique_id=1992194776]
 transform = Transform3D(-3.0591476, -3.3968832, -2.0255368, 3.7462306, -1.6679292, -2.8607287, 1.267822, -3.2679038, 3.56559, 35.045296, -45.61609, -115.68677)
 material_override = SubResource("ShaderMaterial_sywlt")
 mesh = ExtResource("5_iolum")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Bathtub"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Bathtub" unique_id=548862889]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bathtub/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bathtub/StaticBody3D" unique_id=744090588]
 shape = SubResource("ConvexPolygonShape3D_4ae5x")
 
-[node name="Bench" type="MeshInstance3D" parent="."]
+[node name="Bench" type="MeshInstance3D" parent="." unique_id=1058917705]
 transform = Transform3D(2.2445312, -4.383041, 0.86662143, 4.4663258, 2.2268276, -0.30524272, -0.11838509, 0.9111481, 4.914854, 96.19356, -14.154785, -139.63086)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("7_qch6i")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Bench"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Bench" unique_id=1280531018]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bench/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bench/StaticBody3D" unique_id=521328473]
 shape = SubResource("ConvexPolygonShape3D_33lwf")
 
-[node name="BenchCushion" type="MeshInstance3D" parent="."]
+[node name="BenchCushion" type="MeshInstance3D" parent="." unique_id=1113313281]
 transform = Transform3D(3.2524703, 3.5990458, -1.2117364, -0.11796553, -1.4988941, -4.7685847, -3.7957242, 3.1305244, -0.89010894, 42.24893, 30.648071, -117.2793)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("8_1xdjg")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="BenchCushion"]
+[node name="StaticBody3D" type="StaticBody3D" parent="BenchCushion" unique_id=1814932985]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BenchCushion/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BenchCushion/StaticBody3D" unique_id=1945535485]
 shape = SubResource("ConvexPolygonShape3D_xunq6")
 
-[node name="BookcaseClosed" type="MeshInstance3D" parent="."]
+[node name="BookcaseClosed" type="MeshInstance3D" parent="." unique_id=610406224]
 transform = Transform3D(3.254421, 3.5005145, 1.4680395, -0.26233056, 2.1365108, -4.512926, -3.7868097, 2.8603702, 1.5742797, 94.24474, 140.16333, -120.944336)
 material_override = SubResource("ShaderMaterial_vis2m")
 mesh = ExtResource("9_kcj6o")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="BookcaseClosed"]
+[node name="StaticBody3D" type="StaticBody3D" parent="BookcaseClosed" unique_id=2032231671]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BookcaseClosed/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BookcaseClosed/StaticBody3D" unique_id=1556434015]
 shape = SubResource("ConvexPolygonShape3D_d1o54")
 
-[node name="BookcaseClosedDoors" type="MeshInstance3D" parent="."]
+[node name="BookcaseClosedDoors" type="MeshInstance3D" parent="." unique_id=2051688354]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 73.59494, 175.026, -141.57642)
 material_override = SubResource("ShaderMaterial_8ywr2")
 mesh = ExtResource("10_dadbx")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="BookcaseClosedDoors"]
+[node name="StaticBody3D" type="StaticBody3D" parent="BookcaseClosedDoors" unique_id=1981463782]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BookcaseClosedDoors/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BookcaseClosedDoors/StaticBody3D" unique_id=826468246]
 shape = SubResource("ConvexPolygonShape3D_qbpyr")
 
-[node name="BookcaseClosedWide" type="MeshInstance3D" parent="."]
+[node name="BookcaseClosedWide" type="MeshInstance3D" parent="." unique_id=235070970]
 transform = Transform3D(3.11269, 3.8731937, -0.5563544, -0.4858878, -0.32282308, -4.965853, -3.8826632, 3.1454978, 0.17541787, 72.54842, 378.7915, -100.640625)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("11_rfhaa")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="BookcaseClosedWide"]
+[node name="StaticBody3D" type="StaticBody3D" parent="BookcaseClosedWide" unique_id=511774612]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BookcaseClosedWide/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BookcaseClosedWide/StaticBody3D" unique_id=1380985431]
 shape = SubResource("ConvexPolygonShape3D_d7ivg")
 
-[node name="BookcaseOpen" type="MeshInstance3D" parent="."]
+[node name="BookcaseOpen" type="MeshInstance3D" parent="." unique_id=700087613]
 transform = Transform3D(2.726872, -3.9254332, 1.4680395, 2.143353, -0.19883274, -4.512926, 3.6014175, 3.09054, 1.5742797, 94.0657, 126.94275, -103.39282)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("12_4cp7f")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="BookcaseOpen"]
+[node name="StaticBody3D" type="StaticBody3D" parent="BookcaseOpen" unique_id=348996322]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BookcaseOpen/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BookcaseOpen/StaticBody3D" unique_id=461047305]
 shape = SubResource("ConvexPolygonShape3D_lmkib")
 
-[node name="BookcaseOpenLow" type="MeshInstance3D" parent="."]
+[node name="BookcaseOpenLow" type="MeshInstance3D" parent="." unique_id=1999917600]
 transform = Transform3D(4.611619, 1.9231293, 0.18585795, 0.057565723, 0.3439992, -4.9878206, -1.9312316, 4.6025257, 0.2951374, 87.55876, 110.19922, -102.264404)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("13_xn05y")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="BookcaseOpenLow"]
+[node name="StaticBody3D" type="StaticBody3D" parent="BookcaseOpenLow" unique_id=1814082636]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BookcaseOpenLow/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BookcaseOpenLow/StaticBody3D" unique_id=421340870]
 shape = SubResource("ConvexPolygonShape3D_e0tlw")
 
-[node name="CabinetBed" type="MeshInstance3D" parent="."]
+[node name="CabinetBed" type="MeshInstance3D" parent="." unique_id=1093732306]
 transform = Transform3D(4.9716563, 0.07350966, -0.5265266, -0.5220634, -0.26029116, -4.965853, -0.10041773, 4.992679, -0.25114033, 74.75938, 27.744263, -112.319336)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("14_pvwij")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CabinetBed"]
+[node name="StaticBody3D" type="StaticBody3D" parent="CabinetBed" unique_id=1525058590]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinetBed/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinetBed/StaticBody3D" unique_id=1451465608]
 shape = SubResource("ConvexPolygonShape3D_3n6ae")
 
-[node name="CabinetBedDrawer" type="MeshInstance3D" parent="."]
+[node name="CabinetBedDrawer" type="MeshInstance3D" parent="." unique_id=1473254510]
 transform = Transform3D(4.7832494, -1.1778028, 0.8563335, 1.3178669, 4.7520742, -0.825238, -0.61947846, 1.0151706, 4.8565087, 68.24987, 7.6676025, -134.88623)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("15_t1bmw")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CabinetBedDrawer"]
+[node name="StaticBody3D" type="StaticBody3D" parent="CabinetBedDrawer" unique_id=766077263]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinetBedDrawer/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinetBedDrawer/StaticBody3D" unique_id=1410054359]
 shape = SubResource("ConvexPolygonShape3D_yirjo")
 
-[node name="CabinetBedDrawerTable" type="MeshInstance3D" parent="."]
+[node name="CabinetBedDrawerTable" type="MeshInstance3D" parent="." unique_id=1189331921]
 transform = Transform3D(4.406604, 2.0654604, 1.147046, 0.16888759, 2.14592, -4.512926, -2.3565478, 4.0160804, 1.8214779, 34.629128, 520.0823, -140.68628)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("16_asaty")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CabinetBedDrawerTable"]
+[node name="StaticBody3D" type="StaticBody3D" parent="CabinetBedDrawerTable" unique_id=162338797]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinetBedDrawerTable/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinetBedDrawerTable/StaticBody3D" unique_id=337412341]
 shape = SubResource("ConvexPolygonShape3D_h240w")
 
-[node name="CabinetTelevision" type="MeshInstance3D" parent="."]
+[node name="CabinetTelevision" type="MeshInstance3D" parent="." unique_id=1483924434]
 transform = Transform3D(1.837839, 3.344717, 3.2303586, -4.4697046, 2.228512, 0.23553279, -1.2822205, -2.9743242, 3.8091085, 33.823326, 334.0498, -108.947754)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("17_35ub6")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CabinetTelevision"]
+[node name="StaticBody3D" type="StaticBody3D" parent="CabinetTelevision" unique_id=793472506]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinetTelevision/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinetTelevision/StaticBody3D" unique_id=1286405820]
 shape = SubResource("ConvexPolygonShape3D_dma6j")
 
-[node name="CabinetTelevisionDoors" type="MeshInstance3D" parent="."]
+[node name="CabinetTelevisionDoors" type="MeshInstance3D" parent="." unique_id=698107038]
 transform = Transform3D(2.7789447, 1.6413949, 3.8188074, 1.2793167, 4.032917, -2.6643815, -3.954847, 2.4579265, 1.8214779, 74.42903, 595.00854, -139.17554)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("18_nmuxg")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CabinetTelevisionDoors"]
+[node name="StaticBody3D" type="StaticBody3D" parent="CabinetTelevisionDoors" unique_id=554329541]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinetTelevisionDoors/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinetTelevisionDoors/StaticBody3D" unique_id=784826516]
 shape = SubResource("ConvexPolygonShape3D_h21gq")
 
-[node name="CardboardBoxOpen" type="MeshInstance3D" parent="."]
+[node name="CardboardBoxOpen" type="MeshInstance3D" parent="." unique_id=207071189]
 transform = Transform3D(4.994853, 0.21365684, -0.07614296, -0.05084263, -0.581134, -4.965853, -0.22104767, 4.961515, -0.5783632, 92.39155, 405.1023, -130.93506)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("19_qr58o")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CardboardBoxOpen"]
+[node name="StaticBody3D" type="StaticBody3D" parent="CardboardBoxOpen" unique_id=628915246]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CardboardBoxOpen/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CardboardBoxOpen/StaticBody3D" unique_id=1098135130]
 shape = SubResource("ConvexPolygonShape3D_1iy8p")
 
-[node name="ChairCushion" type="MeshInstance3D" parent="."]
+[node name="ChairCushion" type="MeshInstance3D" parent="." unique_id=1536875971]
 transform = Transform3D(-3.5589743, -0.5270224, -3.472168, 0.4649936, 4.8291435, -1.2096095, 3.4810176, -1.183901, -3.3883471, 46.7955, 146.25244, -139.22217)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("20_4ujb5")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ChairCushion"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ChairCushion" unique_id=1116583042]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChairCushion/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChairCushion/StaticBody3D" unique_id=2022740116]
 shape = SubResource("ConvexPolygonShape3D_d4nqm")
 
-[node name="ChairModernCushion" type="MeshInstance3D" parent="."]
+[node name="ChairModernCushion" type="MeshInstance3D" parent="." unique_id=1796334771]
 transform = Transform3D(4.6641817, 0.055597406, 1.8006439, 0.29993537, 4.9039, -0.9283331, -1.7763581, 0.97399825, 4.5712013, 80.305756, 38.49939, -147.32007)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("21_rfefk")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ChairModernCushion"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ChairModernCushion" unique_id=899907240]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChairModernCushion/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChairModernCushion/StaticBody3D" unique_id=729361366]
 shape = SubResource("ConvexPolygonShape3D_b4x25")
 
-[node name="ChairRounded" type="MeshInstance3D" parent="."]
+[node name="ChairRounded" type="MeshInstance3D" parent="." unique_id=1791585802]
 transform = Transform3D(-1.4211583, 0.61716163, 4.753885, 0.82269406, 4.916226, -0.39229548, -4.7226563, 0.6706958, -1.4988941, 78.190765, -40.440918, -138.802)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("22_w7fgj")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ChairRounded"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ChairRounded" unique_id=1964576091]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChairRounded/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChairRounded/StaticBody3D" unique_id=1976102712]
 shape = SubResource("ConvexPolygonShape3D_dvu8k")
 
-[node name="CoatRackStanding" type="MeshInstance3D" parent="."]
+[node name="CoatRackStanding" type="MeshInstance3D" parent="." unique_id=217716379]
 transform = Transform3D(4.484797, -2.2000158, 0.21570133, 2.2064836, 4.4255214, -0.739047, 0.13426484, 0.7580834, 4.9403725, 38.731255, 438.7705, -146.97437)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("23_d4mem")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CoatRackStanding"]
+[node name="StaticBody3D" type="StaticBody3D" parent="CoatRackStanding" unique_id=82088164]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CoatRackStanding/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CoatRackStanding/StaticBody3D" unique_id=749491110]
 shape = SubResource("ConvexPolygonShape3D_7uklg")
 
-[node name="Desk" type="MeshInstance3D" parent="."]
+[node name="Desk" type="MeshInstance3D" parent="." unique_id=38406348]
 transform = Transform3D(4.815775, 1.1944098, -0.6178127, 0.9436575, -4.638225, -1.6113281, -0.9580281, 1.4353583, -4.692753, 87.25763, 672.5381, -117.635445)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("24_ahp74")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Desk"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Desk" unique_id=1018513932]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk/StaticBody3D" unique_id=1520213375]
 shape = SubResource("ConvexPolygonShape3D_1avyn")
 
-[node name="DeskCorner" type="MeshInstance3D" parent="."]
+[node name="DeskCorner" type="MeshInstance3D" parent="." unique_id=1488916722]
 transform = Transform3D(-2.362754, 4.3764234, -0.51411176, 0, -0.5833538, -4.965853, -4.406517, -2.346618, 0.27566433, 92.02459, 132.13062, -137.24023)
 material_override = SubResource("ShaderMaterial_u2uaa")
 mesh = ExtResource("25_p15l0")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DeskCorner"]
+[node name="StaticBody3D" type="StaticBody3D" parent="DeskCorner" unique_id=1142700393]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DeskCorner/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeskCorner/StaticBody3D" unique_id=1836426181]
 shape = SubResource("ConvexPolygonShape3D_7x2ej")
 
-[node name="Doorway" type="MeshInstance3D" parent="."]
+[node name="Doorway" type="MeshInstance3D" parent="." unique_id=2091998061]
 transform = Transform3D(0.09624393, -1.3073422, 4.8251004, 4.931926, -0.7635022, -0.30524272, 0.81660634, 4.7652826, 1.2748466, 96.19952, 280.98096, -108.46777)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("26_e35b8")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Doorway"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Doorway" unique_id=610389580]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Doorway/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doorway/StaticBody3D" unique_id=1341574093]
 shape = SubResource("ConvexPolygonShape3D_w3h86")
 
-[node name="Dryer" type="MeshInstance3D" parent="."]
+[node name="Dryer" type="MeshInstance3D" parent="." unique_id=1252498231]
 transform = Transform3D(4.6058025, -0.10889813, 1.9428651, 1.926396, 0.9604656, -4.512926, -0.2749209, 4.905675, 0.9266993, 64.98645, 401.3108, -85.62915)
 material_override = ExtResource("27_gqqf3")
 mesh = ExtResource("28_5ny3u")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Dryer"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Dryer" unique_id=902441066]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Dryer/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dryer/StaticBody3D" unique_id=804902152]
 shape = SubResource("ConvexPolygonShape3D_jbkgy")
 
-[node name="KitchenFridge" type="MeshInstance3D" parent="."]
+[node name="KitchenFridge" type="MeshInstance3D" parent="." unique_id=151503023]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 61.76301, 526.72656, -134.38916)
 material_override = SubResource("ShaderMaterial_xuvwj")
 mesh = ExtResource("29_w41av")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="KitchenFridge"]
+[node name="StaticBody3D" type="StaticBody3D" parent="KitchenFridge" unique_id=983167937]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="KitchenFridge/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KitchenFridge/StaticBody3D" unique_id=1832316926]
 shape = SubResource("ConvexPolygonShape3D_i8yen")
 
-[node name="KitchenFridgeLarge" type="MeshInstance3D" parent="."]
+[node name="KitchenFridgeLarge" type="MeshInstance3D" parent="." unique_id=1802978862]
 transform = Transform3D(1.1778634, 3.201538, 3.6555152, 1.1300037, 3.4777937, -3.4099917, -4.7260695, 1.6294501, 0.095723204, 85.712105, 61.074585, -97.17969)
 material_override = SubResource("ShaderMaterial_blxg4")
 mesh = ExtResource("30_addgc")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="KitchenFridgeLarge"]
+[node name="StaticBody3D" type="StaticBody3D" parent="KitchenFridgeLarge" unique_id=1058275195]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="KitchenFridgeLarge/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KitchenFridgeLarge/StaticBody3D" unique_id=183616105]
 shape = SubResource("ConvexPolygonShape3D_uuv8l")
 
-[node name="KitchenFridgeSmall" type="MeshInstance3D" parent="."]
+[node name="KitchenFridgeSmall" type="MeshInstance3D" parent="." unique_id=2112529315]
 transform = Transform3D(-0.51129115, 4.936608, 0.607028, -4.959678, -0.46009523, -0.43577868, -0.37439558, -0.64669466, 4.943846, 95.36184, 12.731934, -126.900635)
 material_override = ExtResource("27_gqqf3")
 mesh = ExtResource("31_dp7ls")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="KitchenFridgeSmall"]
+[node name="StaticBody3D" type="StaticBody3D" parent="KitchenFridgeSmall" unique_id=281526878]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="KitchenFridgeSmall/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KitchenFridgeSmall/StaticBody3D" unique_id=911646475]
 shape = SubResource("ConvexPolygonShape3D_8q6f8")
 
-[node name="LoungeDesignSofaCorner" type="MeshInstance3D" parent="."]
+[node name="LoungeDesignSofaCorner" type="MeshInstance3D" parent="." unique_id=1750307376]
 transform = Transform3D(-4.852653, -1.1961762, 0.14463776, -0.064158976, -0.3428307, -4.9878206, 1.2031794, -4.8426886, 0.3173786, 89.96613, 521.479, -141.1294)
 material_override = SubResource("ShaderMaterial_5flu7")
 mesh = ExtResource("32_h7eyy")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LoungeDesignSofaCorner"]
+[node name="StaticBody3D" type="StaticBody3D" parent="LoungeDesignSofaCorner" unique_id=91283629]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LoungeDesignSofaCorner/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LoungeDesignSofaCorner/StaticBody3D" unique_id=2112966433]
 shape = SubResource("ConvexPolygonShape3D_dmc6d")
 
-[node name="LoungeSofaCorner" type="MeshInstance3D" parent="."]
+[node name="LoungeSofaCorner" type="MeshInstance3D" parent="." unique_id=769556078]
 transform = Transform3D(4.258939, -2.5890467, -0.39784637, -0.5610355, -0.15981518, -4.965853, 2.5586486, 4.274494, -0.42663798, 68.54402, 658.4209, -137.42334)
 material_override = SubResource("ShaderMaterial_3i1f1")
 mesh = ExtResource("33_u383a")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LoungeSofaCorner"]
+[node name="StaticBody3D" type="StaticBody3D" parent="LoungeSofaCorner" unique_id=504217900]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LoungeSofaCorner/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LoungeSofaCorner/StaticBody3D" unique_id=2114545505]
 shape = SubResource("ConvexPolygonShape3D_k8hlu")
 
-[node name="SideTable" type="MeshInstance3D" parent="."]
+[node name="SideTable" type="MeshInstance3D" parent="." unique_id=1717972503]
 transform = Transform3D(-3.182797, -3.777638, 0.77411467, 0.37293792, -1.300589, -4.813459, 3.8380618, -3.0063133, 1.1096671, 35.47496, 638.0078, -97.443115)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("34_o1swn")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SideTable"]
+[node name="StaticBody3D" type="StaticBody3D" parent="SideTable" unique_id=485818159]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SideTable/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SideTable/StaticBody3D" unique_id=1612993563]
 shape = SubResource("ConvexPolygonShape3D_73u64")
 
-[node name="SideTableDrawers" type="MeshInstance3D" parent="."]
+[node name="SideTableDrawers" type="MeshInstance3D" parent="." unique_id=1377413977]
 transform = Transform3D(4.125298, -0.94683236, 2.6618457, 1.2507086, 4.836131, -0.21809694, -2.5333066, 0.84578156, 4.2269387, 67.23212, 716.85815, -124.87427)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("35_3w7dk")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SideTableDrawers"]
+[node name="StaticBody3D" type="StaticBody3D" parent="SideTableDrawers" unique_id=1572443293]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SideTableDrawers/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SideTableDrawers/StaticBody3D" unique_id=777839032]
 shape = SubResource("ConvexPolygonShape3D_n44o3")
 
-[node name="Stairs" type="MeshInstance3D" parent="."]
+[node name="Stairs" type="MeshInstance3D" parent="." unique_id=2088686515]
 transform = Transform3D(4.473402, 2.0848894, -0.80119497, -0.15716158, -1.4952924, -4.7685847, -2.2279985, 4.291542, -1.2722759, 44.7241, 631.3684, -144.79199)
 material_override = SubResource("ShaderMaterial_wfrgb")
 mesh = ExtResource("36_usclq")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Stairs"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Stairs" unique_id=141562041]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stairs/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stairs/StaticBody3D" unique_id=1720101990]
 shape = SubResource("ConvexPolygonShape3D_cesxm")
 
-[node name="StairsCorner" type="MeshInstance3D" parent="."]
+[node name="StairsCorner" type="MeshInstance3D" parent="." unique_id=1311526134]
 transform = Transform3D(-2.9345443, 3.7844193, 1.4375744, -3.9876177, -2.396002, -1.8325061, -0.69810814, -2.2220132, 4.424399, 22.021523, 534.96436, -88.31714)
 material_override = SubResource("ShaderMaterial_xxr62")
 mesh = ExtResource("37_67veg")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="StairsCorner"]
+[node name="StaticBody3D" type="StaticBody3D" parent="StairsCorner" unique_id=2096981969]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StairsCorner/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StairsCorner/StaticBody3D" unique_id=71131519]
 shape = SubResource("ConvexPolygonShape3D_8wd4i")
 
-[node name="StairsOpen" type="MeshInstance3D" parent="."]
+[node name="StairsOpen" type="MeshInstance3D" parent="." unique_id=1708475954]
 transform = Transform3D(2.7584548, 4.015457, 1.1256261, 1.1430359, 0.56989664, -4.834117, -4.0105352, 2.9242647, -0.6035555, 58.495087, 747.41797, -126.2832)
 material_override = SubResource("ShaderMaterial_t546j")
 mesh = ExtResource("38_vtpj7")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="StairsOpen"]
+[node name="StaticBody3D" type="StaticBody3D" parent="StairsOpen" unique_id=1842077327]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StairsOpen/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StairsOpen/StaticBody3D" unique_id=1452652112]
 shape = SubResource("ConvexPolygonShape3D_5xxq2")
 
-[node name="StairsOpenSingle" type="MeshInstance3D" parent="."]
+[node name="StairsOpenSingle" type="MeshInstance3D" parent="." unique_id=289921663]
 transform = Transform3D(-2.637783, -2.9332397, 3.0721664, -4.233422, 2.1107056, -1.6195872, -0.3467604, -3.4555793, -3.5970447, 63.359146, 774.459, -124.23389)
 material_override = SubResource("ShaderMaterial_513tx")
 mesh = ExtResource("39_cyg3b")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="StairsOpenSingle"]
+[node name="StaticBody3D" type="StaticBody3D" parent="StairsOpenSingle" unique_id=780091605]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StairsOpenSingle/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StairsOpenSingle/StaticBody3D" unique_id=2072315699]
 shape = SubResource("ConvexPolygonShape3D_31qs8")
 
-[node name="StoolBar" type="MeshInstance3D" parent="."]
+[node name="StoolBar" type="MeshInstance3D" parent="." unique_id=29441709]
 transform = Transform3D(3.9262986, 2.9210832, -1.0254043, -0.13104117, -1.4978076, -4.7685847, -3.0930586, 3.7714515, -1.0996114, 88.26091, 574.3208, -128.56787)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("40_mnujj")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="StoolBar"]
+[node name="StaticBody3D" type="StaticBody3D" parent="StoolBar" unique_id=1895680332]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StoolBar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoolBar/StaticBody3D" unique_id=1271665184]
 shape = SubResource("ConvexPolygonShape3D_mm73b")
 
-[node name="StoolBarSquare" type="MeshInstance3D" parent="."]
+[node name="StoolBarSquare" type="MeshInstance3D" parent="." unique_id=456082828]
 transform = Transform3D(4.5534844, -0.43633804, 2.0187602, 1.9959795, 2.1858766, -4.0296416, -0.5308945, 4.4756627, 2.1648552, 47.393913, -59.965454, -99.00879)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("41_5u3hu")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="StoolBarSquare"]
+[node name="StaticBody3D" type="StaticBody3D" parent="StoolBarSquare" unique_id=1761511902]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StoolBarSquare/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoolBarSquare/StaticBody3D" unique_id=683847296]
 shape = SubResource("ConvexPolygonShape3D_pmdce")
 
-[node name="Table" type="MeshInstance3D" parent="."]
+[node name="Table" type="MeshInstance3D" parent="." unique_id=951847173]
 transform = Transform3D(0.54610276, 0.76212156, 4.911308, 4.755887, 1.3547503, -0.739047, -1.4433677, 4.752244, -0.5769462, 89.72029, -15.949341, -126.03613)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("42_ynvg1")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Table"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Table" unique_id=450287356]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/StaticBody3D" unique_id=1900610298]
 shape = SubResource("ConvexPolygonShape3D_4l24f")
 
-[node name="TableCoffee" type="MeshInstance3D" parent="."]
+[node name="TableCoffee" type="MeshInstance3D" parent="." unique_id=1170828879]
 transform = Transform3D(4.732224, -1.4240867, 0.76028496, 0.54050475, 3.6166022, 3.4099917, -1.5211545, -3.1451817, 3.5768595, 63.692406, 115.024414, -93.9978)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("43_m31yq")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TableCoffee"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TableCoffee" unique_id=1171752696]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TableCoffee/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TableCoffee/StaticBody3D" unique_id=2041351195]
 shape = SubResource("ConvexPolygonShape3D_sua3e")
 
-[node name="TableCoffeeSquare" type="MeshInstance3D" parent="."]
+[node name="TableCoffeeSquare" type="MeshInstance3D" parent="." unique_id=1631651458]
 transform = Transform3D(-3.8133419, 0.1692518, 3.2295165, 0, 4.9931474, -0.2616798, -3.2339487, -0.1995749, -3.8081157, 41.303017, 818.9863, -119.37109)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("44_3th8n")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TableCoffeeSquare"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TableCoffeeSquare" unique_id=716511985]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TableCoffeeSquare/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TableCoffeeSquare/StaticBody3D" unique_id=402507350]
 shape = SubResource("ConvexPolygonShape3D_vbnnh")
 
-[node name="TableCross" type="MeshInstance3D" parent="."]
+[node name="TableCross" type="MeshInstance3D" parent="." unique_id=14697689]
 transform = Transform3D(3.049517, -3.9015923, 0.6913924, 3.962285, 2.9966524, -0.5660161, 0.027300194, 0.8931139, 4.9195127, 63.67418, 531.105, -123.059814)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("45_ik7pv")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TableCross"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TableCross" unique_id=1488635184]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TableCross/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TableCross/StaticBody3D" unique_id=364204599]
 shape = SubResource("ConvexPolygonShape3D_3q204")
 
-[node name="TableRound" type="MeshInstance3D" parent="."]
+[node name="TableRound" type="MeshInstance3D" parent="." unique_id=78248968]
 transform = Transform3D(2.4295862, 2.1245756, 3.8188074, 0.515625, 4.1994286, -2.6643815, -4.3394976, 1.6884834, 1.8214779, 97.35189, 817.0244, -112.59375)
 material_override = ExtResource("6_hci42")
 mesh = ExtResource("46_m53ma")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TableRound"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TableRound" unique_id=1962467630]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TableRound/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TableRound/StaticBody3D" unique_id=1114398963]
 shape = SubResource("ConvexPolygonShape3D_dymdj")
 
-[node name="Toilet" type="MeshInstance3D" parent="."]
+[node name="Toilet" type="MeshInstance3D" parent="." unique_id=161959962]
 transform = Transform3D(4.093815, -2.415813, 1.550654, 2.8529503, 3.1243792, -2.6643815, 0.3183633, 3.0662847, 3.936565, 81.70038, 466.34106, -93.59424)
 material_override = ExtResource("27_gqqf3")
 mesh = ExtResource("47_sayss")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Toilet"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Toilet" unique_id=911914625]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Toilet/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Toilet/StaticBody3D" unique_id=771604428]
 shape = SubResource("ConvexPolygonShape3D_gthi0")
 
-[node name="ToiletSquare" type="MeshInstance3D" parent="."]
+[node name="ToiletSquare" type="MeshInstance3D" parent="." unique_id=1970136326]
 transform = Transform3D(4.168401, 1.5511644, -2.284366, -1.8844948, -1.4252322, -4.406517, -2.0181968, 4.5346007, -0.6035555, 35.945465, 815.9746, -124.80737)
 material_override = ExtResource("27_gqqf3")
 mesh = ExtResource("48_75eo3")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ToiletSquare"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ToiletSquare" unique_id=67773382]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ToiletSquare/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ToiletSquare/StaticBody3D" unique_id=862817367]
 shape = SubResource("ConvexPolygonShape3D_i1i87")
 
-[node name="TrainLocomotiveC" type="MeshInstance3D" parent="."]
+[node name="TrainLocomotiveC" type="MeshInstance3D" parent="." unique_id=2124831403]
 transform = Transform3D(4.989243, 0.25014684, 0.21184905, -0.276576, 1.4778719, 4.7685847, 0.17595209, -4.7700443, 1.4885293, 85.74669, 822.74414, -133.00854)
 material_override = SubResource("ShaderMaterial_j0578")
 mesh = ExtResource("50_m3h3j")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TrainLocomotiveC"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TrainLocomotiveC" unique_id=18034973]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainLocomotiveC/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainLocomotiveC/StaticBody3D" unique_id=946338126]
 shape = SubResource("ConvexPolygonShape3D_vtbek")
 
-[node name="TrainLocomotiveB" type="MeshInstance3D" parent="."]
+[node name="TrainLocomotiveB" type="MeshInstance3D" parent="." unique_id=1488503872]
 transform = Transform3D(1.9594215, -4.291446, -1.65655, 1.1736789, 2.2073689, -4.3301272, 4.4478245, 1.3080573, 1.8723892, 54.491653, 548.3557, -124.03882)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("52_1afll")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TrainLocomotiveB"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TrainLocomotiveB" unique_id=1220639257]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainLocomotiveB/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainLocomotiveB/StaticBody3D" unique_id=521557796]
 shape = SubResource("ConvexPolygonShape3D_jevag")
 
-[node name="TrainLocomotiveA" type="MeshInstance3D" parent="."]
+[node name="TrainLocomotiveA" type="MeshInstance3D" parent="." unique_id=1019219322]
 transform = Transform3D(4.818152, 1.3361928, -1.4579378e-07, 0.22283491, -0.8035166, -4.9299803, -1.3174808, 4.750679, -0.83384323, 43.075363, 437.38623, -103.94995)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("53_iijjx")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TrainLocomotiveA"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TrainLocomotiveA" unique_id=1866736865]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainLocomotiveA/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrainLocomotiveA/StaticBody3D" unique_id=822059752]
 shape = SubResource("ConvexPolygonShape3D_3vdk5")
 
-[node name="Ambulance" type="MeshInstance3D" parent="."]
+[node name="Ambulance" type="MeshInstance3D" parent="." unique_id=1639575494]
 transform = Transform3D(-2.9560728, -0.35055572, 4.017306, -3.3596325, -2.5408702, -2.6938536, 2.2303596, -4.29198, 1.2666516, 58.490814, 346.7002, -140.38525)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("54_2l1iq")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Ambulance"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Ambulance" unique_id=1518475368]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ambulance/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ambulance/StaticBody3D" unique_id=211039719]
 shape = SubResource("ConvexPolygonShape3D_an0af")
 
-[node name="Cone" type="MeshInstance3D" parent="."]
+[node name="Cone" type="MeshInstance3D" parent="." unique_id=208070372]
 transform = Transform3D(-3.6620412, 2.7563632, -1.9979775, -3.1251793, -1.558157, 3.5784636, 1.3500767, 3.8697033, 2.864033, 79.16211, 123.75098, -112.17212)
 material_override = SubResource("ShaderMaterial_an0af")
 mesh = ExtResource("55_5c13n")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cone"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cone" unique_id=933762466]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cone/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cone/StaticBody3D" unique_id=1956787210]
 shape = SubResource("ConvexPolygonShape3D_t8lms")
 
-[node name="DeliveryFlat" type="MeshInstance3D" parent="."]
+[node name="DeliveryFlat" type="MeshInstance3D" parent="." unique_id=971918918]
 transform = Transform3D(-2.6870072, 3.8432336, 1.7348056, -2.0702019, 0.58971256, -4.512926, -3.6734533, -3.1435328, 1.2743413, 39.22326, 702.7383, -129.09009)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("56_hoti3")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DeliveryFlat"]
+[node name="StaticBody3D" type="StaticBody3D" parent="DeliveryFlat" unique_id=1457143218]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DeliveryFlat/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeliveryFlat/StaticBody3D" unique_id=1476362844]
 shape = SubResource("ConvexPolygonShape3D_u2uaa")
 
-[node name="Delivery" type="MeshInstance3D" parent="."]
+[node name="Delivery" type="MeshInstance3D" parent="." unique_id=1739347663]
 transform = Transform3D(4.6763906, 1.5709636, -0.8145217, 0.55229896, 0.8907669, 4.888916, 1.6811717, -4.662468, 0.6595865, 43.068542, 50.946167, -126.06665)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("57_spsc4")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Delivery"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Delivery" unique_id=919940835]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Delivery/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Delivery/StaticBody3D" unique_id=1455413025]
 shape = SubResource("ConvexPolygonShape3D_vis2m")
 
-[node name="Firetruck" type="MeshInstance3D" parent="."]
+[node name="Firetruck" type="MeshInstance3D" parent="." unique_id=1213908978]
 transform = Transform3D(4.4413624, 2.2380397, 0.5152431, 1.3223773, -3.4092925, 3.4099917, 1.8776625, -2.892733, -3.6202874, 127.36661, 965.3844, -115.3266)
 material_override = SubResource("ShaderMaterial_1idwg")
 mesh = ExtResource("58_ykwwj")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Firetruck"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Firetruck" unique_id=36936199]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Firetruck/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Firetruck/StaticBody3D" unique_id=1885250479]
 shape = SubResource("ConvexPolygonShape3D_xuvwj")
 
-[node name="GarbageTruck" type="MeshInstance3D" parent="."]
+[node name="GarbageTruck" type="MeshInstance3D" parent="." unique_id=1496144490]
 transform = Transform3D(2.9796598, 1.4033113, 3.7619605, 3.2641218, -3.574669, -1.2519001, 2.3381913, 3.2019467, -3.0463748, 90.54183, 926.58594, -90.52344)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("59_fx825")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="GarbageTruck"]
+[node name="StaticBody3D" type="StaticBody3D" parent="GarbageTruck" unique_id=206330793]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GarbageTruck/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GarbageTruck/StaticBody3D" unique_id=483754737]
 shape = SubResource("ConvexPolygonShape3D_8ywr2")
 
-[node name="HatchbackSports" type="MeshInstance3D" parent="."]
+[node name="HatchbackSports" type="MeshInstance3D" parent="." unique_id=1800766224]
 transform = Transform3D(-2.4983768, -2.8404298, 3.2695675, 4.290404, -2.139116, 1.4200768, 0.5920712, 3.5151303, 3.5061817, 194.63599, 1059.3956, -114.913086)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("60_r33r2")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="HatchbackSports"]
+[node name="StaticBody3D" type="StaticBody3D" parent="HatchbackSports" unique_id=1134202196]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HatchbackSports/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HatchbackSports/StaticBody3D" unique_id=1901013719]
 shape = SubResource("ConvexPolygonShape3D_3i1f1")
 
-[node name="Police" type="MeshInstance3D" parent="."]
+[node name="Police" type="MeshInstance3D" parent="." unique_id=1180916373]
 transform = Transform3D(-3.337178, 0.7372856, -3.64961, 1.7900841, 4.6151133, -0.70450604, 3.2647882, -1.7768342, -3.3442516, 54.5346, 341.53613, -88.59424)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("61_k5v5k")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Police"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Police" unique_id=1802895181]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Police/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Police/StaticBody3D" unique_id=1770453142]
 shape = SubResource("ConvexPolygonShape3D_wfrgb")
 
-[node name="RaceFuture" type="MeshInstance3D" parent="."]
+[node name="RaceFuture" type="MeshInstance3D" parent="." unique_id=651298482]
 transform = Transform3D(-2.3965862, -4.374515, 0.3464006, 0.13065623, 0.32338557, 4.9878206, -4.386263, 2.3998, -0.040692724, 55.215744, 196.07483, -135.24951)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("62_ou24i")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RaceFuture"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RaceFuture" unique_id=1208236584]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RaceFuture/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RaceFuture/StaticBody3D" unique_id=1097888685]
 shape = SubResource("ConvexPolygonShape3D_t546j")
 
-[node name="Race" type="MeshInstance3D" parent="."]
+[node name="Race" type="MeshInstance3D" parent="." unique_id=1828131550]
 transform = Transform3D(-5, 4.371139e-07, 0, 4.371139e-07, 5, 4.371139e-07, 3.821371e-14, 4.371139e-07, -5, 25.7678, 374.22412, -118.315186)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("63_nxucj")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Race"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Race" unique_id=1090065607]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Race/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Race/StaticBody3D" unique_id=942599814]
 shape = SubResource("ConvexPolygonShape3D_j0578")
 
-[node name="SedanSports" type="MeshInstance3D" parent="."]
+[node name="SedanSports" type="MeshInstance3D" parent="." unique_id=772668179]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 40.20424, 261.47388, -86.53467)
 mesh = ExtResource("64_oykg0")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SedanSports"]
+[node name="StaticBody3D" type="StaticBody3D" parent="SedanSports" unique_id=1876938354]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SedanSports/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SedanSports/StaticBody3D" unique_id=1690665852]
 shape = SubResource("ConvexPolygonShape3D_sywlt")
 
-[node name="Sedan" type="MeshInstance3D" parent="."]
+[node name="Sedan" type="MeshInstance3D" parent="." unique_id=283579415]
 transform = Transform3D(4.256262, -0.17327257, 2.6180553, 0.7685726, 4.852576, -0.9283331, -2.5086918, 1.1926789, 4.157401, 57.564934, 585.0615, -101.44971)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("65_8jtf6")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sedan"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Sedan" unique_id=946064050]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sedan/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sedan/StaticBody3D" unique_id=1046049604]
 shape = SubResource("ConvexPolygonShape3D_1idwg")
 
-[node name="SuvLuxury" type="MeshInstance3D" parent="."]
+[node name="SuvLuxury" type="MeshInstance3D" parent="." unique_id=925664846]
 transform = Transform3D(2.6266382, 0.5355443, 4.2206593, 4.000457, 1.3774676, -2.6643815, -1.4481431, 4.7765865, 0.2951374, 45.21443, 495.16992, -112.1311)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("66_v1g4d")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SuvLuxury"]
+[node name="StaticBody3D" type="StaticBody3D" parent="SuvLuxury" unique_id=1182880701]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SuvLuxury/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SuvLuxury/StaticBody3D" unique_id=425802321]
 shape = SubResource("ConvexPolygonShape3D_513tx")
 
-[node name="Suv" type="MeshInstance3D" parent="."]
+[node name="Suv" type="MeshInstance3D" parent="." unique_id=1200520794]
 transform = Transform3D(-2.2083356, -4.312585, -1.2348546, 0.86123836, 0.9431764, -4.834117, 4.402445, -2.347772, 0.32626265, 93.967674, -83.44678, -110.096924)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("67_wg7c5")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Suv"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Suv" unique_id=796891980]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Suv/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Suv/StaticBody3D" unique_id=2065832351]
 shape = SubResource("ConvexPolygonShape3D_xxr62")
 
-[node name="Taxi" type="MeshInstance3D" parent="."]
+[node name="Taxi" type="MeshInstance3D" parent="." unique_id=604177007]
 transform = Transform3D(4.8767, -1.0840816, 0.20631331, 0.64728594, 2.052929, -4.512926, 0.8937669, 4.4283457, 2.1426458, 69.15682, 172.71252, -107.875244)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("68_ifpnq")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Taxi"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Taxi" unique_id=1302835708]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Taxi/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Taxi/StaticBody3D" unique_id=1628371338]
 shape = SubResource("ConvexPolygonShape3D_blxg4")
 
-[node name="TractorPolice" type="MeshInstance3D" parent="."]
+[node name="TractorPolice" type="MeshInstance3D" parent="." unique_id=1145564236]
 transform = Transform3D(1.6896298, 4.692946, 0.34843978, -1.4923217, 0.183234, 4.7685847, 4.4629726, -1.7154255, 1.4625967, 81.99434, 231.11133, -117.97534)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("69_toyfh")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TractorPolice"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TractorPolice" unique_id=465026719]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TractorPolice/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TractorPolice/StaticBody3D" unique_id=247140103]
 shape = SubResource("ConvexPolygonShape3D_5flu7")
 
-[node name="TractorShovel" type="MeshInstance3D" parent="."]
+[node name="TractorShovel" type="MeshInstance3D" parent="." unique_id=785497907]
 transform = Transform3D(-0.12560824, 3.086768, -3.9314222, 0.16474923, -3.9279704, -3.0893207, -4.9957075, -0.20714882, -0.0030316163, 191.65062, 1029.6727, -111.77108)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("70_lmehu")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TractorShovel"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TractorShovel" unique_id=814290048]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TractorShovel/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TractorShovel/StaticBody3D" unique_id=489374092]
 shape = SubResource("ConvexPolygonShape3D_u7bka")
 
-[node name="Tractor" type="MeshInstance3D" parent="."]
+[node name="Tractor" type="MeshInstance3D" parent="." unique_id=682437860]
 transform = Transform3D(1.9020674, 0.028680079, -4.623994, 4.4741054, -1.2744825, 1.8325061, -1.1681284, -4.834757, -0.5104938, 75.78911, 470.65356, -125.40259)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("71_ses0x")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Tractor"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Tractor" unique_id=1649718672]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tractor/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tractor/StaticBody3D" unique_id=553841999]
 shape = SubResource("ConvexPolygonShape3D_wlsbr")
 
-[node name="TruckFlat" type="MeshInstance3D" parent="."]
+[node name="TruckFlat" type="MeshInstance3D" parent="." unique_id=678597558]
 transform = Transform3D(3.8248463, -3.0485895, 1.0376195, 3.1609976, 3.861984, -0.30524272, -0.61534214, 0.8894838, 4.881616, 27.626701, 88.20471, -103.326904)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("72_2ihh4")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TruckFlat"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TruckFlat" unique_id=1388417840]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TruckFlat/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TruckFlat/StaticBody3D" unique_id=57079100]
 shape = SubResource("ConvexPolygonShape3D_cxkob")
 
-[node name="Truck" type="MeshInstance3D" parent="."]
+[node name="Truck" type="MeshInstance3D" parent="." unique_id=1494975518]
 transform = Transform3D(0.4229017, -1.9381797, -4.5896206, 0.9672235, 4.550429, -1.8325061, 4.8872933, -0.73284376, 0.75980735, 71.41359, 294.95288, -136.07666)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("73_7d6h4")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Truck"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Truck" unique_id=1107785553]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Truck/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Truck/StaticBody3D" unique_id=523398448]
 shape = SubResource("ConvexPolygonShape3D_hsvh5")
 
-[node name="Van" type="MeshInstance3D" parent="."]
+[node name="Van" type="MeshInstance3D" parent="." unique_id=280650813]
 transform = Transform3D(3.2714677, 3.6304877, -1.0569099, -3.0752244, 3.3677998, 2.0496147, 2.2001123, -0.6910027, 4.4364424, 79.424286, 853.86426, -105.87573)
 material_override = ExtResource("51_qfrj0")
 mesh = ExtResource("74_qt52g")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Van"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Van" unique_id=1120963292]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Van/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Van/StaticBody3D" unique_id=1942736269]
 shape = SubResource("ConvexPolygonShape3D_dqmm1")
 
-[node name="Speaker" type="MeshInstance3D" parent="."]
+[node name="Speaker" type="MeshInstance3D" parent="." unique_id=725878311]
 transform = Transform3D(4.4758744, 0.85718644, 2.0571284, 0.09036765, -4.6813583, 1.7540579, 2.226742, -1.5330089, -4.2061267, 48.910084, 451.86774, -115.98952)
 mesh = ExtResource("75_jw6dw")
 surface_material_override/0 = ExtResource("6_hci42")
@@ -1177,12 +1177,12 @@ surface_material_override/1 = ExtResource("76_5i40c")
 surface_material_override/2 = ExtResource("6_hci42")
 surface_material_override/3 = SubResource("ShaderMaterial_iolum")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Speaker"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Speaker" unique_id=2142384888]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Speaker/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Speaker/StaticBody3D" unique_id=1328926802]
 shape = SubResource("ConvexPolygonShape3D_jw6dw")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Speaker"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Speaker" unique_id=1213827254]
 stream = ExtResource("76_68m88")
 volume_db = -5.0
 unit_size = 100.0

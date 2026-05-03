@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1ww68tmfaphe"]
+[gd_scene format=3 uid="uid://c1ww68tmfaphe"]
 
 [ext_resource type="Script" uid="uid://bm7ban3rumq21" path="res://scenes/firework/firework.gd" id="1_vlmwb"]
 [ext_resource type="AudioStream" uid="uid://cbkjbqmi67dmp" path="res://assets/sfx/andy_gardner_cc0_fireworks-3.wav" id="2_ktvhi"]
@@ -57,11 +57,11 @@ vertex_color_use_as_albedo = true
 [sub_resource type="QuadMesh" id="QuadMesh_bewce"]
 material = SubResource("StandardMaterial3D_ktvhi")
 
-[node name="Node3D" type="Node3D" node_paths=PackedStringArray("particles")]
+[node name="Node3D" type="Node3D" unique_id=675678976 node_paths=PackedStringArray("particles")]
 script = ExtResource("1_vlmwb")
 particles = [NodePath("GPUParticles3D"), NodePath("GPUParticles3D2")]
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=561842684]
 emitting = false
 amount = 600
 lifetime = 3.0
@@ -72,7 +72,7 @@ transform_align = 1
 process_material = SubResource("ParticleProcessMaterial_sugp2")
 draw_pass_1 = SubResource("QuadMesh_tbgi4")
 
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=625698941]
 emitting = false
 amount = 200
 lifetime = 3.0
@@ -83,7 +83,7 @@ transform_align = 1
 process_material = SubResource("ParticleProcessMaterial_vlmwb")
 draw_pass_1 = SubResource("QuadMesh_bewce")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1378342699]
 stream = ExtResource("2_ktvhi")
 unit_size = 100.0
 pitch_scale = 1.5

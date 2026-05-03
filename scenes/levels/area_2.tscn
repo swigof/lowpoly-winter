@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bahtprl48hif0"]
+[gd_scene format=3 uid="uid://bahtprl48hif0"]
 
 [ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_npypc"]
 [ext_resource type="Texture2D" uid="uid://dh62pgewpea3p" path="res://assets/textures/GGBotNet-CC0/y2k_grass.png" id="2_8mgey"]
@@ -105,49 +105,49 @@ data = PackedVector3Array(0.060399998, 0.61899996, 0.3463, -0.060399998, 0.61899
 [sub_resource type="SphereShape3D" id="SphereShape3D_de0io"]
 radius = 6.0
 
-[node name="Area2" type="Node3D"]
+[node name="Area2" type="Node3D" unique_id=1419470729]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1700345743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3992615, -24.801437, 17.670288)
 mesh = SubResource("SphereMesh_7xgas")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1334139388]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=518673496]
 shape = SubResource("ConvexPolygonShape3D_w2p53")
 
-[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=1545323684]
 material_override = SubResource("ShaderMaterial_csbb7")
 multimesh = SubResource("MultiMesh_dp8al")
 
-[node name="Bush" parent="." instance=ExtResource("5_8htnc")]
+[node name="Bush" parent="." unique_id=312348534 instance=ExtResource("5_8htnc")]
 transform = Transform3D(1.6289806, 0, -1.1603544, 0, 2, 0, 1.1603544, 0, 1.6289806, 4.3730125, 75.133484, 17.654297)
 
-[node name="AudioText" parent="Bush" instance=ExtResource("6_fsrp6")]
+[node name="AudioText" parent="Bush" unique_id=204349880 instance=ExtResource("6_fsrp6")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3.4011078, 0)
 texts = Array[String](["The green eyed heretic arrives", "What makes you think you can climb to the heavens?", "Freedom is not for the lost"])
 audios = Array[AudioStream]([ExtResource("7_8htnc"), ExtResource("7_8htnc"), ExtResource("7_8htnc")])
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bush/AudioText"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bush/AudioText" unique_id=1058035925]
 shape = SubResource("SphereShape3D_dp8al")
 
-[node name="MultiMeshInstance3D2" type="MultiMeshInstance3D" parent="."]
+[node name="MultiMeshInstance3D2" type="MultiMeshInstance3D" parent="." unique_id=1061915660]
 material_override = SubResource("ShaderMaterial_csbb7")
 multimesh = SubResource("MultiMesh_f1v6p")
 
-[node name="TreeLog" type="MeshInstance3D" parent="."]
+[node name="TreeLog" type="MeshInstance3D" parent="." unique_id=599983523]
 transform = Transform3D(43.12829, 90.22167, -3.9437145e-06, 0, -4.371139e-06, -100, -90.22167, 43.12829, -1.8851974e-06, 1.8864441, -161.55832, 20.185364)
 material_override = SubResource("ShaderMaterial_mmplq")
 mesh = ExtResource("9_4hyrb")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TreeLog"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeLog" unique_id=722475572]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog/StaticBody3D" unique_id=1733004518]
 shape = SubResource("ConcavePolygonShape3D_de0io")
 
-[node name="TreeDetailed" type="MeshInstance3D" parent="."]
+[node name="TreeDetailed" type="MeshInstance3D" parent="." unique_id=1880559963]
 transform = Transform3D(499.4136, 0, 24.206932, 0, 500.00003, 0, -24.206932, 0, 499.4136, -43.029434, -209.99689, -256.5039)
 mesh = ExtResource("10_uqets")
 skeleton = NodePath("../..")
@@ -155,12 +155,12 @@ surface_material_override/0 = SubResource("ShaderMaterial_de0io")
 surface_material_override/1 = SubResource("ShaderMaterial_xidr1")
 surface_material_override/2 = SubResource("ShaderMaterial_8c33x")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TreeDetailed"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeDetailed" unique_id=1981576638]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeDetailed/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeDetailed/StaticBody3D" unique_id=1853559289]
 shape = SubResource("ConcavePolygonShape3D_y40x4")
 
-[node name="TreeDetailed2" type="MeshInstance3D" parent="."]
+[node name="TreeDetailed2" type="MeshInstance3D" parent="." unique_id=1046027656]
 transform = Transform3D(-422.8639, 0, 266.80725, 0, 499.99997, 0, -266.80725, 0, -422.8639, 261.30612, -60.848114, -374.41016)
 mesh = ExtResource("10_uqets")
 skeleton = NodePath("../..")
@@ -168,12 +168,12 @@ surface_material_override/0 = SubResource("ShaderMaterial_de0io")
 surface_material_override/1 = SubResource("ShaderMaterial_xidr1")
 surface_material_override/2 = SubResource("ShaderMaterial_8c33x")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TreeDetailed2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeDetailed2" unique_id=613072625]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeDetailed2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeDetailed2/StaticBody3D" unique_id=2082608804]
 shape = SubResource("ConcavePolygonShape3D_y40x4")
 
-[node name="TreeDetailed3" type="MeshInstance3D" parent="."]
+[node name="TreeDetailed3" type="MeshInstance3D" parent="." unique_id=166092676]
 transform = Transform3D(302.07007, 0, -398.43903, 0, 499.99997, 0, 398.43903, 0, 302.07007, -109.231674, 22.18071, -568.03125)
 mesh = ExtResource("10_uqets")
 skeleton = NodePath("../..")
@@ -181,12 +181,12 @@ surface_material_override/0 = SubResource("ShaderMaterial_de0io")
 surface_material_override/1 = SubResource("ShaderMaterial_xidr1")
 surface_material_override/2 = SubResource("ShaderMaterial_8c33x")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TreeDetailed3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeDetailed3" unique_id=933960200]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeDetailed3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeDetailed3/StaticBody3D" unique_id=1441929544]
 shape = SubResource("ConcavePolygonShape3D_y40x4")
 
-[node name="TreeDetailed4" type="MeshInstance3D" parent="."]
+[node name="TreeDetailed4" type="MeshInstance3D" parent="." unique_id=617200888]
 transform = Transform3D(-280.6735, 0, -413.79022, 0, 499.99997, 0, 413.79022, 0, -280.6735, 227.4543, 142.78851, -646.48267)
 mesh = ExtResource("10_uqets")
 skeleton = NodePath("../..")
@@ -194,12 +194,12 @@ surface_material_override/0 = SubResource("ShaderMaterial_de0io")
 surface_material_override/1 = SubResource("ShaderMaterial_xidr1")
 surface_material_override/2 = SubResource("ShaderMaterial_8c33x")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TreeDetailed4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeDetailed4" unique_id=1596065493]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeDetailed4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeDetailed4/StaticBody3D" unique_id=1665134796]
 shape = SubResource("ConcavePolygonShape3D_y40x4")
 
-[node name="TreeDetailed5" type="MeshInstance3D" parent="."]
+[node name="TreeDetailed5" type="MeshInstance3D" parent="." unique_id=1790065189]
 transform = Transform3D(-416.9573, 0, 275.9467, 0, 499.99997, 0, -275.9467, 0, -416.9573, -78.17803, 230.44519, -867.4614)
 mesh = ExtResource("10_uqets")
 skeleton = NodePath("../..")
@@ -207,12 +207,12 @@ surface_material_override/0 = SubResource("ShaderMaterial_de0io")
 surface_material_override/1 = SubResource("ShaderMaterial_xidr1")
 surface_material_override/2 = SubResource("ShaderMaterial_8c33x")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TreeDetailed5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeDetailed5" unique_id=744874181]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeDetailed5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeDetailed5/StaticBody3D" unique_id=2087869212]
 shape = SubResource("ConcavePolygonShape3D_y40x4")
 
-[node name="TreeDetailed6" type="MeshInstance3D" parent="."]
+[node name="TreeDetailed6" type="MeshInstance3D" parent="." unique_id=2079025794]
 transform = Transform3D(-499.9897, 0, -3.2112885, 0, 499.99997, 0, 3.2112885, 0, -499.9897, 78.7242, 344.3928, -1144.1779)
 mesh = ExtResource("10_uqets")
 skeleton = NodePath("../..")
@@ -220,73 +220,73 @@ surface_material_override/0 = SubResource("ShaderMaterial_de0io")
 surface_material_override/1 = SubResource("ShaderMaterial_xidr1")
 surface_material_override/2 = SubResource("ShaderMaterial_8c33x")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TreeDetailed6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeDetailed6" unique_id=1377816151]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeDetailed6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeDetailed6/StaticBody3D" unique_id=1606093652]
 shape = SubResource("ConcavePolygonShape3D_y40x4")
 
-[node name="TreeLog2" type="MeshInstance3D" parent="."]
+[node name="TreeLog2" type="MeshInstance3D" parent="." unique_id=1817200249]
 transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 64.541, 1011, -1201.439)
 material_override = SubResource("ShaderMaterial_mmplq")
 mesh = ExtResource("9_4hyrb")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TreeLog2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeLog2" unique_id=70026232]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog2/StaticBody3D" unique_id=1611355831]
 shape = SubResource("ConcavePolygonShape3D_de0io")
 
-[node name="Raven" parent="." instance=ExtResource("12_8mgey")]
+[node name="Raven" parent="." unique_id=709654997 instance=ExtResource("12_8mgey")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 64.52779, 1011.4481, -1201.548)
 
-[node name="TreeLog3" type="MeshInstance3D" parent="."]
+[node name="TreeLog3" type="MeshInstance3D" parent="." unique_id=119665434]
 transform = Transform3D(3.7505553, 0, 3.3065593, 0, 5, 0, -3.3065593, 0, 3.7505553, 64.541, 1011, -1151.323)
 material_override = SubResource("ShaderMaterial_mmplq")
 mesh = ExtResource("9_4hyrb")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TreeLog3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeLog3" unique_id=1764684596]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog3/StaticBody3D" unique_id=1664082676]
 shape = SubResource("ConcavePolygonShape3D_de0io")
 
-[node name="TreeLog4" type="MeshInstance3D" parent="."]
+[node name="TreeLog4" type="MeshInstance3D" parent="." unique_id=562630913]
 transform = Transform3D(4.6227303, 0, 1.9053519, 0, 5, 0, -1.9053519, 0, 4.6227303, 40.85, 1011, -1177.947)
 material_override = SubResource("ShaderMaterial_mmplq")
 mesh = ExtResource("9_4hyrb")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TreeLog4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeLog4" unique_id=1040159517]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog4/StaticBody3D" unique_id=766194292]
 shape = SubResource("ConcavePolygonShape3D_de0io")
 
-[node name="TreeLog5" type="MeshInstance3D" parent="."]
+[node name="TreeLog5" type="MeshInstance3D" parent="." unique_id=801797998]
 transform = Transform3D(-2.7012012, 0, -4.2075543, 0, 5, 0, 4.2075543, 0, -2.7012012, 89.075, 1011, -1177.936)
 material_override = SubResource("ShaderMaterial_mmplq")
 mesh = ExtResource("9_4hyrb")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TreeLog5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeLog5" unique_id=720025704]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog5/StaticBody3D" unique_id=1113194534]
 shape = SubResource("ConcavePolygonShape3D_de0io")
 
-[node name="TreeLog6" type="MeshInstance3D" parent="."]
+[node name="TreeLog6" type="MeshInstance3D" parent="." unique_id=1442683919]
 transform = Transform3D(-1.4200765, 0, -4.794099, 0, 5, 0, 4.794099, 0, -1.4200765, 64.541, 1011, -1117.349)
 material_override = SubResource("ShaderMaterial_mmplq")
 mesh = ExtResource("9_4hyrb")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TreeLog6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeLog6" unique_id=1126181993]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLog6/StaticBody3D" unique_id=1413508588]
 shape = SubResource("ConcavePolygonShape3D_de0io")
 
-[node name="AudioText" parent="." instance=ExtResource("6_fsrp6")]
+[node name="AudioText" parent="." unique_id=1479436533 instance=ExtResource("6_fsrp6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.505264, 1013.1534, -1200.8862)
 texts = Array[String](["Ah the burgeoning diamond", "Freedom is but a stones throw away", "Fly! So those below may walk"])
 audios = Array[AudioStream]([ExtResource("13_0qu47"), ExtResource("14_4hyrb"), ExtResource("14_fsrp6")])
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioText"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioText" unique_id=212570885]
 shape = SubResource("SphereShape3D_de0io")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1104975449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.763123, 369.3739, -325.24506)
 stream = ExtResource("16_0qu47")
 unit_size = 100.0
@@ -294,7 +294,7 @@ autoplay = true
 max_distance = 500.0
 parameters/looping = true
 
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="." unique_id=1660124955]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.00159, 686.447, -680.27686)
 stream = ExtResource("17_4hyrb")
 unit_size = 100.0
@@ -302,7 +302,7 @@ autoplay = true
 max_distance = 500.0
 parameters/looping = true
 
-[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="." unique_id=1744889439]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.29518, 884.3023, -1060.0913)
 stream = ExtResource("18_uqets")
 unit_size = 100.0

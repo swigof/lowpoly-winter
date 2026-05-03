@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7fao1fosmmg4"]
+[gd_scene format=3 uid="uid://b7fao1fosmmg4"]
 
 [ext_resource type="PackedScene" uid="uid://uope70ms21et" path="res://scenes/levels/area_1.tscn" id="1_tsias"]
 [ext_resource type="PackedScene" uid="uid://bahtprl48hif0" path="res://scenes/levels/area_2.tscn" id="2_7k8c1"]
@@ -10,54 +10,54 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_0lift"]
 size = Vector3(2000, 100, 1000)
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" unique_id=615110895]
 
-[node name="Area1" parent="." instance=ExtResource("1_tsias")]
+[node name="Area1" parent="." unique_id=1212613805 instance=ExtResource("1_tsias")]
 
-[node name="Area2" parent="." instance=ExtResource("2_7k8c1")]
+[node name="Area2" parent="." unique_id=139416741 instance=ExtResource("2_7k8c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 220.42496, -793.3397)
 
-[node name="Area3" parent="." instance=ExtResource("3_w2p53")]
+[node name="Area3" parent="." unique_id=1135787991 instance=ExtResource("3_w2p53")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.87996, 1276.3694, -2086.5137)
 
-[node name="Area4" parent="." instance=ExtResource("4_w2p53")]
+[node name="Area4" parent="." unique_id=172724277 instance=ExtResource("4_w2p53")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1729.6912, -2772.8945)
 
-[node name="End" parent="." instance=ExtResource("5_7xgas")]
+[node name="End" parent="." unique_id=1723077670 instance=ExtResource("5_7xgas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.93991, 2760.5398, -2884.7852)
 
-[node name="ResetPlane6" parent="." instance=ExtResource("7_0lift")]
+[node name="ResetPlane6" parent="." unique_id=2078367228 instance=ExtResource("7_0lift")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane6"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane6" unique_id=722085739]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -149.03195, -409.025)
 shape = SubResource("BoxShape3D_0lift")
 
-[node name="ResetPlane7" parent="." instance=ExtResource("7_0lift")]
+[node name="ResetPlane7" parent="." unique_id=400571182 instance=ExtResource("7_0lift")]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="ResetPlane7"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ResetPlane7" unique_id=2117230269]
 transform = Transform3D(1, 0, 0, 0, 0.86640036, -0.49935007, 0, 0.49935007, 0.86640036, 0, 66.783966, -1025.9796)
 shape = SubResource("BoxShape3D_0lift")
 
-[node name="ResetPlane8" parent="." instance=ExtResource("7_0lift")]
+[node name="ResetPlane8" parent="." unique_id=1211222870 instance=ExtResource("7_0lift")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane8"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane8" unique_id=637891475]
 transform = Transform3D(1, 0, 0, 0, 0.8755573, -0.4831143, 0, 0.4831143, 0.8755573, 0, 544.4396, -1868.6022)
 shape = SubResource("BoxShape3D_0lift")
 
-[node name="ResetPlane9" parent="." instance=ExtResource("7_0lift")]
+[node name="ResetPlane9" parent="." unique_id=593985199 instance=ExtResource("7_0lift")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane9"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane9" unique_id=1624154323]
 transform = Transform3D(1, 0, 0, 0, 0.8989242, -0.43810436, 0, 0.43810436, 0.8989242, 0, 1362.4988, -2554.1882)
 shape = SubResource("BoxShape3D_0lift")
 
-[node name="ResetPlane11" parent="." instance=ExtResource("7_0lift")]
+[node name="ResetPlane11" parent="." unique_id=1879142791 instance=ExtResource("7_0lift")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane11"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane11" unique_id=1929325800]
 transform = Transform3D(1, 0, 0, 0, -0.0010995828, 0.9999994, 0, -0.9999994, -0.0010995828, 0, 692.3328, -2083.1465)
 shape = SubResource("BoxShape3D_0lift")
 
-[node name="ResetPlane10" parent="." instance=ExtResource("7_0lift")]
+[node name="ResetPlane10" parent="." unique_id=1605365556 instance=ExtResource("7_0lift")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane10"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane10" unique_id=910161535]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1478.629, -3326.4246)
 shape = SubResource("BoxShape3D_0lift")

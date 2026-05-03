@@ -1,4 +1,4 @@
-[gd_resource type="AudioStreamRandomizer" load_steps=7 format=3 uid="uid://dp25ktivaojvr"]
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://dp25ktivaojvr"]
 
 [ext_resource type="AudioStream" uid="uid://ctq6a8a10x7ae" path="res://assets/sfx/swigof-cc0/fl-tts/-01.wav" id="1_qldyy"]
 [ext_resource type="AudioStream" uid="uid://b5ny33taxmx58" path="res://assets/sfx/swigof-cc0/fl-tts/-02.wav" id="2_tyg6g"]
