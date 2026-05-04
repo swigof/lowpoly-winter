@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://3mndku2ra3ak"]
+
+[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_lm12y"]
+[ext_resource type="Texture2D" uid="uid://dl8g2d7uexst5" path="res://assets/models/Kenney-CC0/CityKitRoads/Textures/colormap.png" id="2_apmry"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_lm12y")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/albedoTex = ExtResource("2_apmry")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)

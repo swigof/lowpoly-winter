@@ -1,35 +1,17 @@
 [gd_scene format=3 uid="uid://wxc5hdvbfvcx"]
 
-[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_art0g"]
-[ext_resource type="Texture2D" uid="uid://b3b425wdvfpyv" path="res://assets/textures/GGBotNet-CC0/y2k_stone.png" id="2_6mi66"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfyvx"]
-render_priority = 0
-shader = ExtResource("1_art0g")
-shader_parameter/modulate_color = Color(1, 1, 1, 1)
-shader_parameter/albedoTex = ExtResource("2_6mi66")
-shader_parameter/uv_scale = Vector2(1, 1)
-shader_parameter/uv_offset = Vector2(0, 0)
-shader_parameter/uv_pan_velocity = Vector2(0, 0)
+[ext_resource type="Material" uid="uid://dv6hoxe0rc73v" path="res://shaders/materials/stone.tres" id="1_6mi66"]
+[ext_resource type="Material" uid="uid://81nonm48pn6n" path="res://shaders/materials/stoneside.tres" id="2_art0g"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_w2p53"]
-material = SubResource("ShaderMaterial_lfyvx")
+material = ExtResource("1_6mi66")
 size = Vector2(10, 10)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lfyvx"]
 points = PackedVector3Array(-5, 0, -5, -5, 0, 5, 5, 0, -5, 5, 0, 5)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7xgas"]
-render_priority = 0
-shader = ExtResource("1_art0g")
-shader_parameter/modulate_color = Color(1, 1, 1, 1)
-shader_parameter/albedoTex = ExtResource("2_6mi66")
-shader_parameter/uv_scale = Vector2(1, 100)
-shader_parameter/uv_offset = Vector2(0, 0)
-shader_parameter/uv_pan_velocity = Vector2(0, 0)
-
 [sub_resource type="QuadMesh" id="QuadMesh_gy5pc"]
-material = SubResource("ShaderMaterial_7xgas")
+material = ExtResource("2_art0g")
 size = Vector2(10, 1000)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w2p53"]

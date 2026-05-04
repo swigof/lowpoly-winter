@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d3dert7pppnj1"]
+
+[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_kguya"]
+[ext_resource type="Texture2D" uid="uid://n4xxnydlca4s" path="res://assets/models/Kenney-CC0/SurvivalKit/Textures/colormap.png" id="2_2pwre"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kguya")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/albedoTex = ExtResource("2_2pwre")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)

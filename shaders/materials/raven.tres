@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c8r6or78ylja5"]
+
+[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_3845p"]
+[ext_resource type="Texture2D" uid="uid://bqurfdrk6o5oc" path="res://assets/models/Poly by Google-ccby/raven/Raven_BaseColor.png" id="2_oxsmi"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_3845p")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/albedoTex = ExtResource("2_oxsmi")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)

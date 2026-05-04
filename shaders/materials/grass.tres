@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://6loh0f3qqa2e"]
+
+[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_tgxhq"]
+[ext_resource type="Texture2D" uid="uid://d06ms4xkiea2a" path="res://assets/textures/Grass_04-ScreamingBrainStudios-CC0.png" id="2_rp2qp"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_tgxhq")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/albedoTex = ExtResource("2_rp2qp")
+shader_parameter/uv_scale = Vector2(0.01, 0.01)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)

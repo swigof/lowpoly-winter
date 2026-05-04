@@ -1,24 +1,9 @@
 [gd_scene format=3 uid="uid://cfu3nom0n7ict"]
 
 [ext_resource type="PackedScene" uid="uid://m2i42jq0tn06" path="res://assets/models/Quaternius-cc0-Manta ray.fbx" id="1_2122t"]
-[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="2_7ajds"]
 [ext_resource type="Script" uid="uid://c5m6y1vqbsv2u" path="res://scenes/manta-ray/manta_ray.gd" id="2_xgbim"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivegn"]
-render_priority = 0
-shader = ExtResource("2_7ajds")
-shader_parameter/modulate_color = Color(0.3316725, 0.4805715, 0.71138245, 1)
-shader_parameter/uv_scale = Vector2(1, 1)
-shader_parameter/uv_offset = Vector2(0, 0)
-shader_parameter/uv_pan_velocity = Vector2(0, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rucyx"]
-render_priority = 0
-shader = ExtResource("2_7ajds")
-shader_parameter/modulate_color = Color(1, 1, 1, 1)
-shader_parameter/uv_scale = Vector2(1, 1)
-shader_parameter/uv_offset = Vector2(0, 0)
-shader_parameter/uv_pan_velocity = Vector2(0, 0)
+[ext_resource type="Material" uid="uid://dh1o3n3yugjfy" path="res://shaders/materials/blue.tres" id="3_n8gne"]
+[ext_resource type="Material" uid="uid://cmpwm61v6mwmg" path="res://shaders/materials/white.tres" id="4_n8gne"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2122t"]
 size = Vector3(3.5, 6.5, 0.125)
@@ -62,7 +47,7 @@ size = Vector3(1, 1.5, 0.125)
 [node name="Quaternius-cc0-Manta ray" unique_id=355233219 instance=ExtResource("1_2122t")]
 script = ExtResource("2_xgbim")
 
-[node name="Skeleton3D" parent="Armature" index="0"]
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1905745222) index="0" unique_id=495440614]
 bones/1/rotation = Quaternion(-0.7273683, -5.8792946e-18, 5.9825404e-18, 0.68624735)
 bones/2/position = Vector3(-3.3881318e-21, 0.015576502, 1.3179027e-11)
 bones/2/rotation = Quaternion(0.020183876, -0.00015875662, 0.0030221762, 0.99979174)
@@ -96,11 +81,10 @@ bones/15/position = Vector3(2.428174e-05, 0.0055252095, 0.019846052)
 bones/15/rotation = Quaternion(0.6979128, 4.1852204e-06, 4.0784516e-06, 0.71618277)
 bones/15/scale = Vector3(1, 1.0000001, 1.0000001)
 
-[node name="MantaRay" parent="Armature/Skeleton3D" index="0"]
+[node name="MantaRay" parent="Armature/Skeleton3D" index="0" unique_id=856353889]
 transform = Transform3D(0.9999193, 0.012723108, 1.5167131e-09, -0.012723111, 0.9999193, -9.656276e-12, -1.5167132e-09, -9.620749e-12, 1.0000004, 1.5629535e-05, -1.866937e-05, 1.1898676e-09)
-skeleton = NodePath("..")
-surface_material_override/0 = SubResource("ShaderMaterial_ivegn")
-surface_material_override/1 = SubResource("ShaderMaterial_rucyx")
+surface_material_override/0 = ExtResource("3_n8gne")
+surface_material_override/1 = ExtResource("4_n8gne")
 
 [node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="Armature/Skeleton3D" index="1" unique_id=1365842367]
 
@@ -116,10 +100,10 @@ transform = Transform3D(1, 7.21761e-05, 0.00035430232, -0.00032864657, -0.227143
 shape = SubResource("BoxShape3D_2122t")
 
 [node name="Physical Bone Spine1" type="PhysicalBone3D" parent="Armature/Skeleton3D/PhysicalBoneSimulator3D" index="1" unique_id=858144194]
-transform = Transform3D(0.010000001, -1.6462613e-19, -1.2554641e-21, 8.3162e-21, 0.0005812894, -0.009983093, 1.6442073e-19, 0.009983093, 0.0005812894, 2.4281746e-05, -0.0077569634, -0.0004323854)
+transform = Transform3D(0.010000001, -1.6455803e-19, -1.2554661e-21, 8.3122394e-21, 0.0005812894, -0.009983093, 1.6435276e-19, 0.009983093, 0.0005812894, 2.4281746e-05, -0.007760942, -0.00043219462)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6379785e-10, 0.00023080653, 0.7610479)
-body_offset = Transform3D(0.010000001, 3.097063e-21, 2.1627126e-21, 2.1627013e-21, -1.3969839e-09, -0.010000002, -3.097049e-21, 0.010000002, -1.3969839e-09, 3.637979e-12, 0.0076104803, -2.3070024e-06)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6379785e-10, 0.00023489265, 0.76064956)
+body_offset = Transform3D(0.010000001, 3.1651503e-21, 2.162711e-21, 2.1626989e-21, -1.3969839e-09, -0.010000002, -3.1651468e-21, 0.010000002, -1.3969839e-09, 3.637979e-12, 0.007606497, -2.3478642e-06)
 bone_name = "Spine1"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0

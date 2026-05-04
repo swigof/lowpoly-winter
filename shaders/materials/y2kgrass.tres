@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://g5n4hqx8ddlf"]
+
+[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_ww4mm"]
+[ext_resource type="Texture2D" uid="uid://dh62pgewpea3p" path="res://assets/textures/GGBotNet-CC0/y2k_grass.png" id="2_0vmy7"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ww4mm")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/albedoTex = ExtResource("2_0vmy7")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)

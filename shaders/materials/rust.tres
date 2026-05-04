@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dfqvogna0rurr"]
+
+[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_7w00d"]
+[ext_resource type="Texture2D" uid="uid://1ksvj2vaucnq" path="res://assets/textures/ambientCG-cc0-rust.png" id="2_b5xt4"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_7w00d")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/albedoTex = ExtResource("2_b5xt4")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)

@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dv6hoxe0rc73v"]
+
+[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_xgobm"]
+[ext_resource type="Texture2D" uid="uid://b3b425wdvfpyv" path="res://assets/textures/GGBotNet-CC0/y2k_stone.png" id="2_2xyja"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_xgobm")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/albedoTex = ExtResource("2_2xyja")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)

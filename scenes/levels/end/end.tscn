@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://46qxn340a5ga" path="res://assets/music/anosci-ccby-it's a chill summer day, huh.mp3" id="6_noalq"]
 [ext_resource type="ArrayMesh" uid="uid://gnc3ej38tung" path="res://assets/models/Kenney-CC0/BlasterKit/OBJ format/smoke.obj" id="7_f1un0"]
 [ext_resource type="FontFile" uid="uid://tweqntlcph26" path="res://assets/fonts/PublicPixel-GGBotNet-CC0.ttf" id="7_gd5ey"]
-[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="8_dgsdh"]
+[ext_resource type="Material" uid="uid://cmpwm61v6mwmg" path="res://shaders/materials/white.tres" id="8_dgsdh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5bcbc"]
 size = Vector3(300, 200, 250)
@@ -52,14 +52,6 @@ _data = {
 &"RESET": SubResource("Animation_f1un0"),
 &"text_fade": SubResource("Animation_gd5ey")
 }
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vc2if"]
-render_priority = 0
-shader = ExtResource("8_dgsdh")
-shader_parameter/modulate_color = Color(1, 1, 1, 1)
-shader_parameter/uv_scale = Vector2(1, 1)
-shader_parameter/uv_offset = Vector2(0, 0)
-shader_parameter/uv_pan_velocity = Vector2(0, 0)
 
 [sub_resource type="MultiMesh" id="MultiMesh_f1un0"]
 transform_format = 1
@@ -144,7 +136,7 @@ libraries/ = SubResource("AnimationLibrary_dgsdh")
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=1201717833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.350305, 0)
-material_override = SubResource("ShaderMaterial_vc2if")
+material_override = ExtResource("8_dgsdh")
 multimesh = SubResource("MultiMesh_f1un0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MultiMeshInstance3D" unique_id=202955020]

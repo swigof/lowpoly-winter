@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://pm462ilkrys7"]
+
+[ext_resource type="Shader" uid="uid://ci1lstys2j1kx" path="res://shaders/godot-psx-style-demo/shaders/psx_lit.gdshader" id="1_7r8jm"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_7r8jm")
+shader_parameter/modulate_color = Color(0.6862745, 0.44705883, 0.13725491, 1)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_pan_velocity = Vector2(0, 0)

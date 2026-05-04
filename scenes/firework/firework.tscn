@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1ww68tmfaphe"]
 
 [ext_resource type="Script" uid="uid://bm7ban3rumq21" path="res://scenes/firework/firework.gd" id="1_vlmwb"]
+[ext_resource type="Material" uid="uid://bvi6c7nvlf18c" path="res://shaders/materials/firework.tres" id="2_bewce"]
 [ext_resource type="AudioStream" uid="uid://cbkjbqmi67dmp" path="res://assets/sfx/andy_gardner_cc0_fireworks-3.wav" id="2_ktvhi"]
 
 [sub_resource type="Gradient" id="Gradient_87uty"]
@@ -23,12 +24,8 @@ color_ramp = SubResource("GradientTexture1D_rhpnd")
 hue_variation_min = 0.14999998
 hue_variation_max = 0.14999998
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sugp2"]
-transparency = 1
-vertex_color_use_as_albedo = true
-
 [sub_resource type="QuadMesh" id="QuadMesh_tbgi4"]
-material = SubResource("StandardMaterial3D_sugp2")
+material = ExtResource("2_bewce")
 
 [sub_resource type="Gradient" id="Gradient_vlmwb"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -50,12 +47,8 @@ color_ramp = SubResource("GradientTexture1D_ktvhi")
 hue_variation_min = 0.14999998
 hue_variation_max = 0.14999998
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktvhi"]
-transparency = 1
-vertex_color_use_as_albedo = true
-
 [sub_resource type="QuadMesh" id="QuadMesh_bewce"]
-material = SubResource("StandardMaterial3D_ktvhi")
+material = ExtResource("2_bewce")
 
 [node name="Node3D" type="Node3D" unique_id=675678976 node_paths=PackedStringArray("particles")]
 script = ExtResource("1_vlmwb")
