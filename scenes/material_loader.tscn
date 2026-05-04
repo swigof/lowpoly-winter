@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bhkx1m543btay"]
+
+[ext_resource type="Script" uid="uid://clgnhkct4sr2r" path="res://scenes/material_loader.gd" id="1_fw0nk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fw0nk"]
+
+[node name="MaterialLoader" type="Node3D" unique_id=2065146484]
+script = ExtResource("1_fw0nk")
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=964774338]
+transform = Transform3D(0.8535533, -0.14644662, 0.49999997, 0.49999997, 0.49999997, -0.70710677, -0.14644662, 0.8535533, 0.49999997, 0, 0, 0)
+mesh = SubResource("BoxMesh_fw0nk")

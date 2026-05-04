@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bx3x7mwkwixnu" path="res://scenes/levels/area_4.tscn" id="4_w2p53"]
 [ext_resource type="PackedScene" uid="uid://cl182bqbqcjl7" path="res://scenes/levels/end/end.tscn" id="5_7xgas"]
 [ext_resource type="PackedScene" uid="uid://c0oyij2xckg8v" path="res://scenes/reset_plane/reset_plane.tscn" id="7_0lift"]
+[ext_resource type="PackedScene" uid="uid://bhkx1m543btay" path="res://scenes/material_loader.tscn" id="7_dp8al"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0lift"]
 size = Vector3(2000, 100, 1000)
@@ -61,3 +62,6 @@ shape = SubResource("BoxShape3D_0lift")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane10" unique_id=910161535]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1478.629, -3326.4246)
 shape = SubResource("BoxShape3D_0lift")
+
+[node name="MaterialLoader" parent="." unique_id=1350737927 instance=ExtResource("7_dp8al")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5913665, -7.6435137)
