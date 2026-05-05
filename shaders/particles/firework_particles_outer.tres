@@ -1,0 +1,21 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://baeo6340x3k63"]
+
+[sub_resource type="Gradient" id="Gradient_87uty"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rhpnd"]
+gradient = SubResource("Gradient_87uty")
+
+[resource]
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, -2, 0)
+damping_min = 5.0
+damping_max = 5.0
+scale_min = 0.5
+color = Color(1, 0, 1, 1)
+color_ramp = SubResource("GradientTexture1D_rhpnd")
+hue_variation_min = 0.14999998
+hue_variation_max = 0.14999998

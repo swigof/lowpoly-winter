@@ -3,21 +3,12 @@
 [ext_resource type="Material" uid="uid://bujuja1kta3aw" path="res://shaders/materials/green.tres" id="1_6ftm5"]
 [ext_resource type="ArrayMesh" uid="uid://bk4mh5anvp5t5" path="res://assets/models/Kenney-CC0/NatureKit/plant_bushDetailed.obj" id="2_6ftm5"]
 [ext_resource type="Material" uid="uid://dtatjfdnpbni7" path="res://shaders/materials/smoke.tres" id="3_6ftm5"]
+[ext_resource type="Material" uid="uid://cs8wlgsk0047d" path="res://shaders/particles/smoke_particles.tres" id="3_jpk7d"]
 [ext_resource type="AudioStream" uid="uid://cp2dcslpn2w4u" path="res://assets/sfx/selector_cc0_brushwood-in-the-fire-2.mp3" id="4_6ftm5"]
 
 [sub_resource type="GDScript" id="GDScript_6ftm5"]
 script/source = "extends Node3D
 "
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x11nt"]
-direction = Vector3(0, 1, 0)
-initial_velocity_min = 0.5
-initial_velocity_max = 1.0
-gravity = Vector3(0, 0, 0)
-scale_min = 0.049999997
-scale_max = 0.25
-hue_variation_min = -2.2351742e-08
-hue_variation_max = 0.019999977
 
 [sub_resource type="QuadMesh" id="QuadMesh_f8bao"]
 material = ExtResource("3_6ftm5")
@@ -36,7 +27,7 @@ amount = 200
 lifetime = 2.0
 local_coords = true
 transform_align = 1
-process_material = SubResource("ParticleProcessMaterial_x11nt")
+process_material = ExtResource("3_jpk7d")
 draw_pass_1 = SubResource("QuadMesh_f8bao")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=121447411]
