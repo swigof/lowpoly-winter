@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dprh04nnaa7hi"]
 
 [ext_resource type="Script" uid="uid://dwrbchnkj6pph" path="res://scenes/audio_text/audio_text.gd" id="1_mhafo"]
-[ext_resource type="FontFile" uid="uid://tweqntlcph26" path="res://assets/fonts/PublicPixel-GGBotNet-CC0.ttf" id="2_lpnhn"]
+[ext_resource type="FontFile" uid="uid://xj7lx30yq3i5" path="res://assets/fonts/PublicPixel-GGBotNet-CC0.ttf" id="2_lpnhn"]
 
 [node name="AudioText" type="Area3D" unique_id=1810918891 node_paths=PackedStringArray("label", "audio_player", "timer", "screen_notifier")]
 script = ExtResource("1_mhafo")

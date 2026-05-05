@@ -1,12 +1,28 @@
 [gd_scene format=3 uid="uid://bhkx1m543btay"]
 
 [ext_resource type="Script" uid="uid://clgnhkct4sr2r" path="res://scenes/material_loader.gd" id="1_fw0nk"]
+[ext_resource type="FontFile" uid="uid://xj7lx30yq3i5" path="res://assets/fonts/PublicPixel-GGBotNet-CC0.ttf" id="2_qut7n"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fw0nk"]
 
 [node name="MaterialLoader" type="Node3D" unique_id=2065146484]
+process_mode = 3
 script = ExtResource("1_fw0nk")
 
 [node name="Cube" type="MeshInstance3D" parent="." unique_id=964774338]
 transform = Transform3D(0.8535533, -0.14644662, 0.49999997, 0.49999997, 0.49999997, -0.70710677, -0.14644662, 0.8535533, 0.49999997, 0, 0, 0)
 mesh = SubResource("BoxMesh_fw0nk")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1743845464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1508441, 0)
+billboard = 1
+fixed_size = true
+alpha_cut = 1
+texture_filter = 0
+text = "LOADING"
+font = ExtResource("2_qut7n")
+font_size = 16
+outline_size = 8
+uppercase = true
+autowrap_mode = 2
+width = 300.0

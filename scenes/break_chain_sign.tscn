@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://cmm0hhonfeyim" path="res://shaders/materials/brown.tres" id="1_jt7gq"]
 [ext_resource type="ArrayMesh" uid="uid://brsslub7agm5" path="res://assets/models/Kenney-CC0/NatureKit/sign.obj" id="2_auymt"]
-[ext_resource type="FontFile" uid="uid://tweqntlcph26" path="res://assets/fonts/PublicPixel-GGBotNet-CC0.ttf" id="3_jsq4t"]
+[ext_resource type="FontFile" uid="uid://xj7lx30yq3i5" path="res://assets/fonts/PublicPixel-GGBotNet-CC0.ttf" id="3_jsq4t"]
 [ext_resource type="Material" uid="uid://d3dert7pppnj1" path="res://shaders/materials/survivalkit.tres" id="4_auymt"]
 [ext_resource type="ArrayMesh" uid="uid://qy7el3vt0jmu" path="res://assets/models/Kenney-CC0/SurvivalKit/signpost-single.obj" id="5_wfgye"]
 

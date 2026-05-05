@@ -6,9 +6,8 @@ var _materials: Array[Material]
 var _material_index := 0
 
 func _ready():
-	var dir = DirAccess.open("res://shaders/materials")
-	dir.list_dir_begin()
-	for file_name in dir.get_files():
+	var dir_files = ResourceLoader.list_directory("res://shaders/materials")
+	for file_name in dir_files:
 		if file_name.get_extension() == "tres":
 			var resource = load("res://shaders/materials/"+file_name)
 			if resource is Material:
