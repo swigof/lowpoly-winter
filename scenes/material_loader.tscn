@@ -2,8 +2,12 @@
 
 [ext_resource type="Script" uid="uid://clgnhkct4sr2r" path="res://scenes/material_loader.gd" id="1_fw0nk"]
 [ext_resource type="FontFile" uid="uid://xj7lx30yq3i5" path="res://assets/fonts/PublicPixel-GGBotNet-CC0.ttf" id="2_qut7n"]
+[ext_resource type="Material" uid="uid://nj5fj485sf84" path="res://shaders/materials/flames.tres" id="4_yxqv4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fw0nk"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_vu4au"]
+material = ExtResource("4_yxqv4")
 
 [node name="MaterialLoader" type="Node3D" unique_id=2065146484]
 process_mode = 3
@@ -26,3 +30,10 @@ outline_size = 8
 uppercase = true
 autowrap_mode = 2
 width = 300.0
+
+[node name="Particler" type="GPUParticles3D" parent="." unique_id=1880667043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4313176, 0)
+lifetime = 2.0
+local_coords = true
+transform_align = 1
+draw_pass_1 = SubResource("QuadMesh_vu4au")
