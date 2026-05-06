@@ -26,6 +26,24 @@ func init_world(parent: Node):
 	_level.add_child(_player)
 	parent.add_child(_level)
 	stopwatch = 0
+	var material_loader: Node3D = preload("res://scenes/material_loader.tscn").instantiate()
+	material_loader.position = Vector3(0, 1, -5)
+	material_loader.ready.connect(_start_loading)
+	material_loader.tree_exited.connect(_stop_loading)
+	add_child(material_loader)
+
+func _start_loading():
+	_player.set_process_input(false)
+	_player.set_camera_exposure(0)
+	_player.show_crosshair(false)
+	AudioServer.set_bus_mute(0, true)
+
+func _stop_loading():
+	stopwatch = 0
+	_player.set_process_input(true)
+	_player.set_camera_exposure(1)
+	_player.show_crosshair(true)
+	AudioServer.set_bus_mute(0, false)
 
 func restart():
 	var level := _level_scene.instantiate()
