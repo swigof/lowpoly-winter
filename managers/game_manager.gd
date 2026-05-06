@@ -26,11 +26,12 @@ func init_world(parent: Node):
 	_level.add_child(_player)
 	parent.add_child(_level)
 	stopwatch = 0
-	var material_loader: Node3D = preload("res://scenes/material_loader.tscn").instantiate()
-	material_loader.position = Vector3(0, 1, -5)
-	material_loader.ready.connect(_start_loading)
-	material_loader.tree_exited.connect(_stop_loading)
-	add_child(material_loader)
+	var loader_scene: PackedScene = preload("res://scenes/material_loader/material_loader.tscn")
+	var loader: Node3D = loader_scene.instantiate()
+	loader.position = Vector3(0, 1, -5)
+	loader.ready.connect(_start_loading)
+	loader.tree_exited.connect(_stop_loading)
+	add_child(loader)
 
 func _start_loading():
 	_player.set_process_input(false)

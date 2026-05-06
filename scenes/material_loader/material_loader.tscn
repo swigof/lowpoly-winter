@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhkx1m543btay"]
 
-[ext_resource type="Script" uid="uid://clgnhkct4sr2r" path="res://scenes/material_loader.gd" id="1_fw0nk"]
+[ext_resource type="Script" uid="uid://clgnhkct4sr2r" path="res://scenes/material_loader/material_loader.gd" id="1_fw0nk"]
 [ext_resource type="FontFile" uid="uid://xj7lx30yq3i5" path="res://assets/fonts/PublicPixel-GGBotNet-CC0.ttf" id="2_qut7n"]
 [ext_resource type="PackedScene" uid="uid://08qpnlkebukg" path="res://scenes/chain/chain.tscn" id="4_cmiph"]
 [ext_resource type="Material" uid="uid://nj5fj485sf84" path="res://shaders/materials/flames.tres" id="4_yxqv4"]
