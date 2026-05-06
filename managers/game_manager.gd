@@ -10,6 +10,7 @@ var _level_scene: PackedScene
 var _level: Node3D
 var _player_scene: PackedScene
 var _player: Player
+var _load_screen: Control
 
 func init_menu(parent: Node):
 	_menu = preload("res://scenes/menu/menu.tscn").instantiate()
@@ -34,6 +35,8 @@ func init_world(parent: Node):
 	_level.add_child(loader)
 
 func _start_loading():
+	_load_screen = preload("res://scenes/material_loader/loading_screen.tscn").instantiate()
+	_menu.add_sibling(_load_screen)
 	_player.set_process_input(false)
 	_player.set_camera_exposure(0)
 	_player.show_crosshair(false)
@@ -41,6 +44,7 @@ func _start_loading():
 
 func _stop_loading():
 	stopwatch = 0
+	_load_screen.queue_free()
 	_player.set_process_input(true)
 	_player.set_camera_exposure(1)
 	if not get_tree().paused:
