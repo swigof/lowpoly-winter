@@ -31,7 +31,7 @@ func init_world(parent: Node):
 	loader.position = Vector3(0, 1, -5)
 	loader.ready.connect(_start_loading)
 	loader.tree_exited.connect(_stop_loading)
-	add_child(loader)
+	_level.add_child(loader)
 
 func _start_loading():
 	_player.set_process_input(false)
@@ -43,7 +43,8 @@ func _stop_loading():
 	stopwatch = 0
 	_player.set_process_input(true)
 	_player.set_camera_exposure(1)
-	_player.show_crosshair(true)
+	if not get_tree().paused:
+		_player.show_crosshair(true)
 	AudioServer.set_bus_mute(0, false)
 
 func restart():
