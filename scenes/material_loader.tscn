@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://clgnhkct4sr2r" path="res://scenes/material_loader.gd" id="1_fw0nk"]
 [ext_resource type="FontFile" uid="uid://xj7lx30yq3i5" path="res://assets/fonts/PublicPixel-GGBotNet-CC0.ttf" id="2_qut7n"]
+[ext_resource type="PackedScene" uid="uid://08qpnlkebukg" path="res://scenes/chain/chain.tscn" id="4_cmiph"]
 [ext_resource type="Material" uid="uid://nj5fj485sf84" path="res://shaders/materials/flames.tres" id="4_yxqv4"]
+[ext_resource type="PackedScene" uid="uid://b3fmle2ang8j2" path="res://scenes/blackrock.tscn" id="5_cmiph"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fw0nk"]
 
@@ -37,3 +39,20 @@ lifetime = 2.0
 local_coords = true
 transform_align = 1
 draw_pass_1 = SubResource("QuadMesh_vu4au")
+
+[node name="Chain" parent="." unique_id=245692240 instance=ExtResource("4_cmiph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025597215, 2.383339, -0.0044150352)
+
+[node name="EndLabel" type="Label3D" parent="." unique_id=966976870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1723042, 0)
+billboard = 1
+texture_filter = 0
+text = "Freed from the chain in"
+font = ExtResource("2_qut7n")
+font_size = 16
+outline_size = 0
+uppercase = true
+line_spacing = 20.0
+
+[node name="blackrock" parent="." unique_id=6250219 instance=ExtResource("5_cmiph")]
+transform = Transform3D(0.030998185, -1.2496156, 0, -0.09271584, -0.0022999255, 1.2465546, -1.2461712, -0.030912746, -0.092744365, 1.04321, 2.6906917, 0)

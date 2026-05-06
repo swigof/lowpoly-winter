@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var _cube := $Cube
 @onready var _particler := $Particler
+@onready var _chain := $Chain
 
 var _materials: Array[Material]
 var _particles: Array[ParticleProcessMaterial]
@@ -23,6 +24,8 @@ func _ready():
 			var resource = load("res://shaders/particles/"+file_name)
 			if resource is ParticleProcessMaterial:
 				_particles.append(resource)
+	_chain.target = position
+	_chain.is_active = true
 
 func _process(delta: float):
 	if _material_index < _materials.size():
