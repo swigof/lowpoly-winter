@@ -22,6 +22,9 @@ config/icon="res://icon.svg"
 
 SettingsManager="*res://managers/settings_manager.gd"
 GameManager="*res://managers/game_manager.gd"
+NgManager="*uid://bqwmwnyejdp0"
+NG="*uid://cx0lbddb6da4w"
+NGCloudSave="*uid://b7g1k2gu4cpve"
 
 [display]
 
@@ -31,6 +34,14 @@ window/size/resizable=false
 window/size/window_width_override=960
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/newgrounds/plugin.cfg")
+
+[global_group]
+
+CloudSave="Newgrounds Cloudsave"
 
 [importer_defaults]
 
@@ -78,6 +89,11 @@ fire={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(367, 9),"global_position":Vector2(376, 57),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[newgrounds.io]
+
+opened_getting_started_page=true
+auto_init=false
 
 [physics]
 
