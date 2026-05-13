@@ -1,3 +1,13 @@
+This branch includes newgrounds api integrations for game medals.
+
+Building this branch requires the
+[Newgrounds.io API addon](https://godotengine.org/asset-library/asset/2528)
+to be installed in the `addons` folder.
+This was done with the 2025-06-30 release.
+
+For deployments, the `App ID` and `Aes 128 Key` need to be assigned in the
+project settings.
+
 # As Above So Below
 
 A first person platformer with a grappling hook
