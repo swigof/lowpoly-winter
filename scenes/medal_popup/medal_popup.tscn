@@ -187,7 +187,9 @@ _medal_label = NodePath("MedalPopupViewport/LabelPanel/LabelContainer/MedalLabel
 [node name="MedalPopupViewport" type="SubViewport" parent="." unique_id=1672872362]
 process_mode = 3
 transparent_bg = true
+handle_input_locally = false
 size = Vector2i(320, 240)
+render_target_update_mode = 4
 
 [node name="LabelPanel" type="PanelContainer" parent="MedalPopupViewport" unique_id=46274964]
 process_mode = 3
