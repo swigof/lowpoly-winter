@@ -4,6 +4,7 @@ class_name AudioText extends Area3D
 @export var audios: Array[AudioStream]
 @export var delay: float
 @export var start_delay: float
+@export var medal_id: int
 @export_group("Nodes")
 @export var label: Label3D
 @export var audio_player: AudioStreamPlayer3D
@@ -25,6 +26,7 @@ func _on_timer_timeout():
 		_player = null
 		_index = -1
 		label.text = ""
+		_unlock_medal()
 		return
 	var timer_delay := 0.0
 	if has_text:
@@ -50,3 +52,7 @@ func _on_body_exited(body: Node3D):
 func _on_visible_on_screen_notifier_3d_screen_exited():
 	if _index == -1:
 		timer.stop()
+
+func _unlock_medal():
+	if medal_id != 0:
+		NgManager.unlock_medal(medal_id)

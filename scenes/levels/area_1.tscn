@@ -133,6 +133,7 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -1.7569655, 71.88864
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5381546, 75.11417, -390.82104)
 texts = Array[String](["My sweet pebble", "Rise from rock bottom", "Only you may will it"])
 audios = Array[AudioStream]([ExtResource("12_k3sua"), ExtResource("12_k3sua"), ExtResource("12_k3sua")])
+medal_id = 90077
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AudioText" unique_id=412047975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5156517)

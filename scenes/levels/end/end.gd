@@ -75,6 +75,11 @@ func _on_cutscene_timer_timeout():
 	var seconds := int(GameManager.stopwatch - minutes * 60)
 	end_label.text = "Freed from the chain in\n%02d:%02d" % [minutes, seconds]
 	text_animation.play("text_fade")
+	text_animation.animation_finished.connect(_on_end_text_faded_in)
+
+func _on_end_text_faded_in(anim_name: StringName):
+	if anim_name == "text_fade":
+		NgManager.unlock_medal(90080)
 
 func _on_firework_timer_timeout():
 	var firework: Firework = _firework_scene.instantiate()

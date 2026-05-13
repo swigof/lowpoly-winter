@@ -78,6 +78,7 @@ transform = Transform3D(1.6289806, 0, -1.1603544, 0, 2, 0, 1.1603544, 0, 1.62898
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3.4011078, 0)
 texts = Array[String](["The green eyed heretic arrives", "What makes you think you can climb to the heavens?", "Freedom is not for the lost"])
 audios = Array[AudioStream]([ExtResource("7_8htnc"), ExtResource("7_8htnc"), ExtResource("7_8htnc")])
+medal_id = 90078
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bush/AudioText" unique_id=1058035925]
 shape = SubResource("SphereShape3D_dp8al")
@@ -232,6 +233,7 @@ shape = SubResource("ConcavePolygonShape3D_de0io")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.505264, 1013.1534, -1200.8862)
 texts = Array[String](["Ah the burgeoning diamond", "Freedom is but a stones throw away", "Fly! So those below may walk"])
 audios = Array[AudioStream]([ExtResource("13_0qu47"), ExtResource("14_4hyrb"), ExtResource("14_fsrp6")])
+medal_id = 90079
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AudioText" unique_id=212570885]
 shape = SubResource("SphereShape3D_de0io")
