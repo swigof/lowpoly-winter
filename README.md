@@ -16,7 +16,7 @@ per second, so the models used feel a little out of place.
 ## Assets
 
 Assets for the project can be downloaded from
-[here](https://github.com/swigof/lowpoly-winter/releases/download/1.0.0/assets.zip)
+[here](https://github.com/swigof/lowpoly-winter/releases/download/1.0.1/assets.zip)
 
 The `assets` folder of the archive should be placed in the project's top level directory
 
