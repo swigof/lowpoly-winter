@@ -97,7 +97,7 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = 0.01
-max_value = 0.5
+max_value = 0.99
 step = 0.01
 value = 0.09999999999999999
 
